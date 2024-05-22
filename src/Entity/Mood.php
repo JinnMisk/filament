@@ -16,7 +16,7 @@ class Mood
 
     #[ORM\Column(length: 255)]
     private ?string $color = null;
-
+ 
     #[ORM\Column(nullable: true)]
     private ?float $luminosity = null;
 
