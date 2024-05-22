@@ -16,90 +16,6 @@ class Mood
 
     #[ORM\Column(length: 255)]
     private ?string $color = null;
-
-
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     private ?float $luminosity = null;
 
     public function getId(): ?int
@@ -124,7 +40,7 @@ class Mood
         return $this->luminosity;
     }
 
-    public function setLuminosity(int $luminosity): static
+    public function setLuminosity(float $luminosity): static
     {
         $this->luminosity = $luminosity;
 
