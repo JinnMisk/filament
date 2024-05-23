@@ -26,9 +26,6 @@ class Place
     private ?string $zip = null;
 
     #[ORM\Column(length: 255)]
-    private ?string $country = null;
-
-    #[ORM\Column(length: 255)]
     private ?string $city = null;
 
     #[ORM\Column(length: 255, nullable: true)]
@@ -83,18 +80,6 @@ class Place
     public function setZip(string $zip): static
     {
         $this->zip = $zip;
-
-        return $this;
-    }
-
-    public function getCountry(): ?string
-    {
-        return $this->country;
-    }
-
-    public function setCountry(string $country): static
-    {
-        $this->country = $country;
 
         return $this;
     }

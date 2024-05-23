@@ -42,7 +42,7 @@ class Mood
         return $this->luminosity;
     }
 
-    public function setLuminosity(int $luminosity): static
+    public function setLuminosity(float $luminosity): static
     {
         $this->luminosity = $luminosity;
 
