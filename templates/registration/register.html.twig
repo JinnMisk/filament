@@ -1,19 +1,66 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Register{% endblock %}
-
+{% block body_id %}inscription
+{% endblock %}
 {% block body %}
-    <h1>Register</h1>
-
-    {{ form_errors(registrationForm) }}
-
-    {{ form_start(registrationForm) }}
-        {{ form_row(registrationForm.email) }}
-        {{ form_row(registrationForm.plainPassword, {
-            label: 'Password'
-        }) }}
-        {{ form_row(registrationForm.agreeTerms) }}
-
-        <button type="submit" class="btn">Register</button>
-    {{ form_end(registrationForm) }}
+	<div class="container-fluid min-vh-100 d-flex flex-column align-items-center justify-content-center position-relative">
+		<a href="#" class="btn btn-link back-button"><img src="{{ asset('icones/arrow-left-solid.svg') }}" alt="Retour" width="24" height="24"></a>
+		<div class="row w-100">
+			<div class="col-md-12 d-flex flex-column align-items-center justify-content-center p-4">
+				<h1 class="text-start mb-4">Bonjour ! Connectez-vous à
+					<span class="brand">Filament</span>
+				</h1>
+			</div>
+		</div>
+		<div class="row w-100">
+			<div
+				class="col-md-4 offset-md-2 d-flex flex-column align-items-center justify-content-center p-4">
+				<p class="test text-start mb-4">Connexion</p>
+				<form>
+					<div class="form-group">
+						<input type="email" class="form-control" id="email" placeholder="Entrez votre e-mail" required>
+					</div>
+					<div class="form-group">
+						<input type="password" class="form-control" id="password" placeholder="Mot de passe" required>
+						<a href="#" class="oubli d-block mt-2">Mot de passe oublié ?</a>
+					</div>
+					<button type="submit" class="btn btn-warning btn-block">
+						<a href="./index.html">Je me connecte</a>
+					</button>
+				</form>
+			</div>
+			<div class="col-md-4 offset-md-1 d-flex flex-column justify-content-center p-4">
+				<p class="test text-start mb-4">Vous n’avez pas encore de compte ?</p>
+				{% form_theme registrationForm 'form/registration_form.html.twig' %}
+				{{ form_start(registrationForm) }}
+				<div
+					class="form-group">
+					{{ form_row(registrationForm.email, {'attr': {'placeholder': 'Entrez votre adresse mail'}}) }}
+				</div>
+				<div
+					class="form-group">
+					{{ form_row(registrationForm.plainPassword, {'label': 'Mot de passe', 'attr': {'placeholder': 'Entrez votre mot de passe'}}) }}
+				</div>
+				<div>
+					{{ form_row(registrationForm.agreeTerms) }}
+				</div>
+				<button type="submit" class="btn btn-warning btn-block">Je m'inscris</button>
+				{{ form_end(registrationForm) }}
+			</div>
+			<div class="row w-100">
+				<div class="continuer text-center mt-4">
+					<p>ou continuer avec</p>
+					<div class="btn-group">
+						<a href="#" class="btn mx-2">
+							<i class="fa-brands fa-facebook"></i>
+							<img src="{{ asset('icones/icons8-facebook-nouveau-48.svg') }}" alt=""></a>
+						<a href="#" class="btn mx-2">
+							<i class="fab fa-apple"></i><img src="{{ asset('icones/icons8-mac-os-50.svg') }}" alt=""></a>
+						<a href="#" class="btn mx-2">
+							<i class="fab fa-google"></i><img src="{{ asset('icones/icons8-logo-google-48.svg') }}" alt=""></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 {% endblock %}
