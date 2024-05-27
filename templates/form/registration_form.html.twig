@@ -1,17 +1,21 @@
 {# templates/form/registration_form.html.twig #}
 {% block form_row %}
-    {% set field_type = form.vars.block_prefixes|last %}
-    {% if field_type == 'checkbox' %}
-        <div>
-            {{ form_widget(form) }}
-        </div>
-    {% else %}
-        <div class="form-group">
-            {{ form_label(form) }}
-            <div class="input-group">
-                {{ form_widget(form, { 'attr': { 'class': 'form-control' } }) }}
-            </div>
-            {{ form_errors(form) }}
-        </div>
-    {% endif %}
+	{% set field_type = form.vars.block_prefixes|last %}
+	{% if field_type == '_registration_form_agreeTerms' %}
+		<div class="form-group">
+			{{ form_label(form) }}
+			<div class="input-group">
+				{{ form_widget(form) }}
+			</div>
+			{{ form_errors(form) }}
+		</div>
+	{% else %}
+		<div class="form-group">
+			{{ form_label(form) }}
+			<div class="input-group">
+				{{ form_widget(form, { 'attr': { 'class': 'form-control' } }) }}
+			</div>
+			{{ form_errors(form) }}
+		</div>
+	{% endif %}
 {% endblock %}

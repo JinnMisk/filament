@@ -1,4 +1,4 @@
-:root{
+:root {
     --fm-black: rgb(40, 40, 40);
     --fm-white: rgb(253, 254, 253);
     --fm-yellow: rgb(255, 246, 103);
@@ -9,52 +9,52 @@
     --fm-yellow-tr: rgba(255, 246, 103, 0.3);
 }
 
-h1{
+h1 {
     font-family: "Roboto Serif";
     font-size: 45px;
 }
 
-h4{
+h4 {
     font-family: "Roboto Mono";
     font-size: 18px;
 }
 
-h2{
+h2 {
     font-family: "Roboto Mono";
     font-size: 25px;
 }
 
-h3{
+h3 {
     font-size: "Roboto Mono";
     font-size: 20px;
 }
 
-a{
+a {
     font-family: "Roboto Mono";
     font-size: 18px;
 }
 
-p{
+p {
     font-family: "Roboto mono";
     font-size: 14px;
 }
 
-li{
+li {
     font-family: "Roboto Mono";
 }
 
 /** H2 ANIMATIONS **/
-.btn-picture{
+.btn-picture {
     background-color: var(--fm-yellow);
     border-radius: 10px;
     text-transform: uppercase;
 }
 
-.btn-picture:hover{
+.btn-picture:hover {
     background-color: var(--fm-blue);
 }
 
-main h2{
+main h2 {
     animation: reveal linear;
     animation-timeline: view();
     animation-range-start: cover 0%;
@@ -62,53 +62,56 @@ main h2{
 }
 
 /************************INDEX **********************/
-#header-index .background-dark{
-    background-image:linear-gradient(to top right, var(--fm-black), 95% , var(--fm-yellow)), url(../img/images/lamp-dark.png);
+#header-index .background-dark {
+    background-image: linear-gradient(to top right, var(--fm-black), 95%, var(--fm-yellow)), url(../img/images/lamp-dark.png);
     text-align: center;
     height: 100rem;
     padding-top: 20rem;
     background-size: cover;
 }
 
-#header-index .background-dark img{
+#header-index .background-dark img {
     width: 10%;
 }
 
-#header-index .background-dark p{
+#header-index .background-dark p {
     color: var(--fm-yellow);
 }
 
-#header-index .background-dark h1{
+#header-index .background-dark h1 {
     color: var(--fm-yellow);
     font-family: "Racing Sans One";
     font-size: 45px;
 }
+
 /***********************ACCUEIL.HTML********************/
 /** NAVBAR **/
-#header .bg-body-tertiary, #header-index .bg-body-tertiary{
-    background-color: var(--fm-black)!important;
+#header .bg-body-tertiary,
+#header-index .bg-body-tertiary {
+    background-color: var(--fm-black) !important;
 }
 
-nav div a picture source{
+nav div a picture source {
     width: 350px;
 }
 
-nav div a img{
+nav div a img {
     width: 15rem;
 }
-.navbar-toggler{
+
+.navbar-toggler {
     background-color: var(--fm-yellow);
 }
 
-.navbar-expand-lg .navbar-nav .nav-link{
+.navbar-expand-lg .navbar-nav .nav-link {
     color: var(--fm-yellow);
 }
 
-.navbar-expand-lg .navbar-collapse{
+.navbar-expand-lg .navbar-collapse {
     padding-left: 10rem;
 }
 
-.hero-shot-index{
+.hero-shot-index {
     background-image: url(../img/images/lampe-hero-shot.png);
     text-align: center;
     height: 40rem;
@@ -116,51 +119,51 @@ nav div a img{
     background-size: cover;
 }
 
-.hero-shot-index h1{
+.hero-shot-index h1 {
     font-family: "Roboto Serif";
     font-size: 64px;
     font-weight: 700;
     text-transform: uppercase;
 }
 
-.hero-shot-index p{
+.hero-shot-index p {
     font-family: "roboto mono";
     font-size: 36px;
     color: var(--fm-dark-grey);
 }
 
 .hero-shot-index a {
-    text-decoration:none;
+    text-decoration: none;
     color: var(--fm-black);
 }
 
 /** BANDEAU DE GARANTIE **/
-#waranty{
+#waranty {
     background-color: var(--fm-yellow);
     padding: 2rem 0;
 }
 
-#waranty img{
+#waranty img {
     width: 40px;
     padding-bottom: 1rem;
 }
 
-#waranty article{
+#waranty article {
     text-align: center;
 }
 
-#waranty h4{
+#waranty h4 {
     font-size: 18px;
     color: var(--fm-black);
 }
 
-#waranty p{
+#waranty p {
     font-size: 14px;
     color: var(--fm-dark-grey);
 }
 
 /** PHOTO PANORAMIQUE **/
-#panoramic-picture{
+#panoramic-picture {
     background-image: url(../img/images/photo-salon.png);
     background-size: cover;
     background-position: center;
@@ -175,103 +178,104 @@ nav div a img{
 }
 
 /** LABELS **/
-#labels{
+#labels {
     text-align: center;
     background-color: var(--fm-yellow);
     padding: 2rem 0;
 }
 
-#labels img{
+#labels img {
     width: 40px;
     padding-bottom: 1rem;
 }
 
-#labels h4{
+#labels h4 {
     font-size: 18px;
     color: var(--fm-black);
 }
 
-#labels p{
+#labels p {
     font-size: 14px;
     color: var(--fm-dark-grey);
 }
 
 /** FONCTIONS **/
-#functions{
+#functions {
     padding: 3rem 10rem;
 }
 
-#functions p{
+#functions p {
     text-align: center;
     font-family: "roboto mono";
     font-size: 14px;
 }
 
-#functions p:nth-of-type(even){
+#functions p:nth-of-type(even) {
     margin-left: 3rem;
 }
 
-#functions div article div h2{
+#functions div article div h2 {
     padding-bottom: 2rem;
 }
 
-#functions .functions-list{
+#functions .functions-list {
     padding-top: 5rem;
 }
 
-#functions h2{
+#functions h2 {
     font-weight: 700;
 }
 
-#functions img{
+#functions img {
     width: 20rem;
     min-width: 100%;
     margin: 0 auto;
 }
 
-#functions article .qr-codes img{
+#functions article .qr-codes img {
     width: 100px;
 }
 
 /** TIMELINE **/
-#timeline{
+#timeline {
     padding: 3rem;
 }
 
-#timeline img{
+#timeline img {
     width: 100%;
 }
 
 /** TELECHARGEMENT **/
-#download{
+#download {
     background-color: var(--fm-yellow);
     padding: 2rem 0;
 }
 
-#download ul li{
+#download ul li {
     list-style-type: none;
 }
 
-#download img{
+#download img {
     width: 65px;
 }
 
-#download .download-button img{
-    width: 10rem;;
+#download .download-button img {
+    width: 10rem;
+    ;
 }
 
-#download p{
+#download p {
     font-family: "Roboto Mono";
     font-size: 20px;
     font-weight: bold;
 }
 
-#download .content{
+#download .content {
     display: inline-block;
 }
 
 /** QUALITE **/
-#quality{
+#quality {
     padding: 2rem;
     background: var(--fm-yellow);
     text-align: center;
@@ -282,13 +286,13 @@ nav div a img{
     font-weight: bold;
 }
 
-#quality img{
+#quality img {
     width: 40px;
     padding-bottom: 1rem;
 }
 
 /** QUOTE **/
-#quote{
+#quote {
     color: var(--fm-black);
     padding: 5rem 0;
     text-align: center;
@@ -297,120 +301,122 @@ nav div a img{
 }
 
 /** FOOTER **/
-footer{
+footer {
     background: var(--fm-black);
     color: var(--fm-white);
     padding-top: 5rem;
 }
 
-footer .top img{
+footer .top img {
     height: 2rem;
 }
 
-footer ul{
+footer ul {
     list-style-type: none;
 }
 
-footer .top ul li{
+footer .top ul li {
     display: inline;
     color: var(--fm-yellow);
 }
 
-footer ul li p{
+footer ul li p {
     font-size: 14px;
 }
 
-footer h4{
+footer h4 {
     color: var(--fm-dark-grey);
 }
 
-.network{
+.network {
     display: flex;
     justify-content: flex-end;
     padding-right: 55px;
 }
 
-footer .network ul li{
+footer .network ul li {
     display: inline;
 }
 
-footer .network img{
+footer .network img {
     height: 2rem;
 }
 
 
 /********************AMPOULE***************/
 /** HEADER **/
-#header .hero-shot-ampoule img{
+#header .hero-shot-ampoule img {
     width: 100%;
 }
 
-#header .slogan{
+#header .slogan {
     padding-top: 15rem;
 }
 
-#header .slogan h1{
+#header .slogan h1 {
     text-transform: uppercase;
 }
 
-.hero-shot-ampoule h1{
+.hero-shot-ampoule h1 {
     font-weight: 700;
     text-transform: uppercase;
 }
 
-.hero-shot-ampoule p{
+.hero-shot-ampoule p {
     font-family: "roboto mono";
     font-size: 36px;
     color: var(--fm-dark-grey);
 }
+
 @media only screen and (max-width: 768px) {
-    .hero-shot-ampoule p{
+    .hero-shot-ampoule p {
         font-size: 25px;
     }
-  }
+}
 
-#header .hero-shot-ampoule a{
-    text-decoration:none;
+#header .hero-shot-ampoule a {
+    text-decoration: none;
     color: var(--fm-black);
 }
 
 /** CARACTERISTICS **/
-#caracteristics{
+#caracteristics {
     padding: 3rem;
 }
-#caracteristics img{
+
+#caracteristics img {
     width: 80%;
 }
 
-#caracteristics ul li{
+#caracteristics ul li {
     list-style-type: none;
 }
 
-#caracteristics h2{
+#caracteristics h2 {
     padding-bottom: 2rem;
     text-align: right;
 }
 
-#caracteristics ul li{
+#caracteristics ul li {
     padding-bottom: 1rem
 }
 
 /** COLORS**/
-#colors{
+#colors {
     padding: 3rem;
-    background-image: linear-gradient(to left, var(--fm-blue-tr),var(--fm-yellow-tr));
+    background-image: linear-gradient(to left, var(--fm-blue-tr), var(--fm-yellow-tr));
 }
 
-#colors img{
+#colors img {
     width: 80%;
 }
 
-#colors h3{
+#colors h3 {
     font-weight: bold;
 }
 
 /** PANORAMIC LAMPS **/
-#panoramic-lamps{
+#panoramic-lamps {
     background-image: url(../img/images/panoramique-lampes.png);
     text-align: left;
     height: 30rem;
@@ -419,104 +425,106 @@ footer .network img{
     color: var(--fm-white);
 }
 
-#panoramic-lamps .panoramic-text{
-    padding-top : 15rem;
+#panoramic-lamps .panoramic-text {
+    padding-top: 15rem;
 }
 
 /** TIME **/
-#time{
+#time {
     padding: 3rem;
 }
 
-#time img{
+#time img {
     padding-top: 5rem;
     width: 100%;
     position: relative;
     z-index: -1;
 }
 
-#time h3{
+#time h3 {
     font-weight: bold;
 }
 
 /** MODES **/
-#modes{
-    margin-top: -5rem; 
+#modes {
+    margin-top: -5rem;
 }
-#modes img{
+
+#modes img {
     width: 100%;
 }
 
 /** REMOTE **/
-#remote{
+#remote {
     padding-top: 3rem;
 }
-#remote img{
+
+#remote img {
     width: 100%;
     position: relative;
     padding-top: 5rem;
     z-index: -1;
 }
 
-#remote h3{
+#remote h3 {
     font-weight: bold;
 }
 
-#remote ul{
+#remote ul {
     list-style-type: none;
     padding-left: 0;
 }
 
 /** TECHNICS **/
-#technics{
+#technics {
     background-color: var(--fm-yellow);
     padding: 3rem;
     margin-top: -5rem
 }
 
-#technics h2{
+#technics h2 {
     text-align: center;
     padding-bottom: 2rem;
 }
 
-#technics .technics-list ul li{
+#technics .technics-list ul li {
     list-style-type: none;
     padding-bottom: 2rem;
 }
 
-#technics .technics-list ul li img{
+#technics .technics-list ul li img {
     width: 30px;
     padding-right: 10px;
 }
 
 /***************** DATA VIZ ***************/
 /** HEROSHOT **/
-.hero-shot-data-viz{
+.hero-shot-data-viz {
     background-image: url(../img/images/ampoule-inversee.png);
     text-align: center;
     height: 50rem;
     padding-top: 20rem;
-    background-size:contain;
+    background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
     margin-top: -70px;
     padding-bottom: -4rem;
 }
 
-.hero-shot-data-viz h1{
+.hero-shot-data-viz h1 {
     font-family: "Roboto Mono";
-    
+
 }
 
 /** DATA DUREE DE VIE **/
-#contest article{
+#contest article {
     text-align: center;
     padding: 4rem 0;
     padding-top: 10px;
     max-width: 100%;
 }
 
-#contest p{
+#contest p {
     margin-bottom: -2rem;
 }
 
@@ -529,7 +537,7 @@ footer .network img{
     position: absolute;
     top: 0;
     left: 0;
-    margin: 1rem; 
+    margin: 1rem;
     text-align: left;
 }
 
@@ -547,11 +555,11 @@ footer .network img{
 }
 
 /** DATA COULEURS **/
-#colors-choice{
+#colors-choice {
     padding: 4rem 0;
 }
 
-#colors-choice img{
+#colors-choice img {
     max-width: 100%;
     padding: 2rem 2rem;
     width: 40rem;
@@ -559,7 +567,7 @@ footer .network img{
 }
 
 /** DUREE INCROYABLE **/
-#duration{
+#duration {
     padding: 2rem;
 
 }
@@ -575,20 +583,20 @@ footer .network img{
 }
 
 /** DATA ECONOMISEZ **/
-#economy{
+#economy {
     background-color: var(--fm-yellow);
     padding: 4rem 0;
     text-align: center;
 }
 
-#economy img{
+#economy img {
     width: 1000px;
 }
 
 /***************** CONNEXION ***************/
-#connexion button a{
+#connexion button a {
     color: black;
-    text-decoration:none
+    text-decoration: none
 }
 
 #connexion body {
@@ -605,7 +613,7 @@ footer .network img{
 .inscription {
     color: var(--fm-black);
     text-decoration: underline;
-    font-weight: bold;    
+    font-weight: bold;
 }
 
 .btn-warning {
@@ -690,7 +698,7 @@ body {
     -webkit-text-stroke: 1px var(--fm-black);
 }
 
-#inscription .connexion{
+#inscription .connexion {
     color: var(--fm-black);
     text-decoration: underline;
     font-weight: bold;
@@ -700,6 +708,7 @@ body {
     width: 150px;
     height: auto;
 }
+
 .form-group {
     padding-bottom: 2rem;
     width: 20rem;
@@ -738,61 +747,62 @@ body {
 @media only screen and (min-width: 576px) {
     @keyframes reveal {
         from {
-          transform: scale(0);
-          opacity: 0;
+            transform: scale(0);
+            opacity: 0;
         }
-        to {
-          transform: scale(1);
-          opacity: 1;
-        }
-      }
-  }
 
-  @media only screen and (max-width: 768px) {
-    #header .slogan{
+        to {
+            transform: scale(1);
+            opacity: 1;
+        }
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    #header .slogan {
         padding-top: 10rem;
     }
-  }
+}
 
 @media only screen and (max-width: 768px) and (min-width: 576px) {
-    #panoramic-picture{
+    #panoramic-picture {
         display: none;
     }
-  }
+}
 
-  @media only screen and (max-width: 576px) {
-    #time{
+@media only screen and (max-width: 576px) {
+    #time {
         padding: 3rem 1rem 3rem 1rem;
     }
-  }
+}
 
-  @media only screen and (max-width: 768px) {
-    .hero-shot-index p{
+@media only screen and (max-width: 768px) {
+    .hero-shot-index p {
         font-size: 25px;
     }
-  }
+}
 
-  @media only screen and (max-width: 576px) {
-    #functions{
+@media only screen and (max-width: 576px) {
+    #functions {
         padding: 3rem 0;
     }
-  }
+}
 
-  @media only screen and (max-width: 576px) {
-    #download p{
+@media only screen and (max-width: 576px) {
+    #download p {
         text-align: center;
     }
-  }
+}
 
-  @media only screen and (max-width: 768px) {
-    #caracteristics h2{
+@media only screen and (max-width: 768px) {
+    #caracteristics h2 {
         text-align: center;
         padding-bottom: 1rem;
     }
-  }
+}
 
-  @media only screen and (max-width: 768px) {
-    h1{
+@media only screen and (max-width: 768px) {
+    h1 {
         font-size: 35px;
     }
-  }
+}
