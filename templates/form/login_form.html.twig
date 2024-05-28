@@ -1,10 +1,10 @@
-{# templates/form/registration_form.html.twig #}
+{# templates/form/login_form.html.twig #}
 {% block form_row %}
 	{% set field_type = form.vars.block_prefixes|last %}
 		<div class="form-group">
 			{{ form_label(form) }}
 			<div class="input-group">
-				{{ form_widget(form, {'name': 'username'}) }}
+				{{ form_widget(form, { 'attr': { 'class': 'form-control' }}) }}
 			</div>
 			{{ form_errors(form) }}
 		</div>
