@@ -12,11 +12,13 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 use Symfony\Component\Routing\Attribute\Route;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
+use Symfony\Component\Security\Guard\GuardAuthenticatorHandler;
+use App\Security\LoginFormAuthenticator;
 
 class RegistrationController extends AbstractController
 {
     #[Route('/register', name: 'app_register')]
-    public function register(Request $request, UserPasswordHasherInterface $userPasswordHasher, EntityManagerInterface $entityManager, AuthenticationUtils $authenticationUtils): Response
+    public function register(Request $request, UserPasswordHasherInterface $userPasswordHasher, EntityManagerInterface $entityManager, AuthenticationUtils $authenticationUtils, GuardAuthenticatorHandler $guardHandler, LoginFormAuthenticator $authenticator): Response
     {
         $user = new User();
         $form = $this->createForm(RegistrationFormType::class, $user);
@@ -42,8 +44,25 @@ class RegistrationController extends AbstractController
         }
 
         if ($loginForm->isSubmitted() && $loginForm->isValid() && $request->request->has('login_submit')) {
+                
+            $data = $form->getData();
 
-            return $this->redirectToRoute('app_login');
+            // récupérer l'utilisateur de la base de données
+            $user = $this->getDoctrine()->getRepository(User::class)->findOneBy(['email' => $data['username']]);
+
+            $requestData = [
+                '_username'=>$request->request->get('username'), 
+                '_password'=>$request->request->get('password') 
+            ];
+            
+
+            return $guardHandler->authenticateUserAndHandleSuccess(
+                   $user, // l'utilisateur que vous voulez connecter
+                   $requestData,
+                   $authenticator, // votre authentificateur
+                'main' // le nom du pare-feu dans security.yaml
+                );
+            /* return $this->forward('Symfony/Component/Security'); */
         }
 
            // get the login error if there is one
