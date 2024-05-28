@@ -31,7 +31,11 @@
 
 				<p class="test text-start mb-4">Connexion</p>
 				{# {% form_theme registrationForm 'form/login_form.html.twig' %} #}
+				{%if app.request.query.get('error') %}
+				{{ app.request.query.get('error') }}
+				{%endif%}
 				{{ form_start(loginForm) }}
+				
 				{{ form_row(loginForm.username) }}
 				{{ form_row(loginForm.password) }}
 				<button type="submit" name="login_submit" class="btn btn-warning btn-block">Je me connecte</button>

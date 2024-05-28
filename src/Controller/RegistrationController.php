@@ -59,10 +59,12 @@ class RegistrationController extends AbstractController
                     return $this->redirectToRoute('app_home');
                 } else {
                     $error = 'Invalid credentials.';
+                    return $this->redirectToRoute('app_register', ['error' => $error]);
                 }
             } 
             else {
                 $error = 'Invalid credentials.';
+                return $this->redirectToRoute('app_register', ['error' => $error]);
             }
         }
         // $error = $authenticationUtils->getLastAuthenticationError();
