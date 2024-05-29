@@ -112,7 +112,7 @@ nav div a img {
 }
 
 .hero-shot-index {
-    background-image: url(../img/images/lampe-hero-shot.png);
+    background-image: url(../images/lampe-hero-shot.png);
     text-align: center;
     height: 40rem;
     padding-top: 20rem;
@@ -164,7 +164,7 @@ nav div a img {
 
 /** PHOTO PANORAMIQUE **/
 #panoramic-picture {
-    background-image: url(../img/images/photo-salon.png);
+    background-image: url(../images/photo-salon.png);
     background-size: cover;
     background-position: center;
     height: 30rem;

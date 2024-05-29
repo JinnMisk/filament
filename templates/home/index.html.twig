@@ -4,32 +4,197 @@
 {% endblock %}
 
 {% block body %}
-	<style>
-		.example-wrapper {
-			margin: 1em auto;
-			max-width: 800px;
-			width: 95%;
-			font: 18px / 1.5 sans-serif;
-		}
-		.example-wrapper code {
-			background: #F5F5F5;
-			padding: 2px 6px;
-		}
-	</style>
-
-	<div class="example-wrapper">
-		<h1>Hello
-			{{ controller_name }}! ✅</h1>
-
-		{% if is_granted('IS_AUTHENTICATED_FULLY') %}
-			<p>Email:
-				{{ app.user.email }}</p>
-		{% else %}
-			<p>
-				Vous n'êtes pas loggé : <a href="{{ path('app_login') }}">Se logger</a>
-			</p>
-
-		{% endif %}
-
+	{### HEROSHOT ###}
+	<div class="hero-shot-index">
+		<h1>Filament</h1>
+		<p>Pas encore premier sur les ampoules,<br>mais très bientôt (on croit)</p>
+		<button class="btn-picture"><a href="#">Découvrir</a></button>
 	</div>
+	
+	<!--BANDEAU DE GARANTIE-->
+        <section id="waranty">
+            <div class="container">
+                <div class="row">
+                    <article class="col-lg-3 col-sm-6">
+                        <img src="{{ asset('icones/icone-garantie.png') }}" alt="icone de garantie">
+                        <h4>Garantie</h4>
+                        <p>Notre produit est garanti 2 ans</p>
+                    </article>
+                    <article class="col-lg-3 col-sm-6">
+                        <img src="{{ asset('icones/icone-service-client.png') }}" alt="icone du service client">
+                        <h4>Service Client</h4>
+                        <p>Nous vous offrons un service client rapide et disponible disponible 7j/7, 24h/24</p>
+                    </article>
+                    <article class="col-lg-3 col-sm-6">
+                        <img src="{{ asset('icones/icone-securite.png') }}" alt="icone de securite">
+                        <h4>Normes de sécurité</h4>
+                        <p>Tous les composants sont certifiés NF et passent 70 tests de sécurité </p>
+                    </article>
+                    <article class="col-lg-3 col-sm-6">
+                        <img src="{{ asset('icones/icone-utilisation.png') }}" alt="icone de livre">
+                        <h4>Facilité d'utilisation</h4>
+                        <p>Retrouvez le tutoriel de l'application via les QR code disponibles </p>
+                    </article>
+                </div>
+            </div>
+        </section>
+	
+		<!--PHOTO PANORAMIQUE-->
+        <section id="panoramic-picture">
+            <div class="button">
+                <button class="btn-picture"><a href="#">En savoir plus</a></button>
+            </div>
+        </section>
+	
+		<!--LABELS GAGNES PAR LE PRODUIT-->
+        <section id="labels" class="d-none d-lg-block">
+            <div class="container">
+                <div class="row">
+                    <article class="col-3">
+                        <img src="{{ asset('icones/icone-garantie.png') }}" alt="icone de label">
+                        <h4>Label<br> Energy Star</h4>
+                        <p>Reçu en 2021</p>
+                    </article>
+                    <article class="col-3">
+                        <img src="{{ asset('icones/icone-garantie.png') }}" alt="icone de label">
+                        <h4>Prix de l'innovation en éclairage</h4>
+                        <p>Reçu en 2022</p>
+                    </article>
+                    <article class="col-3">
+                        <img src="{{ asset('icones/icone-garantie.png') }}" alt="icone de label">
+                        <h4>Certification de qualité ISO 9001</h4>
+                        <p>Reçu en 2023 </p>
+                    </article>
+                    <article class="col-3">
+                        <img src="{{ asset('icones/icone-garantie.png') }}" alt="icone de label">
+                        <h4>Label écologique européen</h4>
+                        <p>Reçu en 2024</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+	
+		<!--PRESENTATION DES FONCTIONS-->
+        <section id="functions">
+            <div class="container">
+                <article class="row">
+                    <div class="col-lg-6 col-md-12 col-12">
+                        <h2>Une application pour tout faire</h2>
+                        <div class="d-flex justify-content-center">
+                            <img src="{{ asset('images/mockup-iphone-15-pro.png') }}"
+                                alt="image de smartphone montrant l'application">
+                        </div>
+                    </div>
+                    <!--<div class="qr-codes d-lg-none">
+                            <img src="./public/img/images/qrcode-apple.png" alt="QR code">
+                            <img src="./public/img/images/qrcode-android.png" alt="QR code">
+                        </div>
+                        <div class="list-functions d-none d-lg-inline">-->
+                    <div class="functions-list col-lg-6 col-md-12 col-12">
+                        <p>Allumer / éteindre à distance</p>
+                        <p>Choisir la couleur de la lumière</p>
+                        <p>Choisir l'intensité de la lumière</p>
+                        <p>Choisir un programme d'ambience</p>
+                        <p>Programmer des horaires de marche</p>
+                        <p>Monitorez votre consommation</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+		<!--LIENS DE TELECHARGEMENT-->
+        <section id="download">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-md-8 col-sm-8">
+                        <ul>
+                            <li>
+                                <p>Téléchargez notre application</p>
+                            </li>
+                            <li>
+                                <p>Disponible sur iOS et Android</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-2 col-md-2 col-sm-2 d-none d-sm-inline">
+                        <ul>
+                            <li><img src="{{ asset('images/qrcode-apple.png') }}" alt="QR code"></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-2 col-md-2 col-sm-2 d-none d-sm-inline">
+                        <ul>
+                            <li><img src="{{ asset('images/qrcode-android.png')}}" alt="QR code"></li>
+                        </ul>
+                    </div>
+                    <div class="d-flex justify-content-center">
+                        <div class="download-button col-sm-6 d-inline d-sm-none">
+                            <ul>
+                                <li><img src="{{ asset('images/telechargement-mobile-android.png')}}" alt=""></li>
+                            </ul>
+                        </div>
+                        <div class="download-button col-sm-6 d-inline d-sm-none">
+                            <ul>
+                                <li><img src="{{ asset('images/telechargement-mobile-ios.png')}}" alt=""></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+		<!--FRISE CHRONOLOGIQUE-->
+        <section id="timeline">
+            <div class="container">
+                <div class="row align-item-center">
+                    <h2>Un peu de notre histoire</h2>
+                    <div class="col-lg-6 d-none d-lg-inline">
+                        <img src="{{ asset('images/histoire.png')}}" alt="image historique">
+                    </div>
+
+                    <div class="col-lg-6 col-md-12 d-none d-sm-inline">
+                        <img src="{{ asset('images/frise.png')}}" alt="frise chronologique">
+                    </div>
+                    <div class="col-sm-12 d-inline d-sm-none">
+                        <img src="{{ asset('images/frise-mobile.png')}}" alt="frise chonologique">
+                    </div>
+
+                </div>
+            </div>
+
+        </section>
+
+		<!--BANDEAU DE QUALITÉ-->
+        <section id="quality">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 col-sm-6">
+                        <img src="{{ asset('icones/icone-innovation.png')}}" alt="icone de l'innovation">
+                        <h3>Innovation</h3>
+                        <p>Nous innovons pour des éclairages intelligents et intuitifs</p>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-6">
+                        <img src="{{ asset('icones/icone-durabilite.png')}}" alt="icone de la durabilite">
+                        <h3>Durabilité</h3>
+                        <p>Nous nous engageons pour des produits écologiques et économes en énergie</p>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-6">
+                        <img src="{{ asset('icones/icone-accessibilite.png')}}" alt="icone de l'accessibilité">
+                        <h3>Accessibilité </h3>
+                        <p>Technologies accessible par des produits abordables et conviviauxr</p>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-6">
+                        <img src="{{ asset('icones/icone-qualite.png')}}" alt="icone de la qualité">
+                        <h3>Qualité</h3>
+                        <p>Normes élevées pour une expérience utilisateur exceptionnelle</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+		<!---CITATION-->
+        <section id="quote">
+            <p>"La lumière éclaire notre chemin et illumine nos vies, révélant la beauté cachée du monde."</p>
+        </section>
+
 {% endblock %}
