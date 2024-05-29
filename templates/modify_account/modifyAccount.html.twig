@@ -1,20 +1,72 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Modifier mon compte
+{% block title %}Modifier mon profil
 {% endblock %}
 
 {% block body %}
+    <div class="container">
+    
+    <div class="row">
+        <div class="col-6 offset-4">
+            <h1>Modifier mon profil</h1>
+        </div>
+    </div>
+        <div class="row">
+            <div class="col-4 offset-4">
+                {% form_theme userForm 'form/modify_account_form.html.twig' %}
+            	{{ form_start(userForm) }}
+            
+                <div class="row">
+                    <div class="col-12 d-flex justify-content-center">
+                        <h2>Informations personnelles</h2>
+                    </div>
+                </div>
+            	<div class="form-group">
+            		{{ form_row(userForm.email, {'label': 'Email :', 'attr': {'placeholder': 'Entrez votre adresse mail'}}) }}
+            		{{ form_row(userForm.first_name, {'label': 'Prénom :', 'attr': {'placeholder': 'Entrez votre prénom'}}) }}
+            		{{ form_row(userForm.last_name, {'label': 'Nom :', 'attr': {'placeholder': 'Entrez votre nom'}}) }}
+            		{{ form_row(userForm.phone_number, {'label': 'Numéro de téléphone :', 'attr': {'placeholder': 'Entrez votre numéro de téléphone'}}) }}
+            		{{ form_row(userForm.plainPassword, {'label': 'Entrez un nouveau mot de passe :', 'attr': {'placeholder': 'Nouveau mot de passe'}}) }}
+            	</div>
 
-	{{ form_start(userForm) }}
+                <div class="row">
+                    <div class="col-12 d-flex justify-content-center">
+                        <h2>Adresse de facturation</h2>
+                    </div>
+                </div>
 
-	{# <div class="form-group">
-		{{ form_row(modifyAccount.email, {'label': 'Email', 'attr': {'placeholder': 'Entrez votre adresse mail'}}) }}
-	</div>
-	<div class="form-group">
-		{{ form_row(modifyAccount.first_name, {'label': 'Prénom', 'attr': {'placeholder': 'Entrez votre prénom'}}) }}
-	</div> #}
-	<button type="submit" name="modify_account_submit" class="btn btn-warning btn-block">Enregistrer</button>
+                <div>
+            		{{ form_row(userForm.siret, {'label': 'Siret :', 'attr': {'placeholder': 'Entrez le numéro de siret'}}) }}
+            		{{ form_row(userForm.billing_address_number, {'label': 'N° de rue :', 'attr': {'placeholder': 'Entrez le numéro'}}) }}
+            		{{ form_row(userForm.billing_address_streetname, {'label': 'Nom de rue :', 'attr': {'placeholder': 'Entrez le nom de la rue'}}) }}
+            		{{ form_row(userForm.billing_address_complement, {'label': 'Complément d\'adresse :', 'attr': {'placeholder': 'Entrez le complément d\'adresse'}}) }}
+            		{{ form_row(userForm.billing_address_postalcode, {'label': 'Code postal :', 'attr': {'placeholder': 'Entrez le code postal'}}) }}
+            		{{ form_row(userForm.billing_address_city, {'label': 'Ville :', 'attr': {'placeholder': 'Entrez le nom de la ville'}}) }}
+                </div>
 
+            	<div class="row">
+                    <div class="col-12 d-flex justify-content-center">
+                        <h2>Adresse de livraison</h2>
+                    </div>
+                </div>
+
+                <div>
+            		{{ form_row(userForm.shipping_address_number, {'label': 'N° de rue :', 'attr': {'placeholder': 'Entrez le numéro'}}) }}
+            		{{ form_row(userForm.shipping_address_streetname, {'label': 'Nom de rue :', 'attr': {'placeholder': 'Entrez le nom de la rue'}}) }}
+            		{{ form_row(userForm.shipping_address_complement, {'label': 'Complément d\'adresse :', 'attr': {'placeholder': 'Entrez le complément d\'adresse'}}) }}
+            		{{ form_row(userForm.shipping_address_postalcode, {'label': 'Code postal :', 'attr': {'placeholder': 'Entrez le code postal'}}) }}
+            		{{ form_row(userForm.shipping_address_city, {'label': 'Ville :', 'attr': {'placeholder': 'Entrez le nom de la ville'}}) }}
+                
+                </div>
+
+            	<div class="row">
+                    <div class="col-12 d-flex justify-content-center">
+                        <button type="submit" name="modify_account_submit" class="btn btn-warning btn-block">Enregistrer</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 	{{ form_end(userForm) }}
 
 {% endblock %}
