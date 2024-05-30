@@ -9,7 +9,7 @@
 		<div class="row w-100">
 			<div class="col-md-12 d-flex flex-column align-items-center justify-content-center p-4">
 				<h1 class="text-start mb-4">Mon profil
-					<span class="brand">Filament :</span>
+					<span class="brand">Filament </span>
 				</h1>
 			</div>
 		</div>
@@ -17,11 +17,11 @@
 	<div class="col-md-6 offset-3 d-flex flex-column  justify-content-center p-4">
 		<div class="align-items-center d-flex justify-content-center">
 			<h2>Informations
-				<span class="brand">personelles:</span>
+				<span class="brand">personelles</span>
 			</h2>
 		</div>
 		<div class="row w-100">
-			<div class="col-md-5 offset-1 d-flex flex-column">
+			<div class="col-md-5 offset-1 d-flex flex-column mt-2">
 				<p>
 					<strong>Nom:</strong>
 					{{ app.user.firstname }}</p>
@@ -30,7 +30,7 @@
 					{{ app.user.lastname }}</p>
 			</div>
 
-			<div class="col-md-5 offset-1 d-flex flex-column">
+			<div class="col-md-5 offset-1 d-flex flex-column mt-2">
 				<p>
 					<strong>email:</strong>
 					{{ app.user.email }}</p>
@@ -39,15 +39,15 @@
 					{{ app.user.phonenumber }}</p>
 			</div>
 		</div>
-		<div class="row w-100">
+		<div id="facturation" class="row w-100">
 			<div class="col-md-6 d-flex flex-column">
 				<div class="align-items-center d-flex justify-content-center">
 					<h2>Adresse de
-						<span class="brand">facturation:</span>
+						<span class="brand">facturation</span>
 					</h2>
 				</div>
 				<div class="row w-100">
-					<div class=" d-flex flex-column justify-content-center">
+					<div class=" d-flex flex-column justify-content-center m-2">
 						<p>
 							<strong>SIRET:</strong>
 							{{ app.user.siret }}</p>
@@ -59,10 +59,10 @@
 							 {{ app.user.shippingaddressstreetname }} </p>
 						<p>
 							<strong>Compléments d’adresse:</strong>
-							 {{ app.user.shippingaddresspostalcode }} </p>
+							 {{ app.user.shippingaddresscomplement }} </p>
 						<p>
 							<strong>Code postal:</strong>
-							 {{ app.user.shippingaddresscomplement }} </p>
+							 {{ app.user.shippingaddresspostalcode }} </p>
 						<p>
 							<strong>Ville:</strong>
 							 {{ app.user.shippingaddresscity }} </p>
@@ -72,11 +72,11 @@
 			<div class="col-md-6 d-flex flex-column">
 				<div class="align-items-center d-flex justify-content-center">
 					<h2>Adresse de
-						<span class="brand">livraison:</span>
+						<span class="brand">livraison</span>
 					</h2>
 				</div>
 				<div class="row w-100">
-					<div class="d-flex flex-column justify-content-center">
+					<div class="d-flex flex-column justify-content-center m-2">
 						<p>
 							<strong>N° de rue:</strong>
 							{{ app.user.billingaddressnumber }}</p>

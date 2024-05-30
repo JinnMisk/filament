@@ -13,32 +13,43 @@
 				<div class="collapse navbar-collapse" id="navbarSupportedContent">
 					<ul class="navbar-nav me-auto mb-2 mb-lg-0">
 						<li class="nav-item">
-							<a class="nav-link" href="#">Ampoule</a>
+							<a class="nav-link" href="/">Accueil</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="#">Infographie</a>
+							<a class="nav-link" href="/bulb">Ampoule</a>
 						</li>
-						<li class="nav-item connexion">
-							<a class="nav-link" href="/account">Mon compte</a>
-						</li>
-
-                        {%if is_granted('IS_AUTHENTICATED_FULLY') %}
-
 						<li class="nav-item">
-                        
-							<a class="nav-link" href="{{ path('app_logout') }}"> Se déconnecter : {{ app.user.email }} </a>
+							<a class="nav-link" href="/cart">Panier</a>
 						</li>
+						
 
-                        {% else %}
-                        <li class="nav-item">
-							<a class="nav-link" href="{{ path('app_register') }}">Se connecter</a>
-						</li>
+						{%if is_granted('IS_AUTHENTICATED_FULLY') %}
 
-                        {%endif%}
+							<li class="nav-item">
+								<a class="nav-link" href="#">Dashbord</a>
+							</li>
+							<li class="nav-item connexion">
+								<a class="nav-link" href="/account">Mon compte</a>
+							</li>
 
-					</ul>
+							<li class="nav-item">
+
+								<a class="nav-link" href="{{ path('app_logout') }}">
+									Se déconnecter :
+									{{ app.user.email }}
+								</a>
+							</li>
+
+						{% else %}
+							<li class="nav-item">
+								<a class="nav-link" href="{{ path('app_register') }}">Se connecter</a>
+							</li>
+
+							{%endif%}
+
+						</ul>
+					</div>
 				</div>
-			</div>
-		</nav>
-	</header>
-{% endblock %}
+			</nav>
+		</header>
+	{% endblock %}

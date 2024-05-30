@@ -35,7 +35,7 @@ class ModifyAccountController extends AbstractController
             $entityManager->persist($user);
             $entityManager->flush();
 
-/*             return $this->redirectToRoute('app_home'); */
+             return $this->redirectToRoute('app_account'); 
         }
 
         return $this->render('modify_account/modifyAccount.html.twig', [
