@@ -1,0 +1,12 @@
+INSERT INTO model (reference,model,$hoursMax)
+VALUES
+('Stella Premium DB6','KDF-6546654',25000),
+('Star Premium DB7','DSF-5852231',5000),
+('Stern Standard MK2','SED-5873212',10000),
+('Izarra Standard MK1','DEK-5787554',20000),
+('Réalt Medium VS2','SED-8998762',5000),
+('Stella Premium DB8','SDS-7521444',8000),
+('Star Premium DB5','SZZ-8987985',25000),
+('Stern Standard MK3','QAA-8524785',32000),
+('Izarra Standard MK2','YHH-8956612',42000),
+('Réalt Medium VS1','FFF-8989765',15000);
