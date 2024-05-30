@@ -1,0 +1,13 @@
+INSERT INTO mood (label,color,luminosity)
+VALUES
+(rouge profond,#ff9f33,75.0)
+(vert printanier,#a2ff33,50.0)
+(Disco,#d2b6d2,100.0)
+(Sombre,#b6c0d2,100.0)
+(Jaune violent,#f1f110,95.0)
+
+
+
+
+
+
