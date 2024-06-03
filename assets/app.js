@@ -1,4 +1,5 @@
 import './bootstrap.js';
+
 /*
  * Welcome to your app's main JavaScript file!
  *
@@ -7,5 +8,7 @@ import './bootstrap.js';
  */
 import './styles/app.css';
 import './styles/icons.css';
+import './styles/dashboard.css';
+import './styles/images.css';
 
 console.log('This log comes from assets/app.js - welcome to AssetMapper! 🎉');
