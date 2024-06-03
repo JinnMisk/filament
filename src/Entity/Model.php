@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\ModelRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: ModelRepository::class)]
@@ -27,6 +29,17 @@ class Model
 
     #[ORM\Column(nullable: true)]
     private ?float $default_luminosity = null;
+
+    /**
+     * @var Collection<int, Bulb>
+     */
+    #[ORM\OneToMany(targetEntity: Bulb::class, mappedBy: 'model_id')]
+    private Collection $bulbs;
+
+    public function __construct()
+    {
+        $this->bulbs = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -89,6 +102,36 @@ class Model
     public function setDefaultLuminosity(?float $default_luminosity): static
     {
         $this->default_luminosity = $default_luminosity;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Bulb>
+     */
+    public function getBulbs(): Collection
+    {
+        return $this->bulbs;
+    }
+
+    public function addBulb(Bulb $bulb): static
+    {
+        if (!$this->bulbs->contains($bulb)) {
+            $this->bulbs->add($bulb);
+            $bulb->setModelId($this);
+        }
+
+        return $this;
+    }
+
+    public function removeBulb(Bulb $bulb): static
+    {
+        if ($this->bulbs->removeElement($bulb)) {
+            // set the owning side to null (unless already changed)
+            if ($bulb->getModelId() === $this) {
+                $bulb->setModelId(null);
+            }
+        }
 
         return $this;
     }

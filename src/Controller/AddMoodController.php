@@ -2,35 +2,35 @@
 
 namespace App\Controller;
 
-use App\Entity\Place;
-use App\Form\AddPlaceType;
+use App\Entity\Mood;
+use App\Form\AddMoodType;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 
-class AddPlaceController extends AbstractController
+class AddMoodController extends AbstractController
 {
-    #[Route('/add/place', name: 'app_add_place')]
+    #[Route('/add/mood', name: 'app_add_mood')]
     public function index(EntityManagerInterface $entityManager, Request $request): Response
     {
-        $place = new Place();
+        $mood = new Mood();
 
-        $form = $this->createForm(AddPlaceType::class, $place);
+        $form = $this->createForm(AddMoodType::class, $mood);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid() && 'label') {
 
-            $entityManager->persist($place);
+            $entityManager->persist($mood);
             $entityManager->flush();
         }
-
-                /* return $this->redirectToRoute('app_add_place'); */
-
-        return $this->render('add_place/add_place.html.twig', [
-            /* 'controller_name' => 'AddPlaceController', */
-            'addPlaceForm' => $form->createView(),
+        
+                /* return $this->redirectToRoute('app_add_mood'); */
+                
+        return $this->render('add_mood/add_mood.html.twig', [
+            /* 'controller_name' => 'AddMoodController', */
+            'addMoodForm' => $form->createView(),
         ]);
     }
 }

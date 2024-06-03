@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ajout model
+{% endblock %}
+
+{% block body %}
+
+	<div class="container">
+		<div class="row">
+			<div class="text-center">
+				<h1>Ajouter une programmation</h1>
+			</div>
+		</div>
+
+		{% form_theme addModelForm 'form/add_model_form.html.twig' %}
+		{{ form_start(addModelForm) }}
+
+		<div class="row">
+			<div class="col-6">
+				{{ form_row(addModelForm.name, {'label': 'Désignation', 'attr': {'placeholder': ''}}) }}
+				{{ form_row(addModelForm.reference, {'label': 'Référence', 'attr': {'placeholder': ''}}) }}
+				{{ form_row(addModelForm.hours_max, {'label': 'Durée de vie Max', 'attr': {'placeholder': ''}}) }}
+			</div>
+			<div class="col-6">
+				{{ form_row(addModelForm.default_color, {'label': 'Couleur', 'attr': {'placeholder': ''}}) }}
+				{{ form_row(addModelForm.default_luminosity, {'label': 'Luminosité', 'attr': {'placeholder': ''}}) }}
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-12 d-flex justify-content-center">
+				<button type="submit" name="add_model_submit" class="btn btn-warning btn-block">Enregistrer</button>
+			</div>
+		</div>
+	</div>
+	{{ form_end(addModelForm) }}
+
+{% endblock %}

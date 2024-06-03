@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ajout ambiance
+{% endblock %}
+
+{% block body %}
+<div class="container">
+	<div class="row">
+		<div class="text-center">
+			<h1>Ajouter une ambiance</h1>
+		</div>
+	</div>
+
+	{% form_theme addMoodForm 'form/add_mood_form.html.twig' %}
+	{{ form_start(addMoodForm) }}
+
+	<div class="row">
+		<div>
+			{{ form_row(addMoodForm.label, {'label': 'Nom de l\'ambiance', 'attr': {'placeholder': ''}}) }}
+            {{ form_row(addMoodForm.color, {'label': 'Couleur', 'attr': {'placeholder': ''}}) }}
+			{{ form_row(addMoodForm.luminosity, {'label': 'Luminosité', 'attr': {'placeholder': ''}}) }}
+			{{ form_row(addMoodForm.user_id, {'label': 'ID utilisateur', 'attr': {'placeholder': ''}}) }}
+        </div>
+	</div>
+
+	<div class="row">
+		<div class="d-flex justify-content-center">
+			<button type="submit" name="add_mood_submit" class="btn btn-warning btn-block">Enregistrer</button>
+		</div>
+	</div>
+</div>
+{{ form_end(addMoodForm) }}
+
+{% endblock %}

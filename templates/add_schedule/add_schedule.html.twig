@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ajout programme
+{% endblock %}
+
+{% block body %}
+	<div class="container">
+		<div class="row">
+			<div class="text-center">
+				<h1>Ajouter une programmation</h1>
+			</div>
+		</div>
+
+		{% form_theme addScheduleForm 'form/add_schedule_form.html.twig' %}
+		{{ form_start(addScheduleForm) }}
+
+		<div class="row">
+
+			<div class="col-6">
+				{{ form_row(addScheduleForm.label, {'label': 'Nom du programme', 'attr': {'placeholder': ''}}) }}
+				{{ form_row(addScheduleForm.start_day, {'label': 'Jour début', 'attr': {'placeholder': ''}}) }}
+				{{ form_row(addScheduleForm.start_hour, {'label': 'Heure début', 'attr': {'placeholder': ''}}) }}
+				{{ form_row(addScheduleForm.mood_id, {'label': 'Ambiance', 'attr': {'placeholder': ''}}) }}
+			</div>
+			<div class="col-6">
+				{{ form_row(addScheduleForm.recurrence, {'label': 'Récurrence', 'attr': {'placeholder': ''}}) }}
+				{{ form_row(addScheduleForm.end_day, {'label': 'Jour fin', 'attr': {'placeholder': ''}}) }}
+				{{ form_row(addScheduleForm.end_hour, {'label': 'Heure fin', 'attr': {'placeholder': ''}}) }}
+				{{ form_row(addScheduleForm.user_id, {'label': 'ID Utilisateur', 'attr': {'placeholder': ''}}) }}
+			</div>
+		</div>
+
+
+			<div class="row">
+				<div class="col-12 d-flex justify-content-center">
+					<button type="submit" name="add_schedule_submit" class="btn btn-warning btn-block">Enregistrer</button>
+				</div>
+			</div>
+		</div>
+		{{ form_end(addScheduleForm) }}
+	{% endblock %}

@@ -2,22 +2,19 @@
 
 namespace App\Form;
 
-use App\Entity\Place;
+use App\Entity\Mood;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class AddPlaceType extends AbstractType
+class AddMoodType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
+            ->add('color')
+            ->add('luminosity')
             ->add('label')
-            ->add('address_1')
-            ->add('address_2')
-            ->add('zip')
-            ->add('city')
-            ->add('phone')
             ->add('user_id')
         ;
     }
@@ -25,7 +22,7 @@ class AddPlaceType extends AbstractType
     public function configureOptions(OptionsResolver $resolver): void
     {
         $resolver->setDefaults([
-            'data_class' => Place::class,
+            'data_class' => Mood::class,
         ]);
     }
 }

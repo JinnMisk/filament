@@ -2,36 +2,34 @@
 
 namespace App\Form;
 
-use App\Entity\Bulb;
-use App\Entity\Model;
 use App\Entity\Mood;
-use App\Entity\Place;
+use App\Entity\Schedule;
+use App\Entity\User;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class AddBulbType extends AbstractType
+class AddScheduleType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
+            ->add('start_day', null, [
+                'widget' => 'single_text',
+            ])
+            ->add('end_day', null, [
+                'widget' => 'single_text',
+            ])
+            ->add('recurrence')
+            ->add('start_hour', null, [
+                'widget' => 'single_text',
+            ])
+            ->add('end_hour', null, [
+                'widget' => 'single_text',
+            ])
             ->add('label')
-            ->add('room_label')
-            /* ->add('is_on') */
-            /* ->add('status') */
-            ->add('color')
-            ->add('luminosity')
-            /* ->add('hours') */
-            ->add('wifi')
-            ->add('model_id', EntityType::class, [
-                'class' => Model::class,
-                'choice_label' => 'id',
-            ])
-            ->add('place_id', EntityType::class, [
-                'class' => Place::class,
-                'choice_label' => 'id',
-            ])
+            ->add('user_id')
             ->add('mood_id', EntityType::class, [
                 'class' => Mood::class,
                 'choice_label' => 'id',
@@ -42,7 +40,7 @@ class AddBulbType extends AbstractType
     public function configureOptions(OptionsResolver $resolver): void
     {
         $resolver->setDefaults([
-            'data_class' => Bulb::class,
+            'data_class' => Schedule::class,
         ]);
     }
 }

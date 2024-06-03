@@ -33,11 +33,10 @@ class Schedule
     private ?string $label = null;
 
     #[ORM\ManyToOne]
-    #[ORM\JoinColumn(nullable: false)]
-    private ?User $user_id = null;
-
-    #[ORM\ManyToOne]
     private ?Mood $mood_id = null;
+
+    #[ORM\Column]
+    private ?int $user_id = null;
 
     public function getId(): ?int
     {
@@ -116,18 +115,6 @@ class Schedule
         return $this;
     }
 
-    public function getUserId(): ?User
-    {
-        return $this->user_id;
-    }
-
-    public function setUserId(?User $user_id): static
-    {
-        $this->user_id = $user_id;
-
-        return $this;
-    }
-
     public function getMoodId(): ?Mood
     {
         return $this->mood_id;
@@ -136,6 +123,18 @@ class Schedule
     public function setMoodId(?Mood $mood_id): static
     {
         $this->mood_id = $mood_id;
+
+        return $this;
+    }
+
+    public function getUserId(): ?int
+    {
+        return $this->user_id;
+    }
+
+    public function setUserId(int $user_id): static
+    {
+        $this->user_id = $user_id;
 
         return $this;
     }

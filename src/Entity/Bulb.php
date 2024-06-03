@@ -16,16 +16,16 @@ class Bulb
     #[ORM\Column(length: 255)]
     private ?string $label = null;
 
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(length: 255, nullable: true)]
     private ?string $room_label = null;
 
-    #[ORM\Column]
+    #[ORM\Column(nullable: true)]
     private ?bool $is_on = null;
 
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(length: 255, nullable: true)]
     private ?string $status = null;
 
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(length: 255, nullable: true)]
     private ?string $color = null;
 
     #[ORM\Column(nullable: true)]
@@ -34,18 +34,19 @@ class Bulb
     #[ORM\Column(nullable: true)]
     private ?int $hours = null;
 
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(length: 255, nullable: true)]
     private ?string $wifi = null;
 
-    #[ORM\ManyToOne]
+    #[ORM\ManyToOne(inversedBy: 'bulbs')]
     private ?Model $model_id = null;
 
-    #[ORM\ManyToOne]
+    #[ORM\ManyToOne(inversedBy: 'bulbs')]
+    private ?Mood $mood_id = null;
+
+    #[ORM\ManyToOne(inversedBy: 'bulbs')]
     #[ORM\JoinColumn(nullable: false)]
     private ?Place $place_id = null;
 
-    #[ORM\ManyToOne]
-    private ?Mood $mood_id = null;
 
     public function getId(): ?int
     {
@@ -160,18 +161,6 @@ class Bulb
         return $this;
     }
 
-    public function getPlaceId(): ?Place
-    {
-        return $this->place_id;
-    }
-
-    public function setPlaceId(?Place $place_id): static
-    {
-        $this->place_id = $place_id;
-
-        return $this;
-    }
-
     public function getMoodId(): ?Mood
     {
         return $this->mood_id;
@@ -180,6 +169,18 @@ class Bulb
     public function setMoodId(?Mood $mood_id): static
     {
         $this->mood_id = $mood_id;
+
+        return $this;
+    }
+
+    public function getPlaceId(): ?Place
+    {
+        return $this->place_id;
+    }
+
+    public function setPlaceId(?Place $place_id): static
+    {
+        $this->place_id = $place_id;
 
         return $this;
     }
