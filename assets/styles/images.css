@@ -1,0 +1,20 @@
+/****************************/
+/****** NOUVELLES IMAGES *****/
+/****************************/
+
+
+/****************************/
+/****** DASHBOARD *****/
+/****************************/
+
+/***** Compteur d'économies réalisées ******/
+.economies {
+    width: 10rem;
+    height: auto;
+}
+
+/***** Bulbe vert et énergie verte *****/
+.green {
+    width: 5rem;
+    height: auto;
+}

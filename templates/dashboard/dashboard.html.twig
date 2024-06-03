@@ -1,0 +1,67 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block stylesheets %}
+<link rel="stylesheet" href="{{asset('styles/dashboard.css')}}">
+{% endblock %}
+
+{% block body %}
+   <div class="container mt-4 mb-4">
+       
+       <h1>Mon dashboard</h1>
+        
+       <div class="row d-flex justify-content-around">
+            
+            <div class="col-4 border border-3 border-black rounded-2 d-flex align-items-center flex-column pt-3 pb-3">
+                <h2>Statistiques</h2> 
+                <div class="row w-100">
+                        <div class="col-6 d-flex align-items-center"><p>Économies réalisées: </p></div>
+                        <div class="col-6 d-flex align-items-center"><img class="economies" src="{{asset('images/Counter.png')}}" alt="économies"></div>
+                </div>
+                
+                <div class="row w-100">
+                        <div class="col-6 d-flex align-items-center justify-content-start">
+                            <p>Éco-éclairage : </p>
+                        </div>
+                            <div class="col-6 d-flex flex-column align-items-center">
+                                
+                                <div><img class="green" src="{{asset('images/green-bulb.png')}}" alt="ampoule"></div>
+                                <div class="text-center p-2"><p>650h {# FAIRE UN SPAN DU NB D'HEURES D'ÉCLAIRAGE TOTAL #}</p></div>
+                    
+                            </div>
+                </div>
+
+                <div class="row w-100">
+                        <div class="col-6 d-flex align-items-center justify-content-start">
+                            <p>Énergie sauvée : </p>
+                        </div>
+                            <div class="col-6 d-flex flex-column align-items-center">
+                                
+                                <div><img class="green" src="{{asset('images/green-energy.png')}}" alt="ampoule"></div>
+                                <div class="text-center p-2"><p>1000kw {# FAIRE UN SPAN DE LA QUANTITÉ d'ÉNERGIE SAUVÉe #}</p></div>
+                    
+                            </div>
+                </div>
+            </div>
+        
+            <div id="centralDashboard" class="col-5 border border-3 border-black rounded-2 d-flex align-items-center flex-column pt-3 pb-3">
+                                   
+                    {# {% include('my_bulbs/index.html.twig') %} #}
+                
+            </div>
+
+            <nav class="nav col-2 border border-3 border-black rounded-2 d-flex align-items-start flex-column pt-3 pb-3">
+                <a class="nav-link active" aria-current="page" href="#"></a>
+                <a class="cursorNav nav-link myPlaces">Mes lieux</a>
+                <a class="cursorNav nav-link myBulbs">Mes ampoules</a>
+                <a class="cursorNav nav-link myMoods">Mes ambiances</a>
+                <a class="cursorNav nav-link mySchedules">Mes programmations</a>
+            </nav> 
+       </div>
+
+   </div>
+
+   <script type="module" src="{{ asset('js/dropDownMenu.js')}}"></script>
+   {# <script src="{{ asset('js/colorOpacity.js')}}"></script> #}
+{% endblock %}
