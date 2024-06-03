@@ -17,12 +17,6 @@ class Bulb
     private ?string $label = null;
 
     #[ORM\Column(length: 255)]
-    private ?string $reference = null;
-
-    #[ORM\Column(length: 255)]
-    private ?string $model = null;
-
-    #[ORM\Column(length: 255)]
     private ?string $room_label = null;
 
     #[ORM\Column]
@@ -40,11 +34,18 @@ class Bulb
     #[ORM\Column(nullable: true)]
     private ?int $hours = null;
 
-    #[ORM\Column(nullable: true)]
-    private ?int $hours_max = null;
-
     #[ORM\Column(length: 255)]
     private ?string $wifi = null;
+
+    #[ORM\ManyToOne]
+    private ?Model $model_id = null;
+
+    #[ORM\ManyToOne]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?Place $place_id = null;
+
+    #[ORM\ManyToOne]
+    private ?Mood $mood_id = null;
 
     public function getId(): ?int
     {
@@ -59,30 +60,6 @@ class Bulb
     public function setLabel(string $label): static
     {
         $this->label = $label;
-
-        return $this;
-    }
-
-    public function getReference(): ?string
-    {
-        return $this->reference;
-    }
-
-    public function setReference(string $reference): static
-    {
-        $this->reference = $reference;
-
-        return $this;
-    }
-
-    public function getModel(): ?string
-    {
-        return $this->model;
-    }
-
-    public function setModel(string $model): static
-    {
-        $this->model = $model;
 
         return $this;
     }
@@ -159,18 +136,6 @@ class Bulb
         return $this;
     }
 
-    public function getHoursMax(): ?int
-    {
-        return $this->hours_max;
-    }
-
-    public function setHoursMax(?int $hours_max): static
-    {
-        $this->hours_max = $hours_max;
-
-        return $this;
-    }
-
     public function getWifi(): ?string
     {
         return $this->wifi;
@@ -179,6 +144,42 @@ class Bulb
     public function setWifi(string $wifi): static
     {
         $this->wifi = $wifi;
+
+        return $this;
+    }
+
+    public function getModelId(): ?Model
+    {
+        return $this->model_id;
+    }
+
+    public function setModelId(?Model $model_id): static
+    {
+        $this->model_id = $model_id;
+
+        return $this;
+    }
+
+    public function getPlaceId(): ?Place
+    {
+        return $this->place_id;
+    }
+
+    public function setPlaceId(?Place $place_id): static
+    {
+        $this->place_id = $place_id;
+
+        return $this;
+    }
+
+    public function getMoodId(): ?Mood
+    {
+        return $this->mood_id;
+    }
+
+    public function setMoodId(?Mood $mood_id): static
+    {
+        $this->mood_id = $mood_id;
 
         return $this;
     }

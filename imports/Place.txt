@@ -1,6 +1,5 @@
-INSERT INTO place (label,address_1,address_2,zip,city,phone)
+INSERT INTO place (label,address_1,address_2,zip,city,phone,user_id_id)
 VALUES
-('Maison 1','28 rue du pont','2ème G','75009','Paris','0123455647'),
-('Maison vacances','35 route du bois','','95420','Vaux sur Seine',''),
-('Magasin 1','55 boulevard de la Paix','Au fond','54870','Charleville',''),
-('Dépot A','Route du val','','95640','Andresy','0658758785');
+('Maison 1','28 rue du pont','2ème G','75009','Paris','0123455647',2),
+('Maison vacances','35 route du bois','','95420','Vaux sur Seine','',3),
+('Magasin 1','55 boulevard de la Paix','Au fond','54870','Charleville','',4);

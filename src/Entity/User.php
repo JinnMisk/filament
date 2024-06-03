@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\UserRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
@@ -75,6 +77,16 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $siret = null;
 
+    /**
+     * @var Collection<int, Mood>
+     */
+    #[ORM\OneToMany(targetEntity: Mood::class, mappedBy: 'user_id')]
+    private Collection $moods;
+
+    public function __construct()
+    {
+        $this->moods = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -318,5 +330,4 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
         return $this;
     }
-
 }

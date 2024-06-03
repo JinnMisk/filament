@@ -1,12 +1,5 @@
-INSERT INTO bulb (label,room_label,is_on,status,color,luminosity,hours,wifi,reference,model)
+INSERT INTO bulb (label,room_label,is_on,status,color,luminosity,hours,wifi,model_id_id,mood_id_id,place_id_id)
 VALUES
-('Plafonnier','Salon',true,'false','#F5F2C3',50.0,0,'Home_00','','1'),
-('Lampe appoint','Sejour',false,'false','#F5F2C3',50.0,1540,'Home_00','','2'),
-('Cellier','Cellier',false,'true','#F5F2C3 ',50.0,9212,'MaMaison','','3'),
-('Entree gauche','Entree',true,'false','#F5F2C3',50.0,154,'MaMaison','','4'),
-('Reserve 1','',false,'true','#F5F2C3',50.0,0,'','','5'),
-('Reserve 1','',false,'true','#F5F2C3',50.0,100,'Free-6545','','6'),
-('Reserve 3','',false,'true','#F5F2C3',50.0,0,'','','7'),
-('Stern Standard MK3','Cuisine',false,'false','#F5F2C3',50.0,6577,'Free-6545','','8'),
-('Reserve 2','',false,'true','#F5F2C3',50.0,0,'','','9'),
-('Reserve 2','',false,'true','#F5F2C3',50.0,0,'','','10');
+('Plafonnier','Salon',true,'false','#F5F2C3',50.0,0,'Home_00',1,1,5),
+('Lampe appoint','Sejour',false,'false','#F5F2C3',50.0,1540,'Home_00',2,2,6),
+('Cellier','Cellier',false,'true','#F5F2C3 ',50.0,9212,'MaMaison',3,3,7);

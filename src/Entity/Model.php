@@ -17,7 +17,16 @@ class Model
     private ?string $reference = null;
 
     #[ORM\Column]
-    private ?int $hoursMax = null;
+    private ?int $hours_max = null;
+
+    #[ORM\Column(length: 255)]
+    private ?string $name = null;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $default_color = null;
+
+    #[ORM\Column(nullable: true)]
+    private ?float $default_luminosity = null;
 
     public function getId(): ?int
     {
@@ -38,12 +47,48 @@ class Model
 
     public function getHoursMax(): ?int
     {
-        return $this->hoursMax;
+        return $this->hours_max;
     }
 
-    public function setHoursMax(int $hoursMax): static
+    public function setHoursMax(int $hours_max): static
     {
-        $this->hoursMax = $hoursMax;
+        $this->hours_max = $hours_max;
+
+        return $this;
+    }
+
+    public function getName(): ?string
+    {
+        return $this->name;
+    }
+
+    public function setName(string $name): static
+    {
+        $this->name = $name;
+
+        return $this;
+    }
+
+    public function getDefaultColor(): ?string
+    {
+        return $this->default_color;
+    }
+
+    public function setDefaultColor(?string $default_color): static
+    {
+        $this->default_color = $default_color;
+
+        return $this;
+    }
+
+    public function getDefaultLuminosity(): ?float
+    {
+        return $this->default_luminosity;
+    }
+
+    public function setDefaultLuminosity(?float $default_luminosity): static
+    {
+        $this->default_luminosity = $default_luminosity;
 
         return $this;
     }

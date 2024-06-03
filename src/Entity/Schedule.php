@@ -29,6 +29,16 @@ class Schedule
     #[ORM\Column(type: Types::TIME_IMMUTABLE, nullable: true)]
     private ?\DateTimeImmutable $end_hour = null;
 
+    #[ORM\Column(length: 255)]
+    private ?string $label = null;
+
+    #[ORM\ManyToOne]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?User $user_id = null;
+
+    #[ORM\ManyToOne]
+    private ?Mood $mood_id = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -90,6 +100,42 @@ class Schedule
     public function setEndHour(?\DateTimeImmutable $end_hour): static
     {
         $this->end_hour = $end_hour;
+
+        return $this;
+    }
+
+    public function getLabel(): ?string
+    {
+        return $this->label;
+    }
+
+    public function setLabel(string $label): static
+    {
+        $this->label = $label;
+
+        return $this;
+    }
+
+    public function getUserId(): ?User
+    {
+        return $this->user_id;
+    }
+
+    public function setUserId(?User $user_id): static
+    {
+        $this->user_id = $user_id;
+
+        return $this;
+    }
+
+    public function getMoodId(): ?Mood
+    {
+        return $this->mood_id;
+    }
+
+    public function setMoodId(?Mood $mood_id): static
+    {
+        $this->mood_id = $mood_id;
 
         return $this;
     }

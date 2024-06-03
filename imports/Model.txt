@@ -1,4 +1,4 @@
-INSERT INTO model (reference,model,$hoursMax)
+INSERT INTO model (name,reference,hours_max)
 VALUES
 ('Stella Premium DB6','KDF-6546654',25000),
 ('Star Premium DB7','DSF-5852231',5000),
