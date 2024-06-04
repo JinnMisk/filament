@@ -13,8 +13,7 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\ColorType;
 use Symfony\Component\Form\Extension\Core\Type\RangeType;
 
-
-class AddBulbType extends AbstractType
+class ModifyBulbType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
@@ -38,12 +37,12 @@ class AddBulbType extends AbstractType
                 'class' => Model::class,
                 'choice_label' => 'id',
             ])
-            ->add('place_id', EntityType::class, [
-                'class' => Place::class,
-                'choice_label' => 'id',
-            ])
             ->add('mood_id', EntityType::class, [
                 'class' => Mood::class,
+                'choice_label' => 'id',
+            ])
+            ->add('place_id', EntityType::class, [
+                'class' => Place::class,
                 'choice_label' => 'id',
             ])
         ;

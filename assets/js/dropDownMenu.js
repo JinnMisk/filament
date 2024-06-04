@@ -17,11 +17,10 @@ function loadMyBulbs() {
     {
         return httpResponse.text();   
     })
-    .then(function(results) // results = les données JSON, grâce au httpResponse.json() ci-dessus
+    .then(function(results) 
     {
         centralDashboard.innerHTML = results;
 
-        
     });
 }
 

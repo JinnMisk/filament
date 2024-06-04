@@ -111,3 +111,7 @@ input:checked + .sliderPlace:before {
 .cursorNav {
     cursor: pointer;
 }
+
+.breakRow {
+    word-wrap: break-word;
+}

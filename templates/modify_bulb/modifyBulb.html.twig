@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modifier mon ampoule{% endblock %}
+
+{% block body %}
+<main>
+    <div class="container">
+	<div class="row">
+		<div class="text-center">
+			<h1>Modifier mon ampoule</h1>
+		</div>
+	</div>
+
+	{# {% form_theme modifyBulbForm 'form/modify_bulb_form.html.twig' %} existe pas encore#}
+	{{ form_start(modifyBulbForm) }}
+
+	<div class="row">
+		<div class="col-6">
+			{{ form_row(modifyBulbForm.label, {'label': 'Nom de l\'ampoule :', 'attr': {'placeholder': ''}}) }}
+            {{ form_row(modifyBulbForm.room_label, {'label': 'Nom de la pièce :', 'attr': {'placeholder': ''}}) }}
+        </div>
+        <div class="col-6">
+            {{ form_row(modifyBulbForm.model_id, {'label': 'Modèle :', 'attr': {'placeholder': ''}}) }}
+            {{ form_row(modifyBulbForm.wifi, {'label': 'Réseau WiFi :', 'attr': {'placeholder': ''}}) }}
+        </div>
+	</div>
+    <div class="row">
+		<div class="col-6">
+			{{ form_row(modifyBulbForm.place_id, {'label': 'Localisation :', 'attr': {'placeholder': ''}}) }}
+			{{ form_row(modifyBulbForm.mood_id, {'label': 'Ambiance :', 'attr': {'placeholder': ''}}) }}
+			{# {{ form_row(addBulbForm.status, {'label': 'Statut :', 'attr': {'placeholder': ''}}) }}
+			{{ form_row(addBulbForm.is_on, {'label': 'Etat :', 'attr': {'placeholder': ''}}) }} #}
+		</div>
+		<div class="col-6">
+			{{ form_row(modifyBulbForm.color, {'label': 'Couleur :', 'attr': {'placeholder': ''}}) }}
+			{{ form_row(modifyBulbForm.luminosity, {'label': 'Luminosité'}) }}
+		</div>
+    </div>
+	<div class="row">
+		<div class="col-12 d-flex justify-content-center">
+			<button type="submit" name="modify_bulb_submit" class="btn btn-warning btn-block">Enregistrer</button>
+		</div>
+	</div>
+</div>
+{{ form_end(modifyBulbForm) }}
+</main>
+
+
+{% endblock %}

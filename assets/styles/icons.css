@@ -22,6 +22,11 @@
     background-image: url('../icones/lightbulb-regular.svg');
 }
 
+.icon-modify {
+    background-image: url('../icones/pen-to-square-solid.svg');
+    width: 20px;
+    height: 20px;
+}
 /***** Cercle chromatique *****/
 .colorWheel {
     width: 25px;

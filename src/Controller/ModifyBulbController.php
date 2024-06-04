@@ -2,17 +2,34 @@
 
 namespace App\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use App\Form\ModifyBulbType;
+use App\Repository\BulbRepository;
+use Doctrine\ORM\EntityManagerInterface;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class ModifyBulbController extends AbstractController
 {
-    #[Route('/modify/bulb', name: 'app_modify_bulb')]
-    public function index(): Response
+    #[Route('/modify/bulb/{id<\d+>}', name: 'app_modify_bulb')]
+    public function index(Request $request, BulbRepository $bulbRepository, EntityManagerInterface $entityManager, $id): Response
     {
-        return $this->render('modify_bulb/index.html.twig', [
-            'controller_name' => 'ModifyBulbController',
+        
+        $bulb = $bulbRepository->find($id);
+
+        $form = $this->createForm(ModifyBulbType::class, $bulb);
+        
+        if ($form->isSubmitted() && $form->isValid()) {
+            
+            $entityManager->persist($bulb);
+            $entityManager->flush();
+
+             return $this->redirectToRoute('app_view_bulb'); 
+        }
+
+        return $this->render('modify_bulb/modifyBulb.html.twig', [
+            'modifyBulbForm' => $form->createView(),
         ]);
     }
 }

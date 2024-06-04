@@ -1,6 +1,7 @@
 import './bootstrap.js';
-import './colorOpacity.js';
-import './dropDownMenu.js';
+import './js/colorOpacity.js';
+// import './js/dropDownMenu.js';
+import './js/stats.js';
 
 /*
  * Welcome to your app's main JavaScript file!
