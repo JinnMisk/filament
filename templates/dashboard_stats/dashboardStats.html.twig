@@ -1,0 +1,42 @@
+{% block body %}
+<main>
+    <div class="container">
+        
+                
+                <h2>Statistiques</h2> 
+                
+                <div class="row w-100">
+                    <div class="col-6 d-flex align-items-center"><p>Économies réalisées: </p></div>
+                    <div class="col-6 d-flex align-items-center"><img class="economies" src="{{asset('images/Counter.png')}}" alt="économies"></div>
+                </div>
+                
+                <div class="row w-100">
+                        
+                    <div class="col-6 d-flex align-items-center justify-content-start">
+                        <p>Éco-éclairage : </p>
+                    </div>
+                    
+                    <div class="col-6 d-flex flex-column align-items-center">
+                        <div><img class="green" src="{{asset('images/green-bulb.png')}}" alt="ampoule"></div>
+                        <div class="text-center p-2"><p>650h {# FAIRE UN SPAN DU NB D'HEURES D'ÉCLAIRAGE TOTAL #}</p></div>
+                    </div>
+
+                </div>
+
+                <div class="row w-100">
+                        
+                    <div class="col-6 d-flex align-items-center justify-content-start">
+                        <p>Énergie sauvée : </p>
+                    </div>
+                        
+                    <div class="col-6 d-flex flex-column align-items-center">
+                        <div><img class="green" src="{{asset('images/green-energy.png')}}" alt="ampoule"></div>
+                        <div class="text-center p-2"><p>1000kw {# FAIRE UN SPAN DE LA QUANTITÉ d'ÉNERGIE SAUVÉe #}</p></div>
+                    </div>
+
+                </div>
+          
+       
+    </div>
+</main>
+{% endblock %}

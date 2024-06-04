@@ -21,12 +21,12 @@
 						<li class="nav-item">
 							<a class="nav-link" href="/cart">Panier</a>
 						</li>
-						
+						 
 
-						{%if is_granted('IS_AUTHENTICATED_FULLY') %}
+						{% if is_granted('IS_AUTHENTICATED_FULLY') %}
 
 							<li class="nav-item">
-								<a class="nav-link" href="#">Dashbord</a>
+								<a class="nav-link" href="/my/bulbs">Dashbord</a>
 							</li>
 							<li class="nav-item connexion">
 								<a class="nav-link" href="/account">Mon compte</a>
@@ -45,7 +45,7 @@
 								<a class="nav-link" href="{{ path('app_register') }}">Se connecter</a>
 							</li>
 
-							{%endif%}
+						{% endif %}
 
 						</ul>
 					</div>
