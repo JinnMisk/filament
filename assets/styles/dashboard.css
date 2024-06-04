@@ -87,12 +87,6 @@ input:checked + .sliderPlace:before {
     border-radius: 50%;
 }  
 
-
-/***** Menu déroulant des lieux dans la nav - retour à la ligne du texte *****/
-.whiteSpace {
-    white-space:normal;
-}
-
 /***** Couleur des onglets du menu déroulant *****/
 .nav-link {
     color: black;
