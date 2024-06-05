@@ -112,6 +112,8 @@ input:checked + .sliderPlace:before {
     cursor: pointer;
 }
 
+/***** LABEL DES AMPOULES  *****/
+
 .breakRow {
     word-wrap: break-word;
 }

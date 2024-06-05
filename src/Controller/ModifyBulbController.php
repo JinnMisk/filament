@@ -19,6 +19,7 @@ class ModifyBulbController extends AbstractController
         $bulb = $bulbRepository->find($id);
 
         $form = $this->createForm(ModifyBulbType::class, $bulb);
+        $form->handleRequest($request);
         
         if ($form->isSubmitted() && $form->isValid()) {
             

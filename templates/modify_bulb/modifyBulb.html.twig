@@ -28,12 +28,12 @@
 		<div class="col-6">
 			{{ form_row(modifyBulbForm.place_id, {'label': 'Localisation :', 'attr': {'placeholder': ''}}) }}
 			{{ form_row(modifyBulbForm.mood_id, {'label': 'Ambiance :', 'attr': {'placeholder': ''}}) }}
-			{# {{ form_row(addBulbForm.status, {'label': 'Statut :', 'attr': {'placeholder': ''}}) }}
-			{{ form_row(addBulbForm.is_on, {'label': 'Etat :', 'attr': {'placeholder': ''}}) }} #}
+			{# {{ form_row(modifyBulbForm.status, {'label': 'Statut :', 'attr': {'placeholder': ''}}) }}#}
+			{{ form_row(modifyBulbForm.is_on, {'label': 'Etat :'}) }} 
 		</div>
 		<div class="col-6">
-			{{ form_row(modifyBulbForm.color, {'label': 'Couleur :', 'attr': {'placeholder': ''}}) }}
-			{{ form_row(modifyBulbForm.luminosity, {'label': 'Luminosité'}) }}
+			{{ form_row(modifyBulbForm.color, {'label': 'Couleur :', 'attr': {'class': 'colorWheel'}}) }}
+			{{ form_row(modifyBulbForm.luminosity, {'label': 'Luminosité', 'attr': {'class': 'opacityRange'}}) }}
 		</div>
     </div>
 	<div class="row">

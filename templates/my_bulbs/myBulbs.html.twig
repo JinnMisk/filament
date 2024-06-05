@@ -11,14 +11,14 @@
                 
                 <div class="row">
 
-                    <div class="col-4 border border-3 border-black rounded-2 d-flex align-items-center flex-column pt-3 pb-3">
+                    <div class="col-4 border border-3 border-black rounded-2 d-flex flex-column pt-3 pb-3">
                         {% include('dashboard_stats/dashboardStats.html.twig') %}
                     </div>
                     
                     <div class="col-5 border border-3 border-black rounded-2 d-flex align-items-center flex-column pt-3 pb-3">
                         <div class="row w-100">
                         
-                            <h2>Mes ampoules</h2>
+                            <h2 class="text-center pb-2">Mes ampoules</h2>
                             
                             <div>
                 
@@ -27,20 +27,20 @@
                                         
                                         <a href="{{ path('app_modify_bulb', {id: bulb.id}) }}"><i class="icon icon-modify"></i></a>
                                         
-                                        <div class="bulb"></div>
+                                        <div class="bulb" style="background-color: {{ bulb.color }}; opacity: {{ bulb.luminosity }}/100"></div>
                                         
-                                        <a href="#" class="align-items-center w-25 p-2 mb-0 nav-link breakRow">{{ bulb.label }}</a>
+                                        <a href="{{ path('app_view_bulb', {id: bulb.id}) }}" class="align-items-center w-50 p-2 mb-0 nav-link breakRow">{{ bulb.label }}</a>
                                         
-                                        <div>
+                                        {# <div>
                                             <input class="colorWheel" type="color" id="head" name="head" value="{{ bulb.color }}" disabled/>
                                         </div>
                                         
                                         <div class="p-2 d-flex align-items-center">
                                             <input class="opacityRange" type="range" min="0" max="100" value="{{ bulb.luminosity }}" disabled/>
-                                        </div>
+                                        </div> #}
                                         
                                         <label class="switch p-2">
-                                            <input type="checkbox">
+                                            <input type="checkbox" {{ bulb.isOn == 1 ? 'checked': '' }}>
                                             <span class="slider round"></span>
                                         </label>
                                     </div>
