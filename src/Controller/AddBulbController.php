@@ -29,8 +29,8 @@ class AddBulbController extends AbstractController
         /* return $this->redirectToRoute('app_add_bulb'); */
 
         return $this->render('add_bulb/add_bulb.html.twig', [
-            /* 'controller_name' => 'AddBulbController', */
-            'addBulbForm' => $form->createView(),
+            'controller_name' => 'AddBulbController',
+            'addBulbForm' => $form->createView()
         ]);
     }
 }

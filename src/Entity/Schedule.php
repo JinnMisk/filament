@@ -43,9 +43,15 @@ class Schedule
         return $this->id;
     }
 
+
     public function getStartDay(): ?\DateTimeImmutable
     {
         return $this->start_day;
+    }
+
+    public function getStartDayDMY(): ?string
+    {
+        return date('d/m/y', $this->start_day->getTimestamp());
     }
 
     public function setStartDay(?\DateTimeImmutable $start_day): static
@@ -58,6 +64,11 @@ class Schedule
     public function getEndDay(): ?\DateTimeImmutable
     {
         return $this->end_day;
+    }
+
+    public function getEndDayDMY(): ?string
+    {
+        return date('d/m/y', $this->end_day->getTimestamp());
     }
 
     public function setEndDay(?\DateTimeImmutable $end_day): static
@@ -84,6 +95,11 @@ class Schedule
         return $this->start_hour;
     }
 
+    public function getStartHourHM(): ?string
+    {
+        return date('h \h i', $this->start_hour->getTimestamp());
+    }
+
     public function setStartHour(?\DateTimeImmutable $start_hour): static
     {
         $this->start_hour = $start_hour;
@@ -94,6 +110,12 @@ class Schedule
     public function getEndHour(): ?\DateTimeImmutable
     {
         return $this->end_hour;
+    }
+
+    public function getEndHourHM(): ?string
+    {
+        return date('h \h i', $this->end_hour->getTimestamp());
+        /* return $this->end_hour; */
     }
 
     public function setEndHour(?\DateTimeImmutable $end_hour): static

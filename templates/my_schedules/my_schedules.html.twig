@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Mes adresses
+{% block title %}Mes programmes
 {% endblock %}
 
 {% block body %}
@@ -18,35 +18,40 @@
 				<div class="col-5 border border-3 border-black rounded-2 d-flex align-items-center flex-column pt-3 pb-3">
 					<div class="row w-100">
 
-						<h2>Mes adresses</h2>
+						<h2>Mes programmes</h2>
 						<div>
 							<table>
 								<thead>
 									<tr>
+										<th scope="col"></th>
 										<th scope="col">Nom</th>
-										<th scope="col">Adresse</th>
-										<th scope="col">Code</th>
-										<th scope="col">Ville</th>
-										<th scope="col">Téléphone</th>
+										<th scope="col">Début</th>
+										<th scope="col">Fin</th>
+										<th scope="col">Récurrence</th>
+										<th scope="col">Ambiance</th>
 									</tr>
 								</thead>
 								<tbody>
-									{% for place in places %}
+									{% for schedule in schedules %}
 										<tr>
-											<td>{{place.label}}</td>
-											<td>{{place.address1}}
+											<td></td>
+											<td>{{schedule.label}}</td>
+											<td>{{schedule.getStartDayDMY()}}
 												<br>
-												{{place.address2}}
+												{{schedule.getStartHourHM}}
 											</td>
- 											<td>{{place.zip}}</td>
-											<td>{{place.city}}</td>
-											<td>{{place.phone}}</td>
+											<td>{{schedule.getEndDayDMY()}}
+												<br>
+												{{schedule.getEndHourHM}}
+											</td>
+											<td>{{schedule.recurrence}}</td>
+											{# <td>{{schedule.getMoodID}}</td> #}
 										</tr>
 									{% endfor %}
 								</tbody>
 							</table>
 							<div class="d-flex justify-content-center border rounded-2 borderYellow">
-								<a href="/add/place">
+								<a href="/add/schedule">
 									<i class="icon icon-plus cursorNav" href="/add/schedule"></i>
 								</a>
 								{# <i class="icon icon-plus cursorNav" href="/add/bulb"></i> #}
@@ -55,7 +60,9 @@
 						</div>
 					</div>
 				</div>
-				<div class="col-2 border border-3 border-black rounded-2 d-flex align-items-start flex-column pt-3 pb-3">{% include('dashboard_menu/dashboardMenu.html.twig') %}</div>
+				<div class="col-2 border border-3 border-black rounded-2 d-flex align-items-start flex-column pt-3 pb-3">
+					{% include('dashboard_menu/dashboardMenu.html.twig') %}
+				</div>
 			</div>
 		</main>
 	{% endblock %}
