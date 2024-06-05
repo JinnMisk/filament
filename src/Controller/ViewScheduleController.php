@@ -11,7 +11,7 @@ class ViewScheduleController extends AbstractController
     #[Route('/view/schedule', name: 'app_view_schedule')]
     public function index(): Response
     {
-        return $this->render('view_schedule/index.html.twig', [
+        return $this->render('view_schedule/viewSchedule.html.twig', [
             'controller_name' => 'ViewScheduleController',
         ]);
     }

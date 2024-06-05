@@ -11,7 +11,7 @@ class ViewMoodController extends AbstractController
     #[Route('/view/mood', name: 'app_view_mood')]
     public function index(): Response
     {
-        return $this->render('view_mood/index.html.twig', [
+        return $this->render('view_mood/viewMood.html.twig', [
             'controller_name' => 'ViewMoodController',
         ]);
     }
