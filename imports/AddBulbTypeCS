@@ -21,45 +21,32 @@ class AddBulbType extends AbstractType
         $builder
             ->add('label')
             ->add('room_label')
-<<<<<<< HEAD
-            /* ->add('is_on') */
-            /* ->add('status') */
-=======
->>>>>>> Gilles
+            ->add('is_on')
+            ->add('status')
             ->add('color', ColorType::class, [
                 'attr' => ['class' => 'tinymce'],
             ])
             ->add('luminosity', RangeType::class, [
-<<<<<<< HEAD
             'attr' => [
                 'min' => 0,
                 'max' => 100
             ],
             ])
-            /* ->add('hours') */
-=======
-                'attr' => [
-                    'min' => 0,
-                    'max' => 100
-                ],
-            ])
->>>>>>> Gilles
+            ->add('hours')
             ->add('wifi')
             ->add('model_id', EntityType::class, [
                 'class' => Model::class,
-                'choice_label' => 'name',
+                'choice_label' => 'id',
             ])
             ->add('place_id', EntityType::class, [
                 'class' => Place::class,
-                'choice_label' => 'label',
+                'choice_label' => 'id',
             ])
             ->add('mood_id', EntityType::class, [
                 'class' => Mood::class,
-                'choice_label' => 'label',
+                'choice_label' => 'id',
             ])
-/*          ->add('is_on')
-            ->add('status')
-            ->add('hours') */;
+        ;
     }
 
     public function configureOptions(OptionsResolver $resolver): void

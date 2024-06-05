@@ -1,53 +1,46 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Mes adresses
+{% block title %}Les modèles
 {% endblock %}
 
 {% block body %}
 	<main>
 		<div class="container mt-4 mb-4">
 
-			<h1 class="mt-2 mb-4">Mon dashboard</h1>
+			<h1 class="mt-2 mb-4">Les modèles</h1>
 
 			<div class="row">
 
-				<div class="col-4 border border-3 border-black rounded-2 d-flex align-items-center flex-column pt-3 pb-3">
+{# 				<div class="col-4 border border-3 border-black rounded-2 d-flex align-items-center flex-column pt-3 pb-3">
 					{% include('dashboard_stats/dashboardStats.html.twig') %}
-				</div>
+				</div> #}
 
 				<div class="col-5 border border-3 border-black rounded-2 d-flex align-items-center flex-column pt-3 pb-3">
 					<div class="row w-100">
 
-						<h2>Mes adresses</h2>
+						<h2>Mes ambiances</h2>
 						<div>
 							<table>
 								<thead>
 									<tr>
 										<th scope="col">Nom</th>
-										<th scope="col">Adresse</th>
-										<th scope="col">Code</th>
-										<th scope="col">Ville</th>
-										<th scope="col">Téléphone</th>
+										<th scope="col">Couleur</th>
+										<th scope="col">Luminosité</th>
 									</tr>
 								</thead>
 								<tbody>
-									{% for place in places %}
+									{% for model in models %}
 										<tr>
-											<td>{{place.label}}</td>
-											<td>{{place.address1}}
-												<br>
-												{{place.address2}}
-											</td>
- 											<td>{{place.zip}}</td>
-											<td>{{place.city}}</td>
-											<td>{{place.phone}}</td>
+											<td>{{model.name}}</td>
+ 											<td>{{model.reference}}</td>
+											<td>{{model.hoursmax}}</td>
 										</tr>
 									{% endfor %}
 								</tbody>
 							</table>
 							<div class="d-flex justify-content-center border rounded-2 borderYellow">
-								<a href="/add/place">
-									<i class="icon icon-plus cursorNav" href="/add/schedule"></i>
+								<a href="/add/model">
+									<i class="icon icon-plus cursorNav" href="/add/model"></i>
 								</a>
 								{# <i class="icon icon-plus cursorNav" href="/add/bulb"></i> #}
 								{# <img src="{{ asset('icones/plus-solid.svg') }}" class="icon cursorNav" a href="/add/bulb" alt="ajout"> #}
@@ -55,7 +48,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="col-2 border border-3 border-black rounded-2 d-flex align-items-start flex-column pt-3 pb-3">{% include('dashboard_menu/dashboardMenu.html.twig') %}</div>
+				{# <div class="col-2 border border-3 border-black rounded-2 d-flex align-items-start flex-column pt-3 pb-3">{% include('dashboard_menu/dashboardMenu.html.twig') %}</div> #}
 			</div>
 		</main>
 	{% endblock %}

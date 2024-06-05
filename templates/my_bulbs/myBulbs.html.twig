@@ -1,15 +1,15 @@
 {% extends 'base.html.twig' %}
 
-
-{% block title %}Mes ampoules{% endblock %}
+{% block title %}Mes ampoules
+{% endblock %}
 
 {% block body %}
-        <main>
-            <div class="container mt-4 mb-4">
-                
-                <h1 class="mt-2 mb-4">Mon dashboard</h1>
-                
-                <div class="row">
+	<main>
+		<div class="container mt-4 mb-4">
+
+			<h1 class="mt-2 mb-4">Mon dashboard</h1>
+
+			<div class="row">
 
                     <div class="col-4 border border-3 border-black rounded-2 d-flex align-items-center flex-column pt-3 pb-3">
                         {% include('dashboard_stats/dashboardStats.html.twig') %}
@@ -50,18 +50,15 @@
                                     <a href="/add/bulb"><i class="icon icon-plus"></i></a> {# <i class="icon icon-plus cursorNav" href="/add/bulb"></i> #}{# <img src="{{ asset('icones/plus-solid.svg') }}" class="icon cursorNav" a href="/add/bulb" alt="ajout"> #}
                                 </div>
 
-                            </div>
+						</div>
 
-                        </div>
-                    </div>
+					</div>
+				</div>
 
-                    <div class="col-2 border border-3 border-black rounded-2 d-flex align-items-start flex-column pt-3 pb-3">
-                        {% include('dashboard_menu/dashboardMenu.html.twig') %}
-                    </div>
-
-
-                </div>
-            </div>
-        </main>
-
+				<div class="col-2 border border-3 border-black rounded-2 d-flex align-items-start flex-column pt-3 pb-3">
+					{% include('dashboard_menu/dashboardMenu.html.twig') %}
+				</div>
+			</div>
+		</div>
+	</main>
 {% endblock %}
