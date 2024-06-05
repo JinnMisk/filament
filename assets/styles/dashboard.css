@@ -58,7 +58,7 @@
     -webkit-transition: .4s;
     transition: .4s;
 }
-
+/*  */
 input:checked + .slider {
     background-color: #61dc23;
 }
@@ -111,6 +111,8 @@ input:checked + .sliderPlace:before {
 .cursorNav {
     cursor: pointer;
 }
+
+/***** LABEL DES AMPOULES  *****/
 
 .breakRow {
     word-wrap: break-word;

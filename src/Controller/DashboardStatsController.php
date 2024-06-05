@@ -15,4 +15,4 @@ class DashboardStatsController extends AbstractController
             'controller_name' => 'DashboardStatsController',
         ]);
     }
-}
+}/*  */

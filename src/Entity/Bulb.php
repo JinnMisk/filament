@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: BulbRepository::class)]
 class Bulb
-{
+{/*  */
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
@@ -77,12 +77,12 @@ class Bulb
         return $this;
     }
 
-    public function isOn(): ?bool
+    public function getIsOn(): ?bool
     {
         return $this->is_on;
     }
 
-    public function setOn(bool $is_on): static
+    public function setIsOn(bool $is_on): static
     {
         $this->is_on = $is_on;
 
