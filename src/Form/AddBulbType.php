@@ -21,29 +21,15 @@ class AddBulbType extends AbstractType
         $builder
             ->add('label')
             ->add('room_label')
-<<<<<<< HEAD
-            /* ->add('is_on') */
-            /* ->add('status') */
-=======
->>>>>>> Gilles
             ->add('color', ColorType::class, [
                 'attr' => ['class' => 'tinymce'],
             ])
             ->add('luminosity', RangeType::class, [
-<<<<<<< HEAD
-            'attr' => [
-                'min' => 0,
-                'max' => 100
-            ],
-            ])
-            /* ->add('hours') */
-=======
                 'attr' => [
                     'min' => 0,
                     'max' => 100
                 ],
             ])
->>>>>>> Gilles
             ->add('wifi')
             ->add('model_id', EntityType::class, [
                 'class' => Model::class,
@@ -57,7 +43,7 @@ class AddBulbType extends AbstractType
                 'class' => Mood::class,
                 'choice_label' => 'label',
             ])
-/*          ->add('is_on')
+            /*          ->add('is_on')
             ->add('status')
             ->add('hours') */;
     }
