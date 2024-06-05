@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: BulbRepository::class)]
 class Bulb
-{
+{/*  */
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]

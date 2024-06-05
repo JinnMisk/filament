@@ -15,4 +15,4 @@ class DashboardMenuController extends AbstractController
             'controller_name' => 'DashboardMenuController',
         ]);
     }
-}
+} /*  */

@@ -15,3 +15,4 @@ class FakeStatsController extends AbstractController
         return $this-> json($fakeStat);
     }
 }
+/*  */

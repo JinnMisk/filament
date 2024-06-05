@@ -17,7 +17,7 @@ class AddBulbController extends AbstractController
     public function index(EntityManagerInterface $entityManager, Request $request): Response
     {
       
-        
+        /*  */
         $bulb = new Bulb();
 
         $form = $this->createForm(AddBulbType::class, $bulb);
