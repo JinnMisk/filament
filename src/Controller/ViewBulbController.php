@@ -11,7 +11,7 @@ class ViewBulbController extends AbstractController
     #[Route('/view/bulb', name: 'app_view_bulb')]
     public function index(): Response
     {
-        return $this->render('view_bulb/index.html.twig', [
+        return $this->render('view_bulb/viewBulb.html.twig', [
             'controller_name' => 'ViewBulbController',
         ]);
     }
