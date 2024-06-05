@@ -13,7 +13,6 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\ColorType;
 use Symfony\Component\Form\Extension\Core\Type\RangeType;
 
-
 class AddBulbType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
