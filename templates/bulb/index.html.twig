@@ -1,20 +1,252 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello BulbController!{% endblock %}
+{% block title %}Le produit
+{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+	<main>
+		<div class="container">
+			<!--HEROSHOT-->
+			<div class="hero-shot-ampoule container">
+				<div class="row">
+					<div class="slogan col-6 d-flex flex-column align-items-center">
+						<h1>Filament</h1>
+						<p>Votre ampoule, en mieux</p>
+						<button class="btn-picture">
+							<a href="#caracteristics">En savoir plus</a>
+						</button>
+					</div>
+					<div class="col-6">
+						<img src="{{asset('images/hero-shot-ampoule.png')}}" class="w-100" alt="image d'ampoule"/>
+					</div>
+				</div>
+			</div>
+		</div>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+		<!--PERFORMANCES-->
+		<section id="waranty">
+			<div class="container">
+				<div class="row">
+					<article class="col-lg-3 col-md-6 col-6">
+						<img src="{{asset('icones/icone-endurance.png')}}" alt="icone d endurance"/>
+						<h4>Endurante</h4>
+						<p>
+							Notre ampoule a une durée de vie moyenne 6 fois plus grande que
+							              ses concurrentes
+						</p>
+					</article>
+					<article class="col-lg-3 col-md-6 col-6">
+						<img src="{{asset('icones/icone-ecologiquepng.png')}}" alt="icone écologique"/>
+						<h4>Ecologique</h4>
+						<p>
+							C’est l’ampoule la plus green du marché grâce à ses pièces
+							              détachées changeable
+						</p>
+					</article>
+					<article class="col-lg-3 col-md-6 col-6">
+						<img src="{{asset('icones/icone-coeur.png')}}" alt="icone de performance"/>
+						<h4>Performante</h4>
+						<p>
+							Avec 16+ programmes, une surprise lumineuse à chaque instant
+						</p>
+					</article>
+					<article class="col-lg-3 col-md-6 col-6">
+						<img src="{{asset('icones/icone-horloge.png')}}" alt="icone de programmation"/>
+						<h4>Programmable</h4>
+						<p>Tout programmable, allumage et extinction à distance inclus</p>
+					</article>
+				</div>
+			</div>
+		</section>
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code>/Applications/MAMP/htdocs/filament/src/Controller/BulbController.php</code></li>
-        <li>Your template at <code>/Applications/MAMP/htdocs/filament/templates/bulb/index.html.twig</code></li>
-    </ul>
-</div>
+		<!-- CARACTERISTIQUES-->
+		<section id="caracteristics">
+			<div class="container">
+				<div class="row">
+					<h2>Caractéristiques</h2>
+					<div class="accordion d-inline d-sm-none" id="accordionExample">
+						<div class="accordion-item">
+							<h2 class="accordion-header" id="headingOne">
+								<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+									Details
+								</button>
+							</h2>
+							<div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+								<ul class="list-group">
+									<li class="list-group-item">Poids : 500 grammes</li>
+									<li class="list-group-item">Indice de protection : IP20</li>
+									<li class="list-group-item">Couleur : RGB + 2700 K - 6500 K</li>
+									<li class="list-group-item">Watts : 10watts/heure</li>
+									<li class="list-group-item">Volt : 240 Volts (AC)</li>
+									<li class="list-group-item">Angle d'éclairage : régolabile</li>
+									<li class="list-group-item">Recharge : batterie, fournie avec chargeur</li>
+									<li class="list-group-item">Type de prise : AC</li>
+									<li class="list-group-item">Type de culot : E27</li>
+									<li class="list-group-item">Flux lumineux : 1000.0</li>
+									<li class="list-group-item">Equivalence lampes à incandescence : 100 watts</li>
+									<li class="list-group-item">Température/rendu des couleurs : 6500 Kelvin</li>
+									<li class="list-group-item">Durée de vie moyenne : 25 000 heures</li>
+									<li class="list-group-item">Mises à jour du logiciel : automatique</li>
+									<li class="list-group-item">Pièces détachées : disponible sur demande</li>
+									<li class="list-group-item">Nombre de programmes pré-enregistrées : 16</li>
+									<li class="list-group-item">Nombre de programmes maximum : 36</li>
+								</ul>
+							</div>
+						</div>
+
+					</div>
+					<div class="col-lg-6 col-md-6 col-sm-12 d-flex justify-content-center">
+						<img src="{{asset('images/ampoule-electonique.png')}}" alt="photo de l'ampoule"/>
+					</div>
+					<div class="col-lg-6 col-md-6 col-sm-12 d-none d-sm-inline">
+
+						<ul class="list-group">
+							<li class="list-group-item">Poids : 500 grammes</li>
+							<li class="list-group-item">Indice de protection : IP20</li>
+							<li class="list-group-item">Couleur : RGB + 2700 K - 6500 K</li>
+							<li class="list-group-item">Watts : 10watts/heure</li>
+							<li class="list-group-item">Volt : 240 Volts (AC)</li>
+							<li class="list-group-item">Angle d'éclairage : régolabile</li>
+							<li class="list-group-item">Recharge : batterie, fournie avec chargeur</li>
+							<li class="list-group-item">Type de prise : AC</li>
+							<li class="list-group-item">Type de culot : E27</li>
+							<li class="list-group-item">Flux lumineux : 1000.0</li>
+							<li class="list-group-item">Equivalence lampes à incandescence : 100 watts</li>
+							<li class="list-group-item">Température/rendu des couleurs : 6500 Kelvin</li>
+							<li class="list-group-item">Durée de vie moyenne : 25 000 heures</li>
+							<li class="list-group-item">Mises à jour du logiciel : automatique</li>
+							<li class="list-group-item">Pièces détachées : disponible sur demande</li>
+							<li class="list-group-item">Nombre de programmes pré-enregistrées : 16</li>
+							<li class="list-group-item">Nombre de programmes maximum : 36</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!--COLORS-->
+		<section id="colors">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-8 col-md-8 col-sm-12">
+						<h2>Changement des couleurs</h2>
+						<p>
+							Dans un monde lumineux et varié, une ampoule innovante offre 60
+							              000 couleurs, illuminant chaque instant avec éclat et
+							              personnalité. Froid, chaud, magenta, kaki, choisissez la couleur
+							              que vous voulez depuis votre application.
+						</p>
+					</div>
+					<div class="col-lg-4 col-md-8 col-sm-12 d-flex justify-content-center">
+						<img src="{{asset('images/cercle-chromatique.png')}}" alt="cercle chromatique"/>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- PANORAMIC PICTURE-->
+		<section id="panoramic-lamps">
+			<div class="container">
+				<div class="row">
+					<div class="panoramic-text col-6">
+						<h2>Paramétrez l’intensité de votre ampoule avec 4 niveaux</h2>
+						<p>
+							Pour l’instant, il fait nuit noir. Appuyez sur la plus grosse
+							              ampoule pour allumer.
+						</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- SETTING TIME -->
+		<section id="time">
+			<div class="container">
+				<div class="row">
+					<div class="col-6">
+						<h2>Programmation horaire</h2>
+						<p>
+							Un système de programmation horaire précis assure le contrôle
+							              absolu du temps. Chaque moment est minutieusement orchestré pour
+							              une efficacité maximale.
+						</p>
+					</div>
+					<div class="col-6">
+						<img src="{{asset('images/mokup-programmation-horaire.png')}}" alt="mockup de la programmation horaire"/>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- SETTING MODES-->
+		<section id="modes">
+			<img src="{{asset('images/programmation-ambiences.png')}}" alt="">
+		</section>
+
+		<!-- REMOTE -->
+		<section id="remote">
+			<div class="container">
+				<div class="row">
+					<div class="col-6">
+						<img src="{{asset('images/programmation-distance.png')}}" alt="mockup de la programmation à distance"/>
+					</div>
+					<div class="col-6">
+						<h2>Programmation à distance</h2>
+						<ul>
+							<li>
+								Allumez et éteignez vos ampoules où vous voulez, quand vous voulez.
+							</li>
+							<li>Plus peur de la facture à la fin du mois.</li>
+							<li>
+								Plus peur d’avoir oublié d’éteindre la lumière en partant.
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- TECHNICS -->
+		<section id="technics">
+			<div class="container">
+				<h2>Caractéristiques techniques</h2>
+				<div class="technics-list">
+					<ul class="row">
+						<li class="col-lg-4 col-md-6">
+							<img src="{{asset('icones/icone-endurance.png')}}" alt=""/>Durée de vie : 25 000h
+						</li>
+						<li class="col-lg-4 col-md-6">
+							<img src="{{asset('icones/icone-ecologiquepng.png')}}" alt=""/>Indice énergie : AAA
+						</li>
+						<li class="col-lg-4 col-md-6">
+							<img src="{{asset('icones/icone-securite.png')}}" alt=""/>Garantie : 2 ans
+						</li>
+						<li class="col-lg-4 col-md-6">
+							<img src="{{asset('icones/icone-cycles.png')}}" alt=""/>Nombre
+							              de cycles : 50 000
+						</li>
+						<li class="col-lg-4 col-md-6">
+							<img src="{{asset('icones/icone-wifi.png')}}" alt=""/>Technologie : Wifi
+						</li>
+						<li class="col-lg-4 col-md-6">
+							<img src="{{asset('icones/icone-horloge.png')}}" alt=""/>Temps
+							              d'allumage : 0,5 sec
+						</li>
+						<li class="col-lg-4 col-md-6">
+							<img src="{{asset('icones/icone-garantie.png')}}" alt=""/>Certification : Norme CE
+						</li>
+						<li class="col-lg-4 col-md-6">
+							<img src="{{asset('icones/icone-engrenage.png')}}" alt=""/>Pourcentage de réparabilité : 95%
+						</li>
+						<li class="col-lg-4 col-md-6">
+							<img src="{{asset('icones/icone-main.png')}}" alt=""/>Indice de
+							              réparabilité : 8,5/10
+						</li>
+					</ul>
+				</div>
+			</div>
+		</section>
+	</main>
+
+
 {% endblock %}

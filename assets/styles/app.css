@@ -63,7 +63,7 @@ main h2 {
 
 /************************INDEX **********************/
 #header-index .background-dark {
-    background-image: linear-gradient(to top right, var(--fm-black), 95%, var(--fm-yellow)), url(../img/images/lamp-dark.png);
+    background-image: linear-gradient(to top right, var(--fm-black), 95%, var(--fm-yellow)), url(../images/lamp-dark.png);
     text-align: center;
     height: 100rem;
     padding-top: 20rem;
@@ -342,6 +342,10 @@ footer .network img {
     height: 2rem;
 }
 
+.slogan {
+    padding-top: 15rem;
+}
+
 
 /********************AMPOULE***************/
 /** HEADER **/
@@ -417,7 +421,7 @@ footer .network img {
 
 /** PANORAMIC LAMPS **/
 #panoramic-lamps {
-    background-image: url(../img/images/panoramique-lampes.png);
+    background-image: url(../images/panoramique-lampes.png);
     text-align: left;
     height: 30rem;
     background-size: cover;
@@ -500,7 +504,7 @@ footer .network img {
 /***************** DATA VIZ ***************/
 /** HEROSHOT **/
 .hero-shot-data-viz {
-    background-image: url(../img/images/ampoule-inversee.png);
+    background-image: url(../images/ampoule-inversee.png);
     text-align: center;
     height: 50rem;
     padding-top: 20rem;
