@@ -11,7 +11,7 @@ class ModifyMoodController extends AbstractController
     #[Route('/modify/mood', name: 'app_modify_mood')]
     public function index(): Response
     {
-        return $this->render('modify_mood/index.html.twig', [
+        return $this->render('modify_mood/modifyMood.html.twig', [
             'controller_name' => 'ModifyMoodController',
         ]);
     }

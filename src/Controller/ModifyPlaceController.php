@@ -11,7 +11,7 @@ class ModifyPlaceController extends AbstractController
     #[Route('/modify/place', name: 'app_modify_place')]
     public function index(): Response
     {
-        return $this->render('modify_place/index.html.twig', [
+        return $this->render('modify_place/modifyPlace.html.twig', [
             'controller_name' => 'ModifyPlaceController',
         ]);
     }

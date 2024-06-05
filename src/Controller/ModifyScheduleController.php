@@ -11,7 +11,7 @@ class ModifyScheduleController extends AbstractController
     #[Route('/modify/schedule', name: 'app_modify_schedule')]
     public function index(): Response
     {
-        return $this->render('modify_schedule/index.html.twig', [
+        return $this->render('modify_schedule/modifySchedule.html.twig', [
             'controller_name' => 'ModifyScheduleController',
         ]);
     }

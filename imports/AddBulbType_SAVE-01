@@ -6,40 +6,39 @@ use App\Entity\Bulb;
 use App\Entity\Mood;
 use App\Entity\Model;
 use App\Entity\Place;
+use App\Entity\User;
+use App\Repository\BulbRepository; 
+use App\Repository\PlaceRepository;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-use Symfony\Component\Form\Extension\Core\Type\ColorType;
-use Symfony\Component\Form\Extension\Core\Type\RangeType;
-use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
-
+// use Symfony\Component\Security\Core\Security;
 
 class AddBulbType extends AbstractType
 {
-    public function buildForm(FormBuilderInterface $builder, array $options): void
-    {/*  */
+    public function buildForm(
+        PlaceRepository $placeRepository,
+        BulbRepository $bulbRepository,
+        array $options): void
+    {
+        $user = $this->security->getUser();
+
+        $place = $placeRepository->findBy(['user_id' => 2]);
+        $bulbs = $bulbRepository->findBy(['place_id' => $place]);
+
         $builder
             ->add('label')
             ->add('room_label')
-            ->add('is_on', CheckboxType::class, [
-                'label'    => 'Souhaitez-vous allumer l\'ampoule ?',
-                'required' => false,
-            ])
+            /* ->add('is_on') */
             /* ->add('status') */
-            ->add('color', ColorType::class, [
-                'attr' => ['class' => 'tinymce'],
-            ])
-            ->add('luminosity', RangeType::class, [
-                'attr' => [
-                    'min' => 0,
-                    'max' => 100
-                ],
-            ])
+            ->add('color')
+            ->add('luminosity')
+            /* ->add('hours') */
             ->add('wifi')
             ->add('model_id', EntityType::class, [
                 'class' => Model::class,
-                'choice_label' => 'name',
+                'choice_label' => 'name'
             ])
             ->add('place_id', EntityType::class, [
                 'class' => Place::class,
@@ -49,9 +48,7 @@ class AddBulbType extends AbstractType
                 'class' => Mood::class,
                 'choice_label' => 'label',
             ])
-            /*          ->add('is_on')
-            ->add('status')
-            ->add('hours') */;
+        ;
     }
 
     public function configureOptions(OptionsResolver $resolver): void

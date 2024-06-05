@@ -11,7 +11,7 @@ class ViewPlaceController extends AbstractController
     #[Route('/view/place', name: 'app_view_place')]
     public function index(): Response
     {
-        return $this->render('view_place/index.html.twig', [
+        return $this->render('view_place/viewPlace.html.twig', [
             'controller_name' => 'ViewPlaceController',
         ]);
     }
