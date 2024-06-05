@@ -53,32 +53,6 @@
 							{{ app.user.siret }}</p>
 						<p>
 							<strong>N° de rue:</strong>
-                            {{ app.user.shippingaddressnumber }} </p>
-						<p>
-							<strong>Nom de rue:</strong>
-							 {{ app.user.shippingaddressstreetname }} </p>
-						<p>
-							<strong>Compléments d’adresse:</strong>
-							 {{ app.user.shippingaddresscomplement }} </p>
-						<p>
-							<strong>Code postal:</strong>
-							 {{ app.user.shippingaddresspostalcode }} </p>
-						<p>
-							<strong>Ville:</strong>
-							 {{ app.user.shippingaddresscity }} </p>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-6 d-flex flex-column">
-				<div class="align-items-center d-flex justify-content-center">
-					<h2>Adresse de
-						<span class="brand">livraison</span>
-					</h2>
-				</div>
-				<div class="row w-100">
-					<div class="d-flex flex-column justify-content-center m-2">
-						<p>
-							<strong>N° de rue:</strong>
 							{{ app.user.billingaddressnumber }}</p>
 						<p>
 							<strong>Nom de rue:</strong>
@@ -92,6 +66,32 @@
 						<p>
 							<strong>Ville:</strong>
 							{{ app.user.billingaddresscity }}</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-6 d-flex flex-column">
+				<div class="align-items-center d-flex justify-content-center">
+					<h2>Adresse de
+						<span class="brand">livraison</span>
+					</h2>
+				</div>
+				<div class="row w-100">
+					<div class="d-flex flex-column justify-content-center m-2">
+							<p>
+							<strong>N° de rue:</strong>
+                            {{ app.user.shippingaddressnumber }} </p>
+						<p>
+							<strong>Nom de rue:</strong>
+							 {{ app.user.shippingaddressstreetname }} </p>
+						<p>
+							<strong>Compléments d’adresse:</strong>
+							 {{ app.user.shippingaddresscomplement }} </p>
+						<p>
+							<strong>Code postal:</strong>
+							 {{ app.user.shippingaddresspostalcode }} </p>
+						<p>
+							<strong>Ville:</strong>
+							 {{ app.user.shippingaddresscity }} </p>
 					</div>
 				</div>
 			</div>
