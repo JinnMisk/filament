@@ -15,7 +15,6 @@ class ModifyBulbController extends AbstractController
     #[Route('/modify/bulb/{id<\d+>}', name: 'app_modify_bulb')]
     public function index(Request $request, BulbRepository $bulbRepository, EntityManagerInterface $entityManager, $id): Response
     {
-        /*  */
         $bulb = $bulbRepository->find($id);
 
         $form = $this->createForm(ModifyBulbType::class, $bulb);
