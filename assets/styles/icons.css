@@ -18,6 +18,10 @@
     background-image: url('../icones/plus-solid.svg');
 }
 
+.icon-trash-can-regular{
+    background-image: url('../icones/trash-can-regular.svg');
+}
+
 .icon-lightbulb {
     background-image: url('../icones/lightbulb-regular.svg');
 }
