@@ -12,24 +12,22 @@ use Symfony\Component\Routing\Attribute\Route;
 class ViewBulbController extends AbstractController
 {
     #[Route('/view/bulb/{id<\d+>}', name: 'app_view_bulb')]
-    public function index(MoodRepository $moodRepository, ModelRepository $modelRepository, BulbRepository $bulbRepository, $id): Response
+    public function index($id, $var,  MoodRepository $moodRepository, ModelRepository $modelRepository, BulbRepository $bulbRepository): Response
     {  
         
+        // récupère l'ampoule
         $bulb = $bulbRepository->find($id); 
-        dd($bulb);
-          
-        /* $mood = $moodRepository->findby(['bulb' => $bulb->getId()]);  */
-        
-        /* $model = $modelRepository->findby(['bulbId' => $bulbId]);  */  
-        
-      /*   $user = $this->getUser()-getId();
-        $places = $placeRepository->findBy(['user_id' => $user]); */
+        // récupère le modèle
+        $model = $modelRepository->find($bulb->getModelId());
+        // récupère l'ambiance
+        $moodId = $bulb->getMoodId();
+        // récupère le lieu
+        $placeId = $bulb->getPlaceId();
+
         
         return $this->render('view_bulb/viewBulb.html.twig', [
             'bulb' => $bulb,
-            /* 'mood' => $mood, */
-            /* 'model' => $model
-             */
+            'model' => $model
         ]);
     }
 }

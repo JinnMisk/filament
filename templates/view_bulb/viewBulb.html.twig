@@ -27,13 +27,13 @@
                         </div>
 
                          
-                    {#     
-                        if( {{ model.id }} == null){
+                       
+                        {% if model.id == null %}
                             <p>Modèle : Aucun. </p>
-                        } else {
-                            <p>Modèle : {{ model.label }}</p>
-                        }
-                         #}
+                        {% else %}
+                            <p>Modèle : {{ model.name }}</p>
+                        {% endif %}
+                        
                         <p>Localisation : {{ bulb.roomLabel }}</p>
                         <p>Wifi : {{ bulb.wifi }}</p>
                         {# <p>Ambiance : {{ ViewBulb.moodId }}</p> #}
