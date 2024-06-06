@@ -15,8 +15,8 @@ class AddMoodType extends AbstractType
             ->add('color')
             ->add('luminosity')
             ->add('label')
-            ->add('user_id')
-        ;
+/*             ->add('user_id') */
+            ;
     }
 
     public function configureOptions(OptionsResolver $resolver): void

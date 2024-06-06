@@ -22,14 +22,17 @@ class AddPlaceController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid() && 'label') {
 
+            $place->setUserId($this->getUser()->getId());
+
             $entityManager->persist($place);
             $entityManager->flush();
+
+            return $this->redirectToRoute('app_my_places');
         }
 
-                /* return $this->redirectToRoute('app_add_place'); */
 
         return $this->render('add_place/add_place.html.twig', [
-            /* 'controller_name' => 'AddPlaceController', */
+            'controller_name' => 'AddPlaceController',
             'addPlaceForm' => $form->createView(),
         ]);
     }

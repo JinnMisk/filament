@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello AccountController!
+{% block title %}Mon compte
 {% endblock %}
 
 {% block body %}
@@ -9,7 +9,8 @@
 		<div class="row w-100">
 			<div class="col-md-12 d-flex flex-column align-items-center justify-content-center p-4">
 				<h1 class="text-start mb-4">Mon profil
-					<span class="brand">Filament </span>
+					<span class="brand">Filament
+					</span>
 				</h1>
 			</div>
 		</div>
@@ -77,26 +78,37 @@
 				</div>
 				<div class="row w-100">
 					<div class="d-flex flex-column justify-content-center m-2">
-							<p>
+						<p>
 							<strong>N° de rue:</strong>
-                            {{ app.user.shippingaddressnumber }} </p>
+							{{ app.user.shippingaddressnumber }}
+						</p>
 						<p>
 							<strong>Nom de rue:</strong>
-							 {{ app.user.shippingaddressstreetname }} </p>
+							{{ app.user.shippingaddressstreetname }}
+						</p>
 						<p>
 							<strong>Compléments d’adresse:</strong>
-							 {{ app.user.shippingaddresscomplement }} </p>
+							{{ app.user.shippingaddresscomplement }}
+						</p>
 						<p>
 							<strong>Code postal:</strong>
-							 {{ app.user.shippingaddresspostalcode }} </p>
+							{{ app.user.shippingaddresspostalcode }}
+						</p>
 						<p>
 							<strong>Ville:</strong>
-							 {{ app.user.shippingaddresscity }} </p>
+							{{ app.user.shippingaddresscity }}
+						</p>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-    <a href="{{path('app_modify_account')}}"><button type="button" class="btn btn-primary">Modifier</button></a>
+	<div class="row">
+		<div class="d-flex justify-content-center">
+			<a href="{{path('app_modify_account')}}">
+				<button type="button" class="btn btn-primary">Modifier</button>
+			</a>
+		</div>
+	</div>
 
 {% endblock %}

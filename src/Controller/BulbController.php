@@ -11,7 +11,7 @@ class BulbController extends AbstractController
     #[Route('/bulb', name: 'app_bulb')]
     public function index(): Response
     {
-        return $this->render('bulb/index.html.twig', [
+        return $this->render('bulb/bulb.html.twig', [
             'controller_name' => 'BulbController',
         ]);
     }

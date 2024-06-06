@@ -51,6 +51,8 @@ class Schedule
 
     public function getStartDayDMY(): ?string
     {
+        if ($this->start_day == null)
+            return null;
         return date('d/m/y', $this->start_day->getTimestamp());
     }
 
@@ -68,6 +70,8 @@ class Schedule
 
     public function getEndDayDMY(): ?string
     {
+        if ($this->end_day == null)
+            return null;
         return date('d/m/y', $this->end_day->getTimestamp());
     }
 
@@ -97,6 +101,8 @@ class Schedule
 
     public function getStartHourHM(): ?string
     {
+        if ($this->start_hour == null)
+            return null;
         return date('h \h i', $this->start_hour->getTimestamp());
     }
 
@@ -114,6 +120,8 @@ class Schedule
 
     public function getEndHourHM(): ?string
     {
+        if ($this->end_hour == null)
+            return null;
         return date('h \h i', $this->end_hour->getTimestamp());
         /* return $this->end_hour; */
     }

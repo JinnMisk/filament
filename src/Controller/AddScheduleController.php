@@ -21,11 +21,15 @@ class AddScheduleController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid() && 'label') {
+
+            $schedule->setUserId($this->getUser()->getId());
+
             $entityManager->persist($schedule);
             $entityManager->flush();
+
+            return $this->redirectToRoute('app_my_schedules');
         }
 
-        /* return $this->redirectToRoute('app_add_bulb'); */        
 
         return $this->render('add_schedule/add_schedule.html.twig', [
             /* 'controller_name' => 'AddScheduleController', */

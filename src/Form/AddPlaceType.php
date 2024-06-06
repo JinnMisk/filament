@@ -32,7 +32,7 @@ class AddPlaceType extends AbstractType
             ->add('zip')
             ->add('city')
             ->add('phone')
-            ->add('user_id')
+/*             ->add('user_id') */
         ;
     }
 

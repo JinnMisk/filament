@@ -22,12 +22,15 @@ class AddMoodController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid() && 'label') {
 
+            $mood->setUserId($this->getUser()->getId());
+
             $entityManager->persist($mood);
             $entityManager->flush();
+
+            return $this->redirectToRoute('app_my_moods');
         }
-        
-                /* return $this->redirectToRoute('app_add_mood'); */
-                
+
+
         return $this->render('add_mood/add_mood.html.twig', [
             /* 'controller_name' => 'AddMoodController', */
             'addMoodForm' => $form->createView(),

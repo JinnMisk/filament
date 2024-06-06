@@ -1,11 +1,11 @@
 INSERT INTO mood (label,color,luminosity,user_id_id)
 VALUES
 ('rouge profond','#ff9f33',75.0,2),
-('rouge profond','#ff9f33',75.0,3)
+('rouge profond','#ff9f33',75.0,3),
 ('vert printanier','#a2ff33',50.0,3),
 ('Disco','#d2b6d2',100.0,4),
-('Sombre','#b6c0d2',100.0,5),
-('Jaune violent','#f1f110',95.0,6);
+('Sombre','#b6c0d2',100.0,2),
+('Jaune violent','#f1f110',95.0,1);
 
 
 

@@ -27,9 +27,10 @@ class AddBulbController extends AbstractController
 
             $entityManager->persist($bulb);
             $entityManager->flush();
+            
+            return $this->redirectToRoute('app_my_bulbs'); 
         }
-
-        /* return $this->redirectToRoute('app_add_bulb'); */
+        
 
         return $this->render('add_bulb/add_bulb.html.twig', [
             'controller_name' => 'AddBulbController',
