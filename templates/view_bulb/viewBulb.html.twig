@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Mon ampoule{% endblock %}
+{% block title %} Mon ampoule {% endblock %}
 
 {% block body %}
 <main>
@@ -15,7 +15,42 @@
                     </div>
                     
                     <div class="col-5 border border-3 border-black rounded-2 d-flex align-items-center flex-column pt-3 pb-3">
-                        {#  #}
+                        
+                        <h2>Nom : {{ bulb.label }}</h2>
+
+                        <div class="row">
+                            <div class=" col-6 bulb" style="background-color: {{ bulb.color }}; opacity: {{ bulb.luminosity }}/100"></div>
+                            <label class="switch p-2 col-6">
+                                <input type="checkbox" {{ bulb.isOn == 1 ? 'checked': '' }}>
+                                <span class="slider round"></span>
+                            </label>
+                        </div>
+
+                         
+                    {#     
+                        if( {{ model.id }} == null){
+                            <p>Modèle : Aucun. </p>
+                        } else {
+                            <p>Modèle : {{ model.label }}</p>
+                        }
+                         #}
+                        <p>Localisation : {{ bulb.roomLabel }}</p>
+                        <p>Wifi : {{ bulb.wifi }}</p>
+                        {# <p>Ambiance : {{ ViewBulb.moodId }}</p> #}
+
+
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                       
+                         
+                        
                     </div>
 
                     <div class="col-2 border border-3 border-black rounded-2 d-flex align-items-start flex-column pt-3 pb-3">
