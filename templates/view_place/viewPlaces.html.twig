@@ -5,6 +5,7 @@
 {% block body %}
 	<main>
 		<section>
+            {% for place in places %}
                 <div class="container">
                     <div class="row">
                         <div class="text-center">
@@ -21,6 +22,7 @@
                         </div>
                     </div>
                 </div>
+            {% endfor %}    
 		</section>
 	</main>
 {% endblock %}

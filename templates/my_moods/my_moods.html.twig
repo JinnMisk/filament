@@ -31,7 +31,7 @@
 								<tbody>
 									{% for mood in moods %}
 										<tr>
-											<td>{{mood.label}}</td>
+											<td><a class="text-black" href="{{ path('app_view_one_mood', {id: mood.id})}}">{{mood.label}}</a></td>
  											<td>{{mood.color}}</td>
 											<td>{{mood.luminosity}}</td>
 										</tr>

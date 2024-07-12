@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mes ambiances
+{% endblock %}
+
+{% block body %}
+	<main>
+		<section>
+			{% for mood in moods %}
+				<div class="container">
+					<div class="row">
+						<div class="text-center">
+							<h1>{{mood.label}}</h1>
+						</div>
+					</div>
+					<div class="row">
+						<div class="text-center">
+							<h3>Couleur :
+								{{mood.color}}
+							</h3>
+							<h3>Luminosité :
+								{{mood.luminosity}}
+							</h3>
+						</div>
+					</div>
+				</div>
+			{% endfor %}
+		</section>
+	</main>
+{% endblock %}

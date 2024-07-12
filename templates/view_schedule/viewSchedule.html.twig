@@ -1,20 +1,26 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello ViewScheduleController!{% endblock %}
+{% block title %}Mes programmations{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
-
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
-
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code>/Applications/MAMP/htdocs/filament/src/Controller/ViewScheduleController.php</code></li>
-        <li>Your template at <code>/Applications/MAMP/htdocs/filament/templates/view_schedule/index.html.twig</code></li>
-    </ul>
-</div>
+	<main>
+		<section>
+                <div class="container">
+                    <div class="row">
+                        <div class="text-center">
+                            <h1>{{schedule.label}}</h1>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="text-center">
+                            <h3>Début: {{schedule.getStartDayDMY}} </h3>
+                            <h3>Heure: {{schedule.getStartHourHM}} </h3>
+                            <h3>Fin: {{schedule.getEndDayDMY}} </h3>
+                            <h3>Heure: {{schedule.getEndHourHM}} </h3>
+                            <h3>Ambiance: {{schedule.recurrence}} </h3>
+                        </div>  
+                    </div>
+                </div>
+		</section>
+	</main>
 {% endblock %}
