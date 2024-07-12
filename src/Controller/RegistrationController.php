@@ -15,6 +15,8 @@ use Symfony\Bundle\SecurityBundle\Security;
 use App\Repository\UserRepository;
 use Symfony\Component\Security\Core\Exception\AuthenticationException;
 
+
+
 class RegistrationController extends AbstractController
 {
     #[Route('/register', name: 'app_register')]
@@ -42,6 +44,8 @@ class RegistrationController extends AbstractController
 
             $entityManager->persist($user);
             $entityManager->flush();
+
+            $this->addFlash('success', 'Votre compte a bien été créé !');
 
             // Do anything else you need here, like send an email
 
