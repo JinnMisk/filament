@@ -29,7 +29,10 @@ class AddBulbType extends AbstractType
         $builder
             ->add('label')
             ->add('room_label')
-            /* ->add('is_on') */
+            ->add('is_on', CheckboxType::class, [
+                'label'    => 'Souhaitez-vous allumer l\'ampoule ?',
+                'required' => false,
+            ])
             /* ->add('status') */
             ->add('color', ColorType::class, [
                 'attr' => ['class' => 'tinymce'],

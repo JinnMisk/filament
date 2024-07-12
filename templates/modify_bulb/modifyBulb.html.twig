@@ -38,11 +38,15 @@
     </div>
 	<div class="row">
 		<div class="col-12 d-flex justify-content-center">
-			<button type="submit" name="modify_bulb_submit" class="btn btn-warning btn-block">Enregistrer</button>
+			 <button type="submit" name="modify_bulb_submit" class="btn btn-warning btn-block">Enregistrer</button>
 		</div>
 	</div>
 </div>
 {{ form_end(modifyBulbForm) }}
+
+
+<a href="{{ path('app_delete_bulb', {id: bulbId}) }}" onclick="return confirm('Souhaitez-vous vraiment supprimer cette ampoule ?')"><i class="icon icon-trash-can-regular"></i></a>  
+
 </main>
 
 

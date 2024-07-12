@@ -1,5 +1,6 @@
 import './bootstrap.js';
 import './js/stats.js';
+import './js/confirm.js';
 /* import './js/colorOpacity.js'; */
 // import './js/dropDownMenu.js';
 

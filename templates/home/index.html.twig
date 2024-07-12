@@ -5,6 +5,11 @@
 
 {% block body %}
 
+{% for message in app.flashes('success') %}
+    <div class="alert alert-success">
+        {{ message }}
+    </div>
+{% endfor %}
 <!--FAVICON-->
 <link rel="icon" type="image/vnd.icon" href="{{ asset('/favicon_io/favicon.ico') }}">
 	{### HEROSHOT ###}

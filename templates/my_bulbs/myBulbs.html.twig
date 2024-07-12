@@ -19,13 +19,14 @@
                         <div class="row w-100">
                         
                             <h2 class="text-center pb-2">Mes ampoules</h2>
-                            {#  #}
+                            
                             <div>
                 
                                 {% for bulb in bulbs %}  
                                     <div class="col-12 d-flex flex-row justify-content-evenly align-items-center border rounded-2 border-bottom-0 p-2 borderYellow">
                                         
                                         <a href="{{ path('app_modify_bulb', {id: bulb.id}) }}"><i class="icon icon-modify"></i></a>
+                                          
                                         
                                         <div class="bulb" style="background-color: {{ bulb.color }}; opacity: {{ bulb.luminosity }}/100"></div>
                                         

@@ -9,7 +9,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
-use Symfony\Component\Form\Extension\Core\Type\RangeType;
+
 
 class AddBulbController extends AbstractController
 {
@@ -17,7 +17,6 @@ class AddBulbController extends AbstractController
     public function index(EntityManagerInterface $entityManager, Request $request): Response
     {
       
-        /*  */
         $bulb = new Bulb();
 
         $form = $this->createForm(AddBulbType::class, $bulb);
@@ -27,8 +26,8 @@ class AddBulbController extends AbstractController
 
             $entityManager->persist($bulb);
             $entityManager->flush();
-            
-            return $this->redirectToRoute('app_my_bulbs'); 
+
+            /* return $this->redirectToRoute('app_view_bulb'); */
         }
         
 
