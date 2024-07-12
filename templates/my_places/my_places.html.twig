@@ -33,7 +33,7 @@
 								<tbody>
 									{% for place in places %}
 										<tr>
-											<td>{{place.label}}</td>
+											<td><a class="text-black" href="{{ path('app_view_one_place', {id: place.id})}}">{{place.label}}</a></td>
 											<td>{{place.address1}}
 												<br>
 												{{place.address2}}

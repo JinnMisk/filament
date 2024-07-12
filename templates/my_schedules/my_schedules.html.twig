@@ -35,7 +35,7 @@
 									{% for schedule in schedules %}
 										<tr>
 											<td></td>
-											<td>{{schedule.label}}</td>
+											<td><a class="text-black" href="{{ path('app_view_one_schedule', {id: schedule.id})}}">{{schedule.label}}</a></td>
 											<td>{{schedule.getStartDayDMY()}}
 												<br>
 												{{schedule.getStartHourHM}}
