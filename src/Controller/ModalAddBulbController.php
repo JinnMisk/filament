@@ -10,14 +10,13 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 
-
-class AddBulbController extends AbstractController
+class ModalAddBulbController extends AbstractController
 {
-    #[Route('/add/bulb', name: 'app_add_bulb')]
-    public function index(EntityManagerInterface $entityManager, Request $request): Response
+    #[Route('/modal/add/bulb', name: 'app_modal_add_bulb')]
+    public function addBulb(EntityManagerInterface $entityManager, Request $request): Response
     {
-      
         $bulb = new Bulb();
+
 
         $form = $this->createForm(AddBulbType::class, $bulb);
         $form->handleRequest($request);
@@ -27,13 +26,13 @@ class AddBulbController extends AbstractController
             $entityManager->persist($bulb);
             $entityManager->flush();
 
-            
             return $this->redirectToRoute('app_my_bulbs');
         }
         
-        return $this->render('add_bulb/add_bulb.html.twig', [
-            'controller_name' => 'AddBulbController',
-            'addBulbForm' => $form->createView()
+        return $this->render('modal_add_bulb/modalAddBulb.html.twig', [
+            
+            'controller_name' => 'ModalAddBulbController',
+            'modalAddBulbForm'=>$form->createView()
         ]);
     }
 }

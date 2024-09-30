@@ -32,6 +32,7 @@ h3 {
 a {
     font-family: "Roboto Mono";
     font-size: 18px;
+    text-decoration: none;
 }
 
 p {
@@ -305,6 +306,7 @@ footer {
     background: var(--fm-black);
     color: var(--fm-white);
     padding-top: 5rem;
+    text-decoration: none;
 }
 
 footer .top img {
@@ -313,15 +315,23 @@ footer .top img {
 
 footer ul {
     list-style-type: none;
+    
 }
 
-footer .top ul li {
+footer .top div a{
     display: inline;
     color: var(--fm-yellow);
 }
 
 footer ul li p {
     font-size: 14px;
+   
+}
+
+footer .conditions li a p {
+    font-size: 14px;
+    color: var(--fm-white);
+    text-decoration: none !important;   
 }
 
 footer h4 {

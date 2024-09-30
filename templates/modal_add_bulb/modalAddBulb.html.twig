@@ -1,0 +1,78 @@
+
+
+{% block body %}
+<div class="modal fade" id="reg-modal" tabindex="-1" aria-labelledby="modal-title" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modal-title">Nouvelle ampoule</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+        
+      <div class="modal-body">
+        	{% form_theme modalAddBulbForm 'form/add_bulb_form.html.twig' %}
+	        {{ form_start(modalAddBulbForm) }}
+
+          <div>
+            
+            <div class="row">
+            
+              <div class="col-6 d-flex justify-content-center">
+                  {{ form_row(modalAddBulbForm.label, {'label': 'Nom de l\'ampoule :', 'attr': {'placeholder': ''}}) }}
+              </div>
+                  
+              <div class="col-6 d-flex justify-content-center">
+                  {{ form_row(modalAddBulbForm.room_label, {'label': 'Nom de la pièce :', 'attr': {'placeholder': ''}}) }}
+              </div>
+          
+            </div>
+
+            <div class="row">
+              <div class="col-6 d-flex justify-content-center">
+                {{ form_row(modalAddBulbForm.model_id, {'label': 'Modèle :', 'attr': {'placeholder': ''}}) }}
+              </div> 
+
+              <div class="col-6 d-flex justify-content-center">
+                {{ form_row(modalAddBulbForm.wifi, {'label': 'Réseau WiFi :', 'attr': {'placeholder': ''}}) }}
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-6 d-flex justify-content-center">
+                {{ form_row(modalAddBulbForm.place_id, {'label': 'Localisation :', 'attr': {'placeholder': ''}}) }}
+              </div>
+
+              <div class="col-6 d-flex justify-content-center">
+                {{ form_row(modalAddBulbForm.mood_id, {'label': 'Ambiance :', 'attr': {'placeholder': ''}}) }}
+              </div>
+            </div>
+              {# {{ form_row(addBulbForm.status, {'label': 'Statut :', 'attr': {'placeholder': ''}}) }}
+            
+              {{ form_row(addBulbForm.is_on, {'label': 'Etat :', 'attr': {'placeholder': ''}}) }} #}
+            
+            <div class="row">
+              <div class="col-6 d-flex justify-content-center">
+                {{ form_row(modalAddBulbForm.color, {'label': 'Couleur :', 'attr': {'placeholder': ''}}) }}
+              </div>
+
+              <div class="col-6 d-flex justify-content-center">
+                {{ form_row(modalAddBulbForm.luminosity, {'label': 'Luminosité :'}) }}
+              </div>
+            </div>
+          
+          </div>
+
+          <div class="row">
+            <div class="modal-footer col-12 d-flex justify-content-center">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="submit" name="add_bulb_submit" class="btn btn-warning btn-block">Enregistrer</button>
+            </div>
+          
+        </div>
+        {{ form_end(modalAddBulbForm) }}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

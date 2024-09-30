@@ -8,37 +8,53 @@
                 
                 <h1 class="mt-2 mb-4">Mon dashboard</h1>
                 
-                <div class="row">
+                <div class="row d-flex justify-content-around">
 
-                    <div class="col-4 border border-3 border-black rounded-2 d-flex align-{# items-center #} flex-column pt-3 pb-3">
-                        {% include('dashboard_stats/dashboardStats.html.twig') %}
-                    </div>
                     
-                    <div class="col-5 border border-3 border-black rounded-2 d-flex align-items-center flex-column pt-3 pb-3">
+                    {% include('dashboard_stats/dashboardStats.html.twig') %}
+                    
+                    
+                    <div class="col-5 border border-3 border-black rounded-2 ">
                         
-                        <h2>Nom : {{ bulb.label }}</h2>
+                        <div class="row d-flex justify-content-end">
 
-                        <div class="row">
-                            <div class=" col-6 bulb" style="background-color: {{ bulb.color }}; opacity: {{ bulb.luminosity }}/100"></div>
-                            <label class="switch p-2 col-6">
-                                <input type="checkbox" {{ bulb.isOn == 1 ? 'checked': '' }}>
-                                <span class="slider round"></span>
-                            </label>
+                            <div class="col-1">
+                                <a href="{{ path('app_modify_bulb', {id: bulb.id}) }}"><i class="icon icon-modify"></i></a>
+                            </div>
+                            
+                            <div class="col-1">
+                                <a href="{{ path('app_delete_bulb', {id: bulb.id}) }}" onclick="return confirm('Souhaitez-vous vraiment supprimer cette ampoule ?')"><i class="icon icon-trash-can-regular"></i></a>  
+                            </div>
                         </div>
-
-                         
-                       
-                        {% if model.id == null %}
-                            <p>Modèle : Aucun. </p>
-                        {% else %}
-                            <p>Modèle : {{ model.name }}</p>
-                        {% endif %}
                         
-                        <p>Localisation : {{ bulb.roomLabel }}</p>
-                        <p>Wifi : {{ bulb.wifi }}</p>
-                        {# <p>Ambiance : {{ ViewBulb.moodId }}</p> #}
+                        <div class="row">
+                            <div class="d-flex align-items-center flex-column pt-3 pb-3">
 
+                                <h2>Nom : {{ bulb.label }}</h2>
+                                
 
+                                <div class="row">
+                                    <div class=" col-6 bulb" style="background-color: {{ bulb.color }}; opacity: {{ bulb.luminosity }}/100"></div>
+                                    <label class="switch p-2 col-6">
+                                        <input type="checkbox" {{ bulb.isOn == 1 ? 'checked': '' }}>
+                                        <span class="slider round"></span>
+                                    </label>
+                                </div>
+
+                                
+                            
+                                {% if model.id == null %}
+                                    <p>Modèle : Aucun. </p>
+                                {% else %}
+                                    <p>Modèle : {{ model.name }}</p>
+                                {% endif %}
+                                
+                                <p>Localisation : {{ bulb.roomLabel }}</p>
+                                <p>Wifi : {{ bulb.wifi }}</p>
+                                {# <p>Ambiance : {{ ViewBulb.moodId }}</p> #}
+
+                            </div>
+                        </div>
                          
                          
                          
@@ -53,9 +69,9 @@
                         
                     </div>
 
-                    <div class="col-2 border border-3 border-black rounded-2 d-flex align-items-start flex-column pt-3 pb-3">
-                        {% include('dashboard_menu/dashboardMenu.html.twig') %}
-                    </div>
+                    
+                    {% include('dashboard_menu/dashboardMenu.html.twig') %}
+                    
 
 
                 </div>

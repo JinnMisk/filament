@@ -11,38 +11,40 @@
 					<span class="navbar-toggler-icon"></span>
 				</button>
 				<div class="collapse navbar-collapse" id="navbarSupportedContent">
-					<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+					<ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex align-items-center">
 						<li class="nav-item">
-							<a class="nav-link" href="/">Accueil</a>
+							<a class="nav-link m-1" href="/">Accueil</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="/bulb">Ampoule</a>
+							<a class="nav-link m-1" href="/bulb">Ampoule</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="/cart">Panier</a>
+							<a class="nav-link m-1" href="/products">Produits</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link m-1" href="/cart">Panier</a>
 						</li>
 						 
 {#  #}
 						{% if is_granted('IS_AUTHENTICATED_FULLY') %}
 
 							<li class="nav-item">
-								<a class="nav-link" href="/my/bulbs">Dashboard</a>
+								<a class="nav-link m-1" href="/my/bulbs">Dashboard</a>
 							</li>
 							<li class="nav-item connexion">
-								<a class="nav-link" href="/account">Mon compte</a>
+								<a class="nav-link m-1" href="/account">Profil</a>
 							</li>
 
 							<li class="nav-item">
-
-								<a class="nav-link" href="{{ path('app_logout') }}">
-									Se déconnecter :
+								<a class="nav-link m-1" href="{{ path('app_logout') }}">
+									Se déconnecter :<br>
 									{{ app.user.email }}
 								</a>
 							</li>
 
 						{% else %}
 							<li class="nav-item">
-								<a class="nav-link" href="{{ path('app_register') }}">Se connecter</a>
+								<a class="nav-link" href="{{ path('app_register') }}">Se connecter/S'enregistrer</a>
 							</li>
 
 						{% endif %}

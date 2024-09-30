@@ -2,11 +2,10 @@
     <div class="container">
         <div class="top d-flex justify-content-between">
             <a href="{{ path('app_home') }}"><img src="{{ asset('icones/logo-filament.png') }}" alt="logo filament"></a>
-
-            <ul>
-                <li>Ampoule</li>
-                <li>Infographie</li>
-            </ul>
+            <div>
+                <a href="/bulb">Ampoule</a>
+                <a href="/">Infographie</a>
+            </div>
         </div>
 
         <div class="row">
@@ -21,18 +20,18 @@
                 </li>
             </ul>
 
-            <ul class="col-lg-4 col-md-6">
+            <ul class="col-lg-4 col-md-6 conditions">
                 <li>
                     <h4>Informations légales:</h4>
                 </li>
                 <li>
-                    <p>Politique de confidentialité</p>
+                    <a href="#"><p>Politique de confidentialité</p></a>
                 </li>
                 <li>
-                    <p>Conditions d'utilisation</p>
+                    <a href="#"><p>Conditions d'utilisation</p></a>
                 </li>
                 <li>
-                    <p>Politique de retour </p>
+                    <a href="#"><p>Politique de retour<p></a>
                 </li>
             </ul>
 
@@ -58,9 +57,9 @@
     </ul>
     <div class="network">
         <ul>
-            <li><img src="{{ asset('icones/icone-facebook.png') }}" alt="logo facebook"></li>
-            <li><img src="{{ asset('icones/icone-instagram.png') }}" alt="logo instagram"></li>
-            <li><img src="{{ asset('icones/icone-twitter.png') }}" alt="logo twitter"></li>
+            <li><a href="#"><img src="{{ asset('icones/icone-facebook.png') }}" alt="logo facebook"></li></a>
+            <li><a href="#"><img src="{{ asset('icones/icone-instagram.png') }}" alt="logo instagram"></li></a>
+            <li><a href="#"><img src="{{ asset('icones/icone-twitter.png') }}" alt="logo twitter"></li></a>
         </ul>
     </div>
 </footer>

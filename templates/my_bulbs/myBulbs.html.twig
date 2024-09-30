@@ -9,56 +9,60 @@
 
 			<h1 class="mt-2 mb-4">Mon dashboard</h1>
 
-			<div class="row">
+			<div class="row d-flex justify-content-around">
 
-                    <div class="col-4 border border-3 border-black rounded-2 d-flex flex-column pt-3 pb-3">
-                        {% include('dashboard_stats/dashboardStats.html.twig') %}
-                    </div>
-                    
-                    <div class="col-5 border border-3 border-black rounded-2 d-flex align-items-center flex-column pt-3 pb-3">
-                        <div class="row w-100">
-                        
-                            <h2 class="text-center pb-2">Mes ampoules</h2>
-                            
-                            <div>
+              
+            {% include('dashboard_stats/dashboardStats.html.twig') %}
                 
-                                {% for bulb in bulbs %}  
-                                    <div class="col-12 d-flex flex-row justify-content-evenly align-items-center border rounded-2 border-bottom-0 p-2 borderYellow">
-                                        
-                                        <a href="{{ path('app_modify_bulb', {id: bulb.id}) }}"><i class="icon icon-modify"></i></a>
-                                          
-                                        
-                                        <div class="bulb" style="background-color: {{ bulb.color }}; opacity: {{ bulb.luminosity }}/100"></div>
-                                        
-                                        <a href="{{ path('app_view_bulb', {id: bulb.id}) }}" class="align-items-center w-50 p-2 mb-0 nav-link breakRow">{{ bulb.label }}</a>
-                                        
-                                        {# <div>
-                                            <input class="colorWheel" type="color" id="head" name="head" value="{{ bulb.color }}" disabled/>
-                                        </div>
-                                        
-                                        <div class="p-2 d-flex align-items-center">
-                                            <input class="opacityRange" type="range" min="0" max="100" value="{{ bulb.luminosity }}" disabled/>
-                                        </div> #}
-                                        
-                                        <label class="switch p-2">
-                                            <input type="checkbox" {{ bulb.isOn == 1 ? 'checked': '' }}>
-                                            <span class="slider round"></span>
-                                        </label>
-                                    </div>
-                                {% endfor %}
+                    
+            <div class="col-5 border border-3 border-black rounded-2 d-flex align-items-center flex-column pt-3 pb-3">
+                <div class="row w-100">
+                    
+                    <h2 class="text-center pb-2">Mes ampoules</h2>
+                        
+                        
+            
+                    {% for bulb in bulbs %}  
+                        <div class="col-12 d-flex flex-row justify-content-evenly align-items-center border rounded-2 border-bottom-0 p-2 borderYellow">
+                            
+                            {#  <a href="{{ path('app_modify_bulb', {id: bulb.id}) }}"><i class="icon icon-modify"></i></a> #}
                                 
-                                <div class="d-flex justify-content-center border rounded-2 borderYellow">
-                                    <a href="/add/bulb"><i class="icon icon-plus"></i></a> {# <i class="icon icon-plus cursorNav" href="/add/bulb"></i> #}{# <img src="{{ asset('icones/plus-solid.svg') }}" class="icon cursorNav" a href="/add/bulb" alt="ajout"> #}
-                                </div>
-
-						</div>
-
-					</div>
-				</div>
-
-				<div class="col-2 border border-3 border-black rounded-2 d-flex align-items-start flex-column pt-3 pb-3">
-					{% include('dashboard_menu/dashboardMenu.html.twig') %}
-				</div>
+                            
+                            <div class="bulb" style="background-color: {{ bulb.color }}; opacity: {{ bulb.luminosity }}/100"></div>
+                            
+                            <a href="{{ path('app_view_bulb', {id: bulb.id}) }}" class="align-items-center w-50 p-2 mb-0 nav-link breakRow">{{ bulb.label }}</a>
+                            
+                            {# <div>
+                                <input class="colorWheel" type="color" id="head" name="head" value="{{ bulb.color }}" disabled/>
+                            </div>
+                            
+                            <div class="p-2 d-flex align-items-center">
+                                <input class="opacityRange" type="range" min="0" max="100" value="{{ bulb.luminosity }}" disabled/>
+                            </div> #}
+                            
+                            <label class="switch p-2">
+                                <input type="checkbox" {{ bulb.isOn == 1 ? 'checked': '' }}>
+                                <span class="slider round"></span>
+                            </label>
+                        </div>
+                    {% endfor %}
+                            
+                    <div class="d-flex justify-content-center">
+                                
+                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#reg-modal">
+                            Ajouter une ampoule
+                        </button>
+                        
+                        {% include 'modal_add_bulb/modalAddBulb.html.twig' with { 'modalAddBulbForm': modalAddBulbForm } %}
+                        
+                    </div>              
+                    
+                </div>
+            </div>    
+                
+            {% include('dashboard_menu/dashboardMenu.html.twig') %}
+               
+                
 			</div>
 		</div>
 	</main>
