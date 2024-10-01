@@ -3,55 +3,48 @@
     <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-lg">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="modal-title">Nouvelle ampoule</h5>
+                <h5 class="modal-title" id="modal-title">Nouvelle programmation</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             
             <div class="modal-body">
-                {% form_theme modalAddBulbForm 'form/add_bulb_form.html.twig' %}
-                {{ form_start(modalAddBulbForm) }}
+                {% form_theme modalAddScheduleForm 'form/add_schedule_form.html.twig' %}
+                {{ form_start(modalAddScheduleForm) }}
 
                 <div>
                     <div class="row">
                         <div class="col-6 d-flex justify-content-center">
-                            {{ form_row(modalAddBulbForm.label, {'label': 'Nom de l\'ampoule :', 'attr': {'placeholder': ''}}) }}
+                            {{ form_row(modalAddScheduleForm.label, {'label': 'Nom du programme', 'attr': {'placeholder': ''}}) }}
                         </div>
                             
                         <div class="col-6 d-flex justify-content-center">
-                            {{ form_row(modalAddBulbForm.room_label, {'label': 'Nom de la pièce :', 'attr': {'placeholder': ''}}) }}
+                            {{ form_row(modalAddScheduleForm.start_day, {'label': 'Jour début', 'attr': {'placeholder': ''}}) }}
                         </div>
                     </div>
 
                     <div class="row">
                         <div class="col-6 d-flex justify-content-center">
-                          {{ form_row(modalAddBulbForm.model_id, {'label': 'Modèle :', 'attr': {'placeholder': ''}}) }}
+                          {{ form_row(modalAddScheduleForm.start_hour, {'label': 'Heure début', 'attr': {'placeholder': ''}}) }}
                         </div> 
 
                         <div class="col-6 d-flex justify-content-center">
-                          {{ form_row(modalAddBulbForm.wifi, {'label': 'Réseau WiFi :', 'attr': {'placeholder': ''}}) }}
+                          {{ form_row(modalAddScheduleForm.mood_id, {'label': 'Ambiance', 'attr': {'placeholder': ''}}) }}
                         </div>
                     </div>
 
                     <div class="row">
                         <div class="col-6 d-flex justify-content-center">
-                          {{ form_row(modalAddBulbForm.place_id, {'label': 'Localisation :', 'attr': {'placeholder': ''}}) }}
+                          {{ form_row(modalAddScheduleForm.recurrence, {'label': 'Récurrence', 'attr': {'placeholder': ''}}) }}
                         </div>
 
                         <div class="col-6 d-flex justify-content-center">
-                          {{ form_row(modalAddBulbForm.mood_id, {'label': 'Ambiance :', 'attr': {'placeholder': ''}}) }}
+                          {{ form_row(modalAddScheduleForm.end_day, {'label': 'Jour fin', 'attr': {'placeholder': ''}}) }}
                         </div>
                     </div>
-                      {# {{ form_row(addBulbForm.status, {'label': 'Statut :', 'attr': {'placeholder': ''}}) }}
-                    
-                      {{ form_row(addBulbForm.is_on, {'label': 'Etat :', 'attr': {'placeholder': ''}}) }} #}
                   
                     <div class="row">
                         <div class="col-6 d-flex justify-content-center">
-                          {{ form_row(modalAddBulbForm.color, {'label': 'Couleur :', 'attr': {'placeholder': ''}}) }}
-                        </div>
-
-                        <div class="col-6 d-flex justify-content-center">
-                          {{ form_row(modalAddBulbForm.luminosity, {'label': 'Luminosité :'}) }}
+                          {{ form_row(modalAddScheduleForm.end_hour, {'label': 'Heure fin', 'attr': {'placeholder': ''}}) }}
                         </div>
                     </div>
                 
@@ -64,7 +57,7 @@
                     </div>
                 </div>
 
-                {{ form_end(modalAddBulbForm) }}
+                {{ form_end(modalAddScheduleForm) }}
             </div>
         </div>
     </div>

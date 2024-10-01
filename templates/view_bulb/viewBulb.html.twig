@@ -19,14 +19,23 @@
                         <div class="row d-flex justify-content-end">
 
                             <div class="col-1">
-                                <a href="{{ path('app_modify_bulb', {id: bulb.id}) }}"><i class="icon icon-modify"></i></a>
+                                <button data-bs-toggle="modal" data-bs-target="#reg-modal">
+                                    <i class="icon icon-modify" ></i>
+                                </button>
+                                {# <i class="icon icon-modify" data-bs-toggle="modal" data-bs-target="#reg-modal"></i> #}
+                                {% include 'modal_modify_bulb/modalModifyBulb.html.twig' with { 'modalModifyBulbForm': modalModifyBulbForm } %}
                             </div>
                             
                             <div class="col-1">
-                                <a href="{{ path('app_delete_bulb', {id: bulb.id}) }}" onclick="return confirm('Souhaitez-vous vraiment supprimer cette ampoule ?')"><i class="icon icon-trash-can-regular"></i></a>  
+                                <button <a href="{{ path('app_delete_bulb', {id: bulb.id}) }}" onclick="return confirm('Souhaitez-vous vraiment supprimer cette ampoule ?')"><i class="icon icon-trash-can-regular"></i></a></button>  
                             </div>
                         </div>
+                        <div class="d-flex justify-content-center">
+                                
+                                
                         
+                        
+                            </div>
                         <div class="row">
                             <div class="d-flex align-items-center flex-column pt-3 pb-3">
 
@@ -54,6 +63,8 @@
                                 {# <p>Ambiance : {{ ViewBulb.moodId }}</p> #}
 
                             </div>
+
+                            
                         </div>
                          
                          

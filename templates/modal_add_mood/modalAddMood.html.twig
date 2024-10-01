@@ -1,0 +1,41 @@
+{% block body %}
+<div class="modal fade" id="reg-modal" tabindex="-1" aria-labelledby="modal-title" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modal-title">Nouvelle ambiance</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            
+            <div class="modal-body">
+                {% form_theme modalAddMoodForm 'form/add_mood_form.html.twig' %}
+                {{ form_start(modalAddMoodForm) }}
+
+                <div>
+                    <div class="col-6 d-flex justify-content-center">
+                        {{ form_row(modalAddMoodForm.label, {'label': 'Nom de l\'ambiance', 'attr': {'placeholder': ''}}) }}
+                    </div>
+                        
+                    <div class="col-6 d-flex justify-content-center">
+                        {{ form_row(modalAddMoodForm.color, {'label': 'Couleur', 'attr': {'placeholder': ''}}) }}
+                    </div>
+                
+                    <div class="col-6 d-flex justify-content-center">
+                        {{ form_row(modalAddMoodForm.luminosity, {'label': 'Luminosité', 'attr': {'placeholder': ''}}) }}
+                    </div> 
+                </div>
+
+                <div class="row">
+                    <div class="modal-footer col-12 d-flex justify-content-center">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+                      <button type="submit" name="add_bulb_submit" class="btn btn-warning btn-block">Enregistrer</button>
+                    </div>
+                </div>
+
+                {{ form_end(modalAddMoodForm) }}
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
