@@ -18,11 +18,12 @@
                         <div class="row d-flex justify-content-end">
 
                             <div class="col-1">
-                                <a href="{# {{ path('app_modify_bulb', {id: bulb.id}) }} #}"><i class="icon icon-modify"></i></a>
+                                <i class="icon icon-modify" data-bs-toggle="modal" data-bs-target="#reg-modal"></i>
+                                {% include 'modal_modify_Schedule/modalModifySchedule.html.twig' with { 'modalModifyScheduleForm': modalModifyScheduleForm } %}
                             </div>
                             
                             <div class="col-1">
-                                <a href="{# {{ path('app_delete_bulb', {id: bulb.id}) }} #}" onclick="return confirm('Souhaitez-vous vraiment supprimer cette ampoule ?')"><i class="icon icon-trash-can-regular"></i></a>  
+                                <a href="{{ path('app_delete_schedule', {id: schedule.id}) }}" onclick="return confirm('Souhaitez-vous vraiment supprimer cette programmation ?')"><i class="icon icon-trash-can-regular"></i></a>  
                             </div>
                         </div>
                     
@@ -40,7 +41,9 @@
                             <h3>Ambiance: {{schedule.recurrence}} </h3>
                         </div>  
                     </div>
+
                 </div>
+                    {% include('dashboard_menu/dashboardMenu.html.twig') %}
 		</section>
 	</main>
 {% endblock %}

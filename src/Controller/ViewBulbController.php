@@ -46,4 +46,17 @@ class ViewBulbController extends AbstractController
             'modalModifyBulbForm' => $form->createView()
         ]);
     }
+    
+    #[Route('/delete/bulb/{id<\d+>}', methods: ['GET', 'DELETE'], name: 'app_delete_bulb')]
+    public function delete($id, BulbRepository $bulbRepository, EntityManagerInterface $entityManagerInterface): Response
+    {
+        $bulb = $bulbRepository->find($id);
+        
+        $entityManagerInterface->remove($bulb);
+        $entityManagerInterface->flush();
+        
+        return $this->redirectToRoute('app_my_bulbs');
+
+    
+    }
 }

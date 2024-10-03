@@ -3,89 +3,59 @@
 {% block title %} Mon ampoule {% endblock %}
 
 {% block body %}
-<main>
-            <div class="container mt-4 mb-4">
-                
-                <h1 class="mt-2 mb-4">Mon dashboard</h1>
-                
-                <div class="row d-flex justify-content-around">
-
+    <main>
+        <div class="container mt-4 mb-4">
+            
+            <h1 class="mt-2 mb-4">Mon dashboard</h1>
+            
+            <div class="row d-flex justify-content-around">
+               
+                {% include('dashboard_stats/dashboardStats.html.twig') %}
+                               
+                <div class="col-5 border border-3 border-black rounded-2 ">
                     
-                    {% include('dashboard_stats/dashboardStats.html.twig') %}
-                    
-                    
-                    <div class="col-5 border border-3 border-black rounded-2 ">
-                        
-                        <div class="row d-flex justify-content-end">
-
-                            <div class="col-1">
-                                <button data-bs-toggle="modal" data-bs-target="#reg-modal">
-                                    <i class="icon icon-modify" ></i>
-                                </button>
-                                {# <i class="icon icon-modify" data-bs-toggle="modal" data-bs-target="#reg-modal"></i> #}
-                                {% include 'modal_modify_bulb/modalModifyBulb.html.twig' with { 'modalModifyBulbForm': modalModifyBulbForm } %}
-                            </div>
-                            
-                            <div class="col-1">
-                                <button <a href="{{ path('app_delete_bulb', {id: bulb.id}) }}" onclick="return confirm('Souhaitez-vous vraiment supprimer cette ampoule ?')"><i class="icon icon-trash-can-regular"></i></a></button>  
-                            </div>
+                    <div class="row d-flex justify-content-end">
+                        <div class="col-1">
+                            <i class="icon icon-modify" data-bs-toggle="modal" data-bs-target="#reg-modal"></i>
+                            {% include 'modal_modify_bulb/modalModifyBulb.html.twig' with { 'modalModifyBulbForm': modalModifyBulbForm } %}
                         </div>
-                        <div class="d-flex justify-content-center">
-                                
-                                
                         
-                        
-                            </div>
-                        <div class="row">
-                            <div class="d-flex align-items-center flex-column pt-3 pb-3">
-
-                                <h2>Nom : {{ bulb.label }}</h2>
-                                
-
-                                <div class="row">
-                                    <div class=" col-6 bulb" style="background-color: {{ bulb.color }}; opacity: {{ bulb.luminosity }}/100"></div>
-                                    <label class="switch p-2 col-6">
-                                        <input type="checkbox" {{ bulb.isOn == 1 ? 'checked': '' }}>
-                                        <span class="slider round"></span>
-                                    </label>
-                                </div>
-
-                                
-                            
-                                {% if model.id == null %}
-                                    <p>Modèle : Aucun. </p>
-                                {% else %}
-                                    <p>Modèle : {{ model.name }}</p>
-                                {% endif %}
-                                
-                                <p>Localisation : {{ bulb.roomLabel }}</p>
-                                <p>Wifi : {{ bulb.wifi }}</p>
-                                {# <p>Ambiance : {{ ViewBulb.moodId }}</p> #}
-
-                            </div>
-
-                            
+                        <div class="col-1">                               
+                                <a href="{{ path('app_delete_bulb', {id: bulb.id}) }}" onclick="return confirm('Souhaitez-vous vraiment supprimer cette ampoule ?')"><i class="icon icon-trash-can-regular"></i></a>  
                         </div>
-                         
-                         
-                         
-                         
-                         
-                         
-                         
-                         
-                         
-                       
-                         
-                        
                     </div>
-
                     
-                    {% include('dashboard_menu/dashboardMenu.html.twig') %}
-                    
+                    <div class="row">
+                        <div class="d-flex align-items-center flex-column pt-3 pb-3">
 
+                            <h2>Nom : {{ bulb.label }}</h2>
+                            
+                            <div class="row">
+                                <div class=" col-6 bulb" style="background-color: {{ bulb.color }}; opacity: {{ bulb.luminosity }}/100"></div>
+                                <label class="switch p-2 col-6">
+                                    <input type="checkbox" {{ bulb.isOn == 1 ? 'checked': '' }}>
+                                    <span class="slider round"></span>
+                                </label>
+                            </div>
+                      
+                            {% if model.id == null %}
+                                <p>Modèle : Aucun. </p>
+                            {% else %}
+                                <p>Modèle : {{ model.name }}</p>
+                            {% endif %}
+                            
+                            <p>Localisation : {{ bulb.roomLabel }}</p>
+                            
+                            <p>Wifi : {{ bulb.wifi }}</p>
+                            {# <p>Ambiance : {{ ViewBulb.moodId }}</p> #}
 
+                        </div> 
+                    </div>                    
                 </div>
+
+                {% include('dashboard_menu/dashboardMenu.html.twig') %}
+                
             </div>
-        </main>
+        </div>
+    </main>
 {% endblock %}

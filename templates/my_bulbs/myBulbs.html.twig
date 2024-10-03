@@ -23,14 +23,12 @@
                         
             
                     {% for bulb in bulbs %}  
-                        <div class="col-12 d-flex flex-row justify-content-evenly align-items-center border rounded-2 border-bottom-0 p-2 borderYellow">
+                        <div class="col-12 d-flex flex-row justify-content-evenly align-items-center border rounded-2 border-bottom-0 p-2 borderYellow">                                
                             
-                            {#  <a href="{{ path('app_modify_bulb', {id: bulb.id}) }}"><i class="icon icon-modify"></i></a> #}
-                                
+                            <a href="{{ path('app_view_bulb', {id: bulb.id}) }}" class="align-items-center w-50 p-2 mb-0 nav-link breakRow"><strong><u>{{ bulb.label }}</u></strong></a>
                             
                             <div class="bulb" style="background-color: {{ bulb.color }}; opacity: {{ bulb.luminosity }}/100"></div>
                             
-                            <a href="{{ path('app_view_bulb', {id: bulb.id}) }}" class="align-items-center w-50 p-2 mb-0 nav-link breakRow">{{ bulb.label }}</a>
                             
                             {# <div>
                                 <input class="colorWheel" type="color" id="head" name="head" value="{{ bulb.color }}" disabled/>

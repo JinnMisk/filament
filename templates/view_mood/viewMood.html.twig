@@ -18,11 +18,12 @@
                         <div class="row d-flex justify-content-end">
 
                             <div class="col-1">
-                                <a href="{# {{ path('app_modify_bulb', {id: bulb.id}) }} #}"><i class="icon icon-modify"></i></a>
+                                <i class="icon icon-modify" data-bs-toggle="modal" data-bs-target="#reg-modal"></i></a>
+                                {% include 'modal_modify_Mood/modalModifyMood.html.twig' with { 'modalModifyMoodForm': modalModifyMoodForm } %}
                             </div>
                             
                             <div class="col-1">
-                                <a href="{# {{ path('app_delete_bulb', {id: bulb.id}) }} #}" onclick="return confirm('Souhaitez-vous vraiment supprimer cette ampoule ?')"><i class="icon icon-trash-can-regular"></i></a>  
+                                <a href="{{ path('app_delete_mood', {id: mood.id}) }}" onclick="return confirm('Souhaitez-vous vraiment supprimer cette ambiance ?')"><i class="icon icon-trash-can-regular"></i></a>  
                             </div>
                         </div>
 
