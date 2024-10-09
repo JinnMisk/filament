@@ -1,6 +1,7 @@
 import './bootstrap.js';
 import './js/stats.js';
 import './js/confirm.js';
+import './js/home.js';
 /* import './js/colorOpacity.js'; */
 // import './js/dropDownMenu.js';
 
@@ -16,5 +17,7 @@ import './styles/icons.css';
 import './styles/dashboard.css';
 import './styles/images.css';
 import './styles/myTables.css';
+import './styles/nav.css';
+import './styles/home.css';
 
 console.log('This log comes from assets/app.js - welcome to AssetMapper! 🎉');

@@ -11,6 +11,7 @@ class CartController extends AbstractController
     #[Route('/cart', name: 'app_cart')]
     public function index(): Response
     {
+        //Retourne la vue relative au panier d'achat
         return $this->render('cart/cart.html.twig', [
             'controller_name' => 'CartController',
         ]);

@@ -10,23 +10,26 @@
                 <h1 class="mt-2 mb-4">Mon dashboard</h1>
                     
                 <div class="row d-flex justify-content-around">
-                        
+
+                    <!-- Section de gauche - Statistiques -->  
                     {% include('dashboard_stats/dashboardStats.html.twig') %}
 
                     <div class="col-5 border border-3 border-black rounded-2 d-flex align-items-center flex-column pt-3 pb-3">
                         
+                        <!-- Bouton de modification de l'ambiance et son formulaire en fenêtre modale -->
                         <div class="row d-flex justify-content-end">
-
                             <div class="col-1">
-                                <i class="icon icon-modify" data-bs-toggle="modal" data-bs-target="#reg-modal"></i></a>
+                                <i class="icon icon-modify" data-bs-toggle="modal" data-bs-target="#reg-modal"></i>
                                 {% include 'modal_modify_Mood/modalModifyMood.html.twig' with { 'modalModifyMoodForm': modalModifyMoodForm } %}
                             </div>
                             
+                            <!-- Bouton de suppression de l'ambiance -->
                             <div class="col-1">
                                 <a href="{{ path('app_delete_mood', {id: mood.id}) }}" onclick="return confirm('Souhaitez-vous vraiment supprimer cette ambiance ?')"><i class="icon icon-trash-can-regular"></i></a>  
                             </div>
                         </div>
 
+                        <!-- Informations détaillées de l'ambiance -->
                         <div class="row">
                             <div class="text-center">
                                 <h1>{{mood.label}}</h1>
@@ -40,6 +43,7 @@
 
                     </div>
 
+                    <!-- Section de droite - Menu -->
                     {% include('dashboard_menu/dashboardMenu.html.twig') %}
 
                 </div>

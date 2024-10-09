@@ -11,57 +11,66 @@
 
 			<div class="row d-flex justify-content-around">
 
+                <!-- SECTION DE GAUCHE - LES STATISTIQUES-->  
+                {% include('dashboard_stats/dashboardStats.html.twig') %}
+                    
+                <!-- SECTION CENTRALE - LISTE DES AMPOULES -->     
+                <div class="col-5 border border-3 border-black rounded-2">
+                    
+                        <h2 class="text-center pb-2">Mes ampoules</h2>
+                            
+                        <div>
+                            <table width="100%">
+                                <thead>
+                                    <tr>
+                                        <th scope="col" width="50%">Nom</th>
+                                        <th scope="col">Couleur</th>
+                                        <th scope="col">On/Off</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for bulb in bulbs %}  
+                                        <tr>
+                                                                    
+                                            <td>
+                                                <a class="text-black" href="{{ path('app_view_bulb', {id: bulb.id}) }}" class="align-items-center nav-link breakRow" width="50%"><strong><u>{{ bulb.label }}</u></strong></a>
+                                            </td>
+                                            
+                                            <td>
+                                                <div class="bulb" style="background-color: {{ bulb.color }}; opacity: {{ bulb.luminosity }}/100"></div>
+                                            </td>
+                                            
+                                            <td>
+                                                <label class="switch p-2">
+                                                    <input type="checkbox" {{ bulb.isOn == 1 ? 'checked': '' }}>
+                                                <span class="slider round"></span>
+                                                </label>
+                                            </td>
+                                        </tr>                              
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>           
+                        
+                        <!-- BOUTON D'AJOUT -->
+                        <div class="d-flex justify-content-center">
+                                    
+                            <button class="btn btn-primary mt-3" data-bs-toggle="modal" data-bs-target="#reg-modal">
+                                Ajouter une ampoule
+                            </button>
+                            
+                            <!-- FENÊTRE MODALE - FORMULAIRE D'AJOUT D'AMPOULE -->
+                            {% include 'modal_add_bulb/modalAddBulb.html.twig' with { 'modalAddBulbForm': modalAddBulbForm } %}
+                            
+                        </div>              
+                </div>    
+
+                <!-- SECTION DE DROITE - MENU -->  
+                {% include('dashboard_menu/dashboardMenu.html.twig') %}
               
-            {% include('dashboard_stats/dashboardStats.html.twig') %}
-                
-                    
-            <div class="col-5 border border-3 border-black rounded-2 d-flex align-items-center flex-column pt-3 pb-3">
-                <div class="row w-100">
-                    
-                    <h2 class="text-center pb-2">Mes ampoules</h2>
-                        
-                        
-            
-                    {% for bulb in bulbs %}  
-                        <div class="col-12 d-flex flex-row justify-content-evenly align-items-center border rounded-2 border-bottom-0 p-2 borderYellow">                                
-                            
-                            <a href="{{ path('app_view_bulb', {id: bulb.id}) }}" class="align-items-center w-50 p-2 mb-0 nav-link breakRow"><strong><u>{{ bulb.label }}</u></strong></a>
-                            
-                            <div class="bulb" style="background-color: {{ bulb.color }}; opacity: {{ bulb.luminosity }}/100"></div>
-                            
-                            
-                            {# <div>
-                                <input class="colorWheel" type="color" id="head" name="head" value="{{ bulb.color }}" disabled/>
-                            </div>
-                            
-                            <div class="p-2 d-flex align-items-center">
-                                <input class="opacityRange" type="range" min="0" max="100" value="{{ bulb.luminosity }}" disabled/>
-                            </div> #}
-                            
-                            <label class="switch p-2">
-                                <input type="checkbox" {{ bulb.isOn == 1 ? 'checked': '' }}>
-                                <span class="slider round"></span>
-                            </label>
-                        </div>
-                    {% endfor %}
-                            
-                    <div class="d-flex justify-content-center">
-                                
-                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#reg-modal">
-                            Ajouter une ampoule
-                        </button>
-                        
-                        {% include 'modal_add_bulb/modalAddBulb.html.twig' with { 'modalAddBulbForm': modalAddBulbForm } %}
-                        
-                    </div>              
-                    
-                </div>
-            </div>    
-                
-            {% include('dashboard_menu/dashboardMenu.html.twig') %}
-               
-                
 			</div>
 		</div>
 	</main>
 {% endblock %}
+
+                            

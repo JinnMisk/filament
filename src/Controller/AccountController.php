@@ -11,6 +11,7 @@ class AccountController extends AbstractController
     #[Route('/account', name: 'app_account')]
     public function index(): Response
     {
+        //Retourne la vue du profil
         return $this->render('account/account.html.twig', [
             'controller_name' => 'AccountController',
         ]);

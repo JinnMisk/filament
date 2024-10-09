@@ -1,12 +1,16 @@
 {% block body %}
+<!-- FORMULAIRE D'AJOUT D'UNE PROGRAMMATION -->
 <div class="modal fade" id="reg-modal" tabindex="-1" aria-labelledby="modal-title" aria-hidden="true">
     <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-lg">
         <div class="modal-content">
+
+            <!-- TITRE -->
             <div class="modal-header">
                 <h5 class="modal-title" id="modal-title">Nouvelle programmation</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             
+            <!-- FORMULAIRE -->
             <div class="modal-body">
                 {% form_theme modalAddScheduleForm 'form/add_schedule_form.html.twig' %}
                 {{ form_start(modalAddScheduleForm) }}
@@ -50,6 +54,7 @@
                 
                 </div>
 
+                <!-- BOUTONS -->
                 <div class="row">
                     <div class="modal-footer col-12 d-flex justify-content-center">
                       <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>

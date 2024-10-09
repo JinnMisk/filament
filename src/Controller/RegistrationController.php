@@ -15,13 +15,13 @@ use Symfony\Bundle\SecurityBundle\Security;
 use App\Repository\UserRepository;
 use Symfony\Component\Security\Core\Exception\AuthenticationException;
 
-
-
 class RegistrationController extends AbstractController
 {
     #[Route('/register', name: 'app_register')]
     public function register(Request $request, UserPasswordHasherInterface $userPasswordHasher, EntityManagerInterface $entityManager, AuthenticationUtils $authenticationUtils, Security $security, UserRepository $userRepository): Response
     {
+        // Fonction d'enregistrement d'un nouvel utilisateur
+
         $error = null;
         $user = new User();
         $form = $this->createForm(RegistrationFormType::class, $user);

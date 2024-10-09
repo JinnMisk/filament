@@ -25,7 +25,6 @@ class ModifyBulbType extends AbstractType
                 'label'    => 'Souhaitez-vous allumer l\'ampoule ?',
                 'required' => false,
             ])
-            /* ->add('status') */
             ->add('color', ColorType::class, [
                 'attr' => ['class' => 'tinymce'],
             ])
@@ -35,7 +34,6 @@ class ModifyBulbType extends AbstractType
                 'max' => 100
             ],
             ])
-            /* ->add('hours') */
             ->add('wifi')
             ->add('model_id', EntityType::class, [
                 'class' => Model::class,

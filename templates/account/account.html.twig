@@ -5,6 +5,7 @@
 
 {% block body %}
 
+	<!-- ZONE TITRE DE LA PAGE PROFIL -->
 	<div class="d-flex flex-column align-items-center justify-content-center position-relative">
 		<div class="row w-100">
 			<div class="col-md-12 d-flex flex-column align-items-center justify-content-center p-4">
@@ -15,6 +16,8 @@
 			</div>
 		</div>
 	</div>
+
+	<!-- INFORMATIONS PERSONNELLES -->
 	<div class="col-md-6 offset-3 d-flex flex-column  justify-content-center p-4">
 		<div class="align-items-center d-flex justify-content-center">
 			<h2>Informations
@@ -40,6 +43,8 @@
 					{{ app.user.phonenumber }}</p>
 			</div>
 		</div>
+
+		<!-- ADRESSE DE FACTURATION -->
 		<div id="facturation" class="row w-100">
 			<div class="col-md-6 d-flex flex-column">
 				<div class="align-items-center d-flex justify-content-center">
@@ -70,6 +75,8 @@
 					</div>
 				</div>
 			</div>
+
+			<!-- ADRESSE DE LIVRAISON -->
 			<div class="col-md-6 d-flex flex-column">
 				<div class="align-items-center d-flex justify-content-center">
 					<h2>Adresse de
@@ -103,8 +110,10 @@
 			</div>
 		</div>
 	</div>
+
+	<!-- BOUTON DE MODIFICATION -->
 	<div class="row">
-		<div class="d-flex justify-content-center">
+		<div class="d-flex justify-content-center m-3">
 			<a href="{{path('app_modify_account')}}">
 				<button type="button" class="btn btn-primary">Modifier</button>
 			</a>

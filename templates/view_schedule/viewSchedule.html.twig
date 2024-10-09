@@ -10,24 +10,27 @@
                     <h1 class="mt-2 mb-4">Mon dashboard</h1>
                     
                     <div class="row d-flex justify-content-around">
-                        
+
+                    <!-- Section de gauche - Statistiques -->   
                     {% include('dashboard_stats/dashboardStats.html.twig') %}
 
                     <div class="col-5 border border-3 border-black rounded-2 d-flex align-items-center flex-column pt-3 pb-3">
 
                         <div class="row d-flex justify-content-end">
 
+                            <!-- Bouton de modification de la programmation et son formulaire en fenêtre modale -->
                             <div class="col-1">
                                 <i class="icon icon-modify" data-bs-toggle="modal" data-bs-target="#reg-modal"></i>
                                 {% include 'modal_modify_Schedule/modalModifySchedule.html.twig' with { 'modalModifyScheduleForm': modalModifyScheduleForm } %}
                             </div>
                             
+                            <!-- Bouton de suppression -->
                             <div class="col-1">
                                 <a href="{{ path('app_delete_schedule', {id: schedule.id}) }}" onclick="return confirm('Souhaitez-vous vraiment supprimer cette programmation ?')"><i class="icon icon-trash-can-regular"></i></a>  
                             </div>
                         </div>
                     
-                    
+                        <!-- Informations détaillées de la programmation -->
                         <div class="row text-center">
                             <h1>{{schedule.label}}</h1>
                         </div>
@@ -43,6 +46,8 @@
                     </div>
 
                 </div>
+
+                    <!-- Section de droite - Menu -->
                     {% include('dashboard_menu/dashboardMenu.html.twig') %}
 		</section>
 	</main>

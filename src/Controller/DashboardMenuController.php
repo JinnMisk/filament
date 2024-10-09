@@ -10,9 +10,10 @@ class DashboardMenuController extends AbstractController
 {
     #[Route('/dashboard/menu', name: 'app_dashboard_menu')]
     public function index(): Response
-    {
+    {   
+        //Retourne la portion de droite du dashboard, le menu
         return $this->render('dashboard_menu/dashboardMenu.html.twig', [
             'controller_name' => 'DashboardMenuController',
         ]);
     }
-} /*  */
+} 
