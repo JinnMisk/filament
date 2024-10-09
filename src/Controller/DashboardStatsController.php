@@ -11,8 +11,9 @@ class DashboardStatsController extends AbstractController
     #[Route('/dashboard/stats', name: 'app_dashboard_stats')]
     public function index(): Response
     {
+        //Retourne la partie gauche du dashboard, les statistiques de l'utilisateur
         return $this->render('dashboard_stats/dashboardStats.html.twig', [
             'controller_name' => 'DashboardStatsController',
         ]);
     }
-}/*  */
+}

@@ -6,16 +6,20 @@
 {% block body %}
 	<div class="container">
 
+		<!-- TITRE -->
 		<div class="row">
 			<div class="col-6 offset-4">
 				<h1>Modifier mon profil</h1>
 			</div>
 		</div>
+
+		<!-- FORMULAIRE -->
 		<div class="row">
 			<div class="col-4 offset-4">
 				{% form_theme userForm 'form/modify_account_form.html.twig' %}
 				{{ form_start(userForm) }}
-{#  #}
+
+				<!-- INFORMATIONS PERSONNELLES -->
 				<div class="row">
 					<div class="col-12 d-flex justify-content-center">
 						<h2>Informations personnelles</h2>
@@ -29,12 +33,12 @@
 					{{ form_row(userForm.plainPassword, {'label': 'Entrez un nouveau mot de passe :', 'attr': {'placeholder': 'Nouveau mot de passe'}}) }}
 				</div>
 
+				<!-- ADRESSE DE FACTURATION -->
 				<div class="row">
 					<div class="col-12 d-flex justify-content-center">
 						<h2>Adresse de facturation</h2>
 					</div>
 				</div>
-
 				<div>
 					{{ form_row(userForm.siret, {'label': 'Siret :', 'attr': {'placeholder': 'Entrez le numéro de siret'}}) }}
 					{{ form_row(userForm.billing_address_number, {'label': 'N° de rue :', 'attr': {'placeholder': 'Entrez le numéro'}}) }}
@@ -44,26 +48,27 @@
 					{{ form_row(userForm.billing_address_city, {'label': 'Ville :', 'attr': {'placeholder': 'Entrez le nom de la ville'}}) }}
 				</div>
 
+				<!-- ADRESSE DE LIVRAISON -->
 				<div class="row">
 					<div class="col-12 d-flex justify-content-center">
 						<h2>Adresse de livraison</h2>
 					</div>
 				</div>
-
 				<div>
 					{{ form_row(userForm.shipping_address_number, {'label': 'N° de rue :', 'attr': {'placeholder': 'Entrez le numéro'}}) }}
 					{{ form_row(userForm.shipping_address_streetname, {'label': 'Nom de rue :', 'attr': {'placeholder': 'Entrez le nom de la rue'}}) }}
 					{{ form_row(userForm.shipping_address_complement, {'label': 'Complément d\'adresse :', 'attr': {'placeholder': 'Entrez le complément d\'adresse'}}) }}
 					{{ form_row(userForm.shipping_address_postalcode, {'label': 'Code postal :', 'attr': {'placeholder': 'Entrez le code postal'}}) }}
 					{{ form_row(userForm.shipping_address_city, {'label': 'Ville :', 'attr': {'placeholder': 'Entrez le nom de la ville'}}) }}
-
 				</div>
 
+				<!-- BOUTON -->
 				<div class="row">
 					<div class="col-12 d-flex justify-content-center">
 						<button type="submit" name="modify_account_submit" class="btn btn-warning btn-block">Enregistrer</button>
 					</div>
 				</div>
+				
 			</div>
 		</div>
 	</div>

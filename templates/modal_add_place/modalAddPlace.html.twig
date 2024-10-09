@@ -1,60 +1,65 @@
 {% block body %}
+<!-- FORMULAIRE D'AJOUT D'UNE ADRESSE -->
 <div class="modal fade" id="reg-modal" tabindex="-1" aria-labelledby="modal-title" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-lg">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="modal-title">Nouvelle adresse</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-        
-      <div class="modal-body">
-        	{% form_theme modalAddPlaceForm 'form/add_place_form.html.twig' %}
-	        {{ form_start(modalAddPlaceForm) }}
+    <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-lg">
+        <div class="modal-content">
 
-            <div>
+            <!-- TITRE -->
+            <div class="modal-header">
+                <h5 class="modal-title" id="modal-title">Nouvelle adresse</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
             
-                <div class="row">           
-                    <div class="col-6 d-flex justify-content-center">
-                        {{ form_row(modalAddPlaceForm.label, {'label': 'Nom du lieu', 'attr': {'placeholder': ''}}) }}
-                    </div>
+            <!-- FORMULAIRE -->
+            <div class="modal-body">
+                {% form_theme modalAddPlaceForm 'form/add_place_form.html.twig' %}
+                {{ form_start(modalAddPlaceForm) }}
+
+                    <div>
+                    
+                        <div class="row">           
+                            <div class="col-6 d-flex justify-content-center">
+                                {{ form_row(modalAddPlaceForm.label, {'label': 'Nom du lieu', 'attr': {'placeholder': ''}}) }}
+                            </div>
+                                
+                            <div class="col-6 d-flex justify-content-center">
+                                {{ form_row(modalAddPlaceForm.address_1, {'label': 'N° et nom de la rue', 'attr': {'placeholder': ''}}) }}
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-6 d-flex justify-content-center">
+                                {{ form_row(modalAddPlaceForm.address_2, {'label': 'Complément d\'adresse', 'attr': {'placeholder': ''}}) }}
+                            </div>
+
+                            <div class="col-6 d-flex justify-content-center">
+                                {{ form_row(modalAddPlaceForm.zip, {'label': 'Code postal', 'attr': {'placeholder': ''}}) }}
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-6 d-flex justify-content-center">
+                                {{ form_row(modalAddPlaceForm.city, {'label': 'Ville', 'attr': {'placeholder': ''}}) }}
+                            </div>
                         
-                    <div class="col-6 d-flex justify-content-center">
-                        {{ form_row(modalAddPlaceForm.address_1, {'label': 'N° et nom de la rue', 'attr': {'placeholder': ''}}) }}
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-6 d-flex justify-content-center">
-                        {{ form_row(modalAddPlaceForm.address_2, {'label': 'Complément d\'adresse', 'attr': {'placeholder': ''}}) }}
-                    </div>
-
-                    <div class="col-6 d-flex justify-content-center">
-                        {{ form_row(modalAddPlaceForm.zip, {'label': 'Code postal', 'attr': {'placeholder': ''}}) }}
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-6 d-flex justify-content-center">
-                        {{ form_row(modalAddPlaceForm.city, {'label': 'Ville', 'attr': {'placeholder': ''}}) }}
-                    </div>
+                            <div class="col-6 d-flex justify-content-center">
+                                {{ form_row(modalAddPlaceForm.phone, {'label': 'Téléphone', 'attr': {'placeholder': ''}}) }}
+                            </div>
+                        </div>
                 
-                    <div class="col-6 d-flex justify-content-center">
-                        {{ form_row(modalAddPlaceForm.phone, {'label': 'Téléphone', 'attr': {'placeholder': ''}}) }}
                     </div>
-                </div>
-          
-            </div>
 
-            <div class="row">
-                <div class="modal-footer col-12 d-flex justify-content-center">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
-                    <button type="submit" name="add_bulb_submit" class="btn btn-warning btn-block">Enregistrer</button>
-                </div>
+                    <!-- BOUTONS -->
+                    <div class="row">
+                        <div class="modal-footer col-12 d-flex justify-content-center">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+                            <button type="submit" name="add_bulb_submit" class="btn btn-warning btn-block">Enregistrer</button>
+                        </div>
+                    </div>
+                {{ form_end(modalAddPlaceForm) }}
             </div>
-            {{ form_end(modalAddPlaceForm) }}
-      </div>
+        </div>
     </div>
-  </div>
 </div>
 
 {% endblock %}

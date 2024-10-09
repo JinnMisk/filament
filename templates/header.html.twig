@@ -1,57 +1,61 @@
 {% block header %}
-	<header
-		id="header">
+	<header id="header">
+
 		<!-- NAVBAR-->
 		<nav class="navbar navbar-expand-lg bg-body-tertiary">
 			<div class="container">
 				<a class="navbar-brand" href="{{ path('app_home') }}">
 					<img src="{{ asset('icones/logo-filament.png') }}"/>
 				</a>
+
 				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon"></span>
 				</button>
+
 				<div class="collapse navbar-collapse" id="navbarSupportedContent">
-					<ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex align-items-center">
-						<li class="nav-item">
-							<a class="nav-link m-1" href="/">Accueil</a>
+					<ul class="navbar-nav nav-pills me-auto mb-2 mb-lg-0 d-flex align-items-center" id="pills-tab" role="tablist">
+						<li class="nav-item" role="presentation">
+							<a class="nav-link {{ app.request.attributes.get('_route') == 'app_home' ? 'active' : '' }} m-1" id="pills-home-tab" href="{{ path('app_home') }}" role="tab" aria-controls="pills-home" aria-selected="true">Accueil</a>
 						</li>
-						<li class="nav-item">
-							<a class="nav-link m-1" href="/bulb">Ampoule</a>
+
+						<li class="nav-item" role="presentation">
+							<a class="nav-link {{ app.request.attributes.get('_route') == 'app_bulb' ? 'active' : '' }} m-1" id="pills-bulb-tab" href="{{ path('app_bulb') }}" role="tab" aria-controls="pills-bulb" aria-selected="false">Ampoule</a>
 						</li>
-						<li class="nav-item">
-							<a class="nav-link m-1" href="/products">Produits</a>
+
+						<li class="nav-item" role="presentation">
+							<a class="nav-link {{ app.request.attributes.get('_route') == 'app_products' ? 'active' : '' }} m-1" id="pills-products-tab" href="{{ path('app_products') }}" role="tab" aria-controls="pills-products" aria-selected="false">Produits</a>
 						</li>
-						<li class="nav-item">
-							<a class="nav-link m-1" href="/cart">Panier</a>
+
+						<li class="nav-item" role="presentation">
+							<a class="nav-link {{ app.request.attributes.get('_route') == 'app_cart' ? 'active' : '' }} m-1" id="pills-cart-tab" href="{{ path('app_cart') }}" role="tab" aria-controls="pills-cart" aria-selected="false">Panier</a>
 						</li>
-						 
-{#  #}
+							
+						<!-- Onglets supplémentaires si authentifié ou lien vers la page de connexion/enregistrement -->
 						{% if is_granted('IS_AUTHENTICATED_FULLY') %}
 
-							<li class="nav-item">
-								<a class="nav-link m-1" href="/my/bulbs">Dashboard</a>
-							</li>
-							<li class="nav-item connexion">
-								<a class="nav-link m-1" href="/account">Profil</a>
-							</li>
+						<li class="nav-item">
+							<a class="nav-link {{ app.request.attributes.get('_route') == 'app_my_bulbs' ? 'active' : ''}} m-1" id="pills-dashboard-tab" href="{{ path('app_my_bulbs')}}" role="tab" aria-controls="pills-dashboard" aria-selected="false">Dashboard</a>
+						</li>
 
-							<li class="nav-item">
-								<a class="nav-link m-1" href="{{ path('app_logout') }}">
-									Se déconnecter :<br>
-									{{ app.user.email }}
-								</a>
-							</li>
+						<li class="nav-item connexion">
+							<a class="nav-link {{ app.request.attributes.get('_route') == 'app_account' ? 'active' : ''}} m-1" id="pills-account-tab" href="{{ path('app_account')}}" role="tab" aria-controls="pills-account" aria-selected="false">Profil</a>
+						</li>
+
+						<li class="nav-item">
+							<a class="nav-link m-1" href="{{ path('app_logout') }}">
+								Se déconnecter :<br>
+								{{ app.user.email }}
+							</a>
+						</li>
 
 						{% else %}
 							<li class="nav-item">
 								<a class="nav-link" href="{{ path('app_register') }}">Se connecter/S'enregistrer</a>
 							</li>
-
 						{% endif %}
-
-						</ul>
-					</div>
+					</ul>
 				</div>
-			</nav>
-		</header>
-	{% endblock %}
+			</div>
+		</nav>
+	</header>
+{% endblock %}

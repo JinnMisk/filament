@@ -11,6 +11,7 @@ class BulbController extends AbstractController
     #[Route('/bulb', name: 'app_bulb')]
     public function index(): Response
     {
+        //Retourne la vue de la page d'informations concernant l'ampoule Filament
         return $this->render('bulb/bulb.html.twig', [
             'controller_name' => 'BulbController',
         ]);

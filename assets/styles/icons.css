@@ -11,27 +11,21 @@
     cursor: pointer; 
 }
 
+/**** Switch ****/
 .icon-toggle {
     background-image: url('../icones/toggle-on-solid.svg');
 }
 
-.icon-plus {
-    background-image: url('../icones/plus-solid.svg');
-}
-
+/**** Poubelle ****/
 .icon-trash-can-regular{
     background-image: url('../icones/trash-can-regular.svg');
 }
 
-.icon-lightbulb {
-    background-image: url('../icones/lightbulb-regular.svg');
-}
-
+/**** Crayon modifier ****/
 .icon-modify {
     background-image: url('../icones/pen-to-square-solid.svg');
-    /* width: 20px;
-    height: 20px; */
 }
+
 /***** Cercle chromatique *****/
 .colorWheel {
     width: 25px;

@@ -11,52 +11,55 @@
 
 			<div class="row d-flex justify-content-around">
 
-                        {% include('dashboard_stats/dashboardStats.html.twig') %}
+					<!-- SECTION DE GAUCHE - LES STATISTIQUES -->
+					{% include('dashboard_stats/dashboardStats.html.twig') %}
                     
+					<!-- SECTION CENTRALE - LISTE DES ADRESSES -->
                     <div class="col-5 border border-3 border-black rounded-2 d-flex align-items-center flex-column pt-3 pb-3">
-                        <div class="row w-100">
                         
+						<div class="row w-100">
                             <h2 class="text-center pb-2">Mes adresses</h2>
 						<div>
-							<table>
-								<thead>
-									<tr>
-										<th scope="col">Nom</th>
-										<th scope="col">Adresse</th>
-										<th scope="col">Code</th>
-										<th scope="col">Ville</th>
-										<th scope="col">Téléphone</th>
-									</tr>
-								</thead>
-								<tbody>
-									{% for place in places %}
-										<tr>
-											<td><a class="text-black" href="{{ path('app_view_one_place', {id: place.id})}}">{{place.label}}</a></td>
-											<td>{{place.address1}}
-												<br>
-												{{place.address2}}
-											</td>
- 											<td>{{place.zip}}</td>
-											<td>{{place.city}}</td>
-											<td>{{place.phone}}</td>
-										</tr>
-									{% endfor %}
-								</tbody>
-							</table>
-							<div class="d-flex justify-content-center">
-								<button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#reg-modal">
-                            		Ajouter un lieu
-                        		</button>
-                        
-                        		{% include 'modal_add_place/modalAddPlace.html.twig' with { 'modalAddPlaceForm': modalAddPlaceForm } %}
 
-								{# <i class="icon icon-plus cursorNav" href="/add/bulb"></i> #}
-								{# <img src="{{ asset('icones/plus-solid.svg') }}" class="icon cursorNav" a href="/add/bulb" alt="ajout"> #}
-							</div>
+						<table width="100%">
+							<thead>
+								<tr>
+									<th scope="col">Nom</th>
+									<th scope="col">Adresse</th>
+									<th scope="col">Code postal</th>
+									<th scope="col">Ville</th>
+									<th scope="col">Téléphone</th>
+								</tr>
+							</thead>
+							<tbody>
+								{% for place in places %}
+									<tr>
+										<td><a class="text-black" href="{{ path('app_view_one_place', {id: place.id})}}"><strong><u>{{place.label}}</u></strong></a></td>
+										<td>{{place.address1}}
+											<br>
+											{{place.address2}}
+										</td>
+										<td>{{place.zip}}</td>
+										<td>{{place.city}}</td>
+										<td>{{place.phone}}</td>
+									</tr>
+								{% endfor %}
+							</tbody>
+						</table>
+
+						<div class="d-flex justify-content-center">
+							<button class="btn btn-primary mt-3" data-bs-toggle="modal" data-bs-target="#reg-modal">
+								Ajouter un lieu
+							</button>
+
+							<!-- FENÊTRE MODALE - FORMULAIRE D'AJOUT D'ADRESSE -->
+							{% include 'modal_add_place/modalAddPlace.html.twig' with { 'modalAddPlaceForm': modalAddPlaceForm } %}
 						</div>
 					</div>
 				</div>
-				{% include('dashboard_menu/dashboardMenu.html.twig') %}
 			</div>
-		</main>
-	{% endblock %}
+			<!-- SECTION DE DROITE - MENU -->
+			{% include('dashboard_menu/dashboardMenu.html.twig') %}
+		</div>
+	</main>
+{% endblock %}

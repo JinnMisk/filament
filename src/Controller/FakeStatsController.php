@@ -10,9 +10,9 @@ class FakeStatsController extends AbstractController
 {
     #[Route('/fake/stats/moneysaved', name: 'app_fake_stats')]
     public function index(): Response
-    {
+    {   
+        //Retourne une statistique concernant les économies réalisées par l'utilisateur
         $fakeStat = '2367€';
         return $this-> json($fakeStat);
     }
 }
-/*  */

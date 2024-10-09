@@ -18,6 +18,7 @@ use Symfony\Component\Form\Extension\Core\Type\RangeType;
 
 class AddBulbType extends AbstractType
 {
+    //Sécurisation du processus d'ajout d'ampoule
     private Security $security;
     public function __construct(Security $security)
     {
@@ -26,15 +27,10 @@ class AddBulbType extends AbstractType
 
 
     public function buildForm(FormBuilderInterface $builder, array $options): void
-    {/*  */
+    {// Constructeur de la base d'un formulaire d'ajout d'ampoule
         $builder
             ->add('label')
             ->add('room_label')
-            /* ->add('is_on', CheckboxType::class, [
-                'label'    => 'Souhaitez-vous allumer l\'ampoule ?',
-                'required' => false,
-            ]) */
-            /* ->add('status') */
             ->add('color', ColorType::class, [
                 'attr' => ['class' => 'tinymce'],
             ])
@@ -72,10 +68,7 @@ class AddBulbType extends AbstractType
                     ->orderBy('mood.label', 'ASC')
                     ;
                 }
-            ])
-            /*          ->add('is_on')
-            ->add('status')
-            ->add('hours') */;
+            ]);
     }
 
     public function configureOptions(OptionsResolver $resolver): void

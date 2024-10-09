@@ -10,26 +10,27 @@
                 <h1 class="mt-2 mb-4">Mon dashboard</h1>
                 
                 <div class="row d-flex justify-content-around">
-                        
+
+                    <!-- Section de gauche - Statistiques -->   
                     {% include('dashboard_stats/dashboardStats.html.twig') %}
 
                     <div class="col-5 border border-3 border-black rounded-2 d-flex align-items-center flex-column pt-3 pb-3">
 
                         <div class="row d-flex justify-content-end">
 
+                            <!-- Bouton de modification de l'adresse et son formulaire en fenêtre modale -->
                             <div class="col-1">
-                                 {# <button data-bs-toggle="modal" data-bs-target="#reg-modal">
-                                    <i class="icon icon-modify" ></i>
-                                </button> #}
                                 <i class="icon icon-modify" data-bs-toggle="modal" data-bs-target="#reg-modal"></i>
                                 {% include 'modal_modify_place/modalModifyPlace.html.twig' with { 'modalModifyPlaceForm': modalModifyPlaceForm } %}
                             </div>
                             
+                            <!-- Bouton de suppression de l'adresse -->
                             <div class="col-1">
                                 <a href="{{ path('app_delete_place', {id: place.id}) }}" onclick="return confirm('Souhaitez-vous vraiment supprimer ce lieu ?')"><i class="icon icon-trash-can-regular"></i></a>  
                             </div>
                         </div>
                         
+                        <!-- Informations détaillées de l'adresse -->
                         <div class="row text-center">
                             <h1>{{place.label}}</h1>
                         </div>
@@ -46,6 +47,7 @@
                         </div>
                     </div>
 
+                    <!-- Section de droite - Menu -->
                     {% include('dashboard_menu/dashboardMenu.html.twig') %}
 
                 </div>

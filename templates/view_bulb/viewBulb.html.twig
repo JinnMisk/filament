@@ -10,21 +10,26 @@
             
             <div class="row d-flex justify-content-around">
                
+               <!-- Section de gauche - Statistiques -->
                 {% include('dashboard_stats/dashboardStats.html.twig') %}
-                               
+
+                <!-- Section centrale - Détail d'une ampoule -->             
                 <div class="col-5 border border-3 border-black rounded-2 ">
                     
                     <div class="row d-flex justify-content-end">
+                        <!-- Bouton de modification de l'ampoule et son formulaire en fenêtre modale -->
                         <div class="col-1">
                             <i class="icon icon-modify" data-bs-toggle="modal" data-bs-target="#reg-modal"></i>
                             {% include 'modal_modify_bulb/modalModifyBulb.html.twig' with { 'modalModifyBulbForm': modalModifyBulbForm } %}
                         </div>
                         
+                        <!-- Bouton de suppression de l'ampoule -->
                         <div class="col-1">                               
                                 <a href="{{ path('app_delete_bulb', {id: bulb.id}) }}" onclick="return confirm('Souhaitez-vous vraiment supprimer cette ampoule ?')"><i class="icon icon-trash-can-regular"></i></a>  
                         </div>
                     </div>
                     
+                    <!-- Informations détaillées de l'ampoule -->
                     <div class="row">
                         <div class="d-flex align-items-center flex-column pt-3 pb-3">
 
@@ -47,12 +52,12 @@
                             <p>Localisation : {{ bulb.roomLabel }}</p>
                             
                             <p>Wifi : {{ bulb.wifi }}</p>
-                            {# <p>Ambiance : {{ ViewBulb.moodId }}</p> #}
-
+                            
                         </div> 
                     </div>                    
                 </div>
 
+                <!-- Section de droite - Menu -->
                 {% include('dashboard_menu/dashboardMenu.html.twig') %}
                 
             </div>

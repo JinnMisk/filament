@@ -1,43 +1,49 @@
 {% block body %}
-
-    
+    <!-- SECTION STATISTIQUES, À GAUCHE DANS LE DASHBOARD -->
     <div class="col-4 border border-3 border-black rounded-2 d-flex flex-column pt-3 pb-3">            
-                <h2 class="text-center pb-2">Statistiques</h2> 
+        <h2 class="text-center pb-2">Statistiques</h2> 
+        
+        <!-- ÉCONOMIES RÉALISÉES -->
+        <div class="row w-100 ps-3">
+            <div class="col-6 d-flex align-items-center ">
+                <p>Économies réalisées:</p>
+            </div>
+            
+            <div class="col-6 d-flex flex-column align-items-center" id="moneySaved">
+                {# <img class="economies" src="{{asset('images/Counter.png')}}" alt="économies"> #}
+            </div>
+        </div>
+        
+        <!-- ÉCLAIRAGE ÉCOLOGIQUE -->
+        <div class="row w-100 ps-3">
+            <div class="col-6 d-flex align-items-center justify-content-start">
+                <p>Éco-éclairage : </p>
+            </div>
+            
+            <div class="col-6 d-flex flex-column align-items-center">
+                <div>
+                    <img class="green" src="{{asset('images/green-bulb.png')}}" alt="ampoule">
+                </div>
+                <div class="text-center p-2">
+                    <p>650h {# FAIRE UN SPAN DU NB D'HEURES D'ÉCLAIRAGE TOTAL #}</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ÉNERGIE SAUVÉE -->
+        <div class="row w-100 ps-3">  
+            <div class="col-6 d-flex align-items-center justify-content-start">
+                <p>Énergie sauvée : </p>
+            </div>
                 
-                <div class="row w-100 ps-3">
-                    <div class="col-6 d-flex align-items-center "><p>Économies réalisées:</p></div>
-                    <div class="col-6 d-flex flex-column align-items-center" id="moneySaved">
-                        {# <img class="economies" src="{{asset('images/Counter.png')}}" alt="économies"> #}
-                    </div>
+            <div class="col-6 d-flex flex-column align-items-center">
+                <div>
+                    <img class="green" src="{{asset('images/green-energy.png')}}" alt="ampoule">
                 </div>
-                
-                <div class="row w-100 ps-3">
-                        
-                    <div class="col-6 d-flex align-items-center justify-content-start">
-                        <p>Éco-éclairage : </p>
-                    </div>
-                    
-                    <div class="col-6 d-flex flex-column align-items-center">
-                        <div><img class="green" src="{{asset('images/green-bulb.png')}}" alt="ampoule"></div>
-                        <div class="text-center p-2"><p>650h {# FAIRE UN SPAN DU NB D'HEURES D'ÉCLAIRAGE TOTAL #}</p></div>
-                    </div>
-
+                <div class="text-center p-2">
+                    <p>1000kw {# FAIRE UN SPAN DE LA QUANTITÉ d'ÉNERGIE SAUVÉe #}</p>
                 </div>
-
-                <div class="row w-100 ps-3">
-                        
-                    <div class="col-6 d-flex align-items-center justify-content-start">
-                        <p>Énergie sauvée : </p>
-                    </div>
-                        
-                    <div class="col-6 d-flex flex-column align-items-center">
-                        <div><img class="green" src="{{asset('images/green-energy.png')}}" alt="ampoule"></div>
-                        <div class="text-center p-2"><p>1000kw {# FAIRE UN SPAN DE LA QUANTITÉ d'ÉNERGIE SAUVÉe #}</p></div>
-                    </div>
-
-                </div>
-          
-       
+            </div>
+        </div>
     </div> 
-
 {% endblock %}

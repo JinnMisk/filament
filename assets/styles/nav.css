@@ -1,0 +1,6 @@
+/**NAV**/
+
+.nav-pills .nav-item .nav-link.active {
+    background-color: rgb(255, 246, 103) !important; 
+    color: rgb(40, 40, 40);
+}
