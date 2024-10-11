@@ -34,7 +34,7 @@
 						{% if is_granted('IS_AUTHENTICATED_FULLY') %}
 
 						<li class="nav-item">
-							<a class="nav-link {{ app.request.attributes.get('_route') == 'app_my_bulbs' ? 'active' : ''}} m-1" id="pills-dashboard-tab" href="{{ path('app_my_bulbs')}}" role="tab" aria-controls="pills-dashboard" aria-selected="false">Dashboard</a>
+							<a class="nav-link {{ app.request.attributes.get('_route') in ['app_my_bulbs', 'app_my_moods', 'app_my_schedules', 'app_my_places', 'app_view_bulb', 'app_view_one_mood', 'app_view_one_schedule', 'app_view_one_place'] ? 'active' : ''}} m-1" id="pills-dashboard-tab" href="{{ path('app_my_bulbs')}}" role="tab" aria-controls="pills-dashboard" aria-selected="false">Dashboard</a>
 						</li>
 
 						<li class="nav-item connexion">

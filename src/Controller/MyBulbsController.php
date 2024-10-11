@@ -30,7 +30,7 @@ class MyBulbsController extends AbstractController
         $form->handleRequest($request);
 
         //Si le formulaire est soumis et que les données sont valides, celles-ci sont enregistrées dans la base de données
-        if ($form->isSubmitted() && $form->isValid()) {
+        if ($form->isSubmitted() && $form->isValid() && 'label') {
             
             $entityManager->persist($bulb);
             $entityManager->flush();

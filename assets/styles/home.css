@@ -4,64 +4,54 @@
 
 /**** Images ****/
 
+#cosyPic, #romanticPic, #dayPic, #sleepTimePic {
+    opacity: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
 #cosyPic {
-    opacity: 0;
-    object-fit: cover;
-    position: absolute;
-}
-
-#romanticPic {
     opacity: 1;
-    object-fit: fill;
-    position: absolute;  
 }
 
-#dayPic {
-    opacity: 0;
-    object-fit: cover;
-    position: absolute;
-    
-}
 
-#sleepTimePic {
-    opacity: 0;
-    object-fit: cover;
-    position: absolute;
-    
-}
 
 /**** Boutons ****/
 
-#cosyBtn {
-    position: absolute;
-    bottom: 20%;
-    left: 20%;
+#cosyBtn, #romanticBtn, #nightBtn, #sleepTimeBtn {
+     
 }
     
-#romanticBtn {
+/* #romanticBtn {
     position: absolute;
-    bottom: 20%;
+    bottom: 5%;
     left: 40%;
 }
 
 #nightBtn {
     position: absolute;
-    bottom: 20%;
-    left: 60%;
+    bottom: 5%;
+    left: 50%;
 }
 
 #sleepTimeBtn {
     position: absolute;
-    bottom: 20%;
-    left: 80%;
+    bottom: 5%;
+    left: 60%;
+} */
+
+#allBtn {
+    
 }
 
 /**** Divisions ****/
 
 #picParent {
     position: relative;
-    width: 300px;
-    height: 300px;
+    height: 45rem;
+    align-items: bottom;
+    gap: 10px;
 }
 
 .modes {
@@ -70,9 +60,9 @@
 
 /**** Texte ****/
 
-#settings {
+/* #settings {
     position: absolute;
     right: 0.2;
     z-index: 2;
     color: aliceblue;
-}
+} */

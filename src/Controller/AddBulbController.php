@@ -25,6 +25,8 @@ class AddBulbController extends AbstractController
         //Envoi des données à la base de données après leur soumission et leur vérification
         if ($form->isSubmitted() && $form->isValid() && 'label') {
 
+            $bulb->setUserId($this->getUser()->getId());
+
             $entityManager->persist($bulb);
             $entityManager->flush();
 

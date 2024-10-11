@@ -63,6 +63,7 @@ main h2 {
 }
 
 /************************INDEX **********************/
+
 #header-index .background-dark {
     background-image: linear-gradient(to top right, var(--fm-black), 95%, var(--fm-yellow)), url(../images/lamp-dark.png);
     text-align: center;
@@ -358,6 +359,7 @@ footer .network img {
 
 
 /********************AMPOULE***************/
+
 /** HEADER **/
 #header .hero-shot-ampoule img {
     width: 100%;

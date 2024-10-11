@@ -16,7 +16,7 @@ let sleepTimePic = document.querySelector('#sleepTimePic');
 
 //Récupérer la valeur de l'opacité pour chaque image ; lui donner un nom et un valeur
 let cosyPicOpacity = parseFloat(window.getComputedStyle(cosyPic).getPropertyValue('opacity')); 
-cosyPicOpacity= 1;
+cosyPicOpacity = 1;
 let romanticPicOpacity = parseFloat(window.getComputedStyle(romanticPic).getPropertyValue('opacity')); 
 romanticPicOpacity = 0;
 let nightPicOpacity = parseFloat(window.getComputedStyle(nightPic).getPropertyValue('opacity')); 
