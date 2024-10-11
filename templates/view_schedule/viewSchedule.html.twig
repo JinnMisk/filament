@@ -14,12 +14,12 @@
                     <!-- Section de gauche - Statistiques -->   
                     {% include('dashboard_stats/dashboardStats.html.twig') %}
 
-                    <div class="col-5 border border-3 border-black rounded-2 d-flex align-items-center flex-column pt-3 pb-3">
+                    <div class="col-5 border border-3 border-black rounded-2">
 
-                        <div class="row d-flex justify-content-end">
+                        <div class="row d-flex justify-content-end m-2 p-2">
 
                             <!-- Bouton de modification de la programmation et son formulaire en fenêtre modale -->
-                            <div class="col-1">
+                            <div class="col-1 me-2">
                                 <i class="icon icon-modify" data-bs-toggle="modal" data-bs-target="#reg-modal"></i>
                                 {% include 'modal_modify_Schedule/modalModifySchedule.html.twig' with { 'modalModifyScheduleForm': modalModifyScheduleForm } %}
                             </div>

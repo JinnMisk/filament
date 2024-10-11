@@ -14,11 +14,11 @@
                     <!-- Section de gauche - Statistiques -->  
                     {% include('dashboard_stats/dashboardStats.html.twig') %}
 
-                    <div class="col-5 border border-3 border-black rounded-2 d-flex align-items-center flex-column pt-3 pb-3">
+                    <div class="col-5 border border-3 border-black rounded-2">
                         
                         <!-- Bouton de modification de l'ambiance et son formulaire en fenêtre modale -->
-                        <div class="row d-flex justify-content-end">
-                            <div class="col-1">
+                        <div class="row d-flex justify-content-end m-2 p-2">
+                            <div class="col-1 me-2">
                                 <i class="icon icon-modify" data-bs-toggle="modal" data-bs-target="#reg-modal"></i>
                                 {% include 'modal_modify_Mood/modalModifyMood.html.twig' with { 'modalModifyMoodForm': modalModifyMoodForm } %}
                             </div>

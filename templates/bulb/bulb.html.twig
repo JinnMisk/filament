@@ -5,6 +5,7 @@
 
 {% block body %}
 	<main>
+		<section>
 		<div class="container">
 
 			<!--HEROSHOT-->
@@ -27,6 +28,7 @@
 				</div>
 			</div>
 		</div>
+		</section>
 
 		<!--PERFORMANCES-->
 		<section id="waranty">
@@ -37,7 +39,6 @@
 						
 						<h4>Endurante</h4>
 						<p>
-
 							Notre ampoule a une durée de vie moyenne 6 fois plus grande que ses concurrentes
 						</p>
 					</article>
@@ -172,7 +173,7 @@
 							              ampoule pour allumer.
 						</p>
 					</div>
-					<img id="lightBulb" src="{{asset('images/ampoule-inversee.png')}}"/>
+					
 				</div>
 			</div>
 		</section>
@@ -200,7 +201,7 @@
 
 		<!-- PROGRAMMATION AMBIANCES-->
 		<section id="modes">
-			<div id="picParent">
+			<div class="container-fluid" id="picParent">
 				<p id="settings">Programmation <br> des ambiances</p>
 				
 				<img id="romanticPic" src="{{asset('images/programmation-ambiences.png')}}" alt="éclairage romantique">
@@ -211,13 +212,15 @@
 				
 				<img id="sleepTimePic" src="{{asset('images/sleeppic.png')}}" alt="éclairage nuit">
 				
-				<button class="btn btn-primary" id="cosyBtn">Cosy</button>
-				
-				<button class="btn btn-primary" id="romanticBtn">Romantique</button>
-				
-				<button class="btn btn-primary" id="nightBtn">Tamisé</button>
-				
-				<button class="btn btn-primary" id="sleepTimeBtn">Nuit</button>
+				<div class="allBtn">
+					<button class="btn btn-primary btn-group" id="cosyBtn">Cosy</button>
+					
+					<button class="btn btn-primary btn-group" id="romanticBtn">Romantique</button>
+					
+					<button class="btn btn-primary btn-group" id="nightBtn">Tamisé</button>
+					
+					<button class="btn btn-primary btn-group" id="sleepTimeBtn">Nuit</button>
+				</div>
 			</div>
 		</section>
 
